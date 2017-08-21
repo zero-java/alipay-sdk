@@ -2,6 +2,7 @@ package com.alipay.api;
 
 import java.io.*;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.alipay.api.internal.util.AlipayUtils;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -34,6 +35,7 @@ public class FileItem implements Serializable {
      */
     @ApiModelProperty(notes = " 文件内容")
     @NotEmpty
+    @JSONField(serialize = false)
     private byte[] content;
     @ApiModelProperty(notes = "")
     private File file;
