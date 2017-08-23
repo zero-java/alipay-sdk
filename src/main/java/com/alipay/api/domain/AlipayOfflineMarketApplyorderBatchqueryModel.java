@@ -9,6 +9,8 @@ import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import io.swagger.annotations.*;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 分页查询Leads、门店、商品相关操作流水信息
  *
@@ -37,6 +39,7 @@ public class AlipayOfflineMarketApplyorderBatchqueryModel extends AlipayObject {
 	/**
 	 * 业务类型：SHOP-店铺，ITEM-商品。
 	 */@JSONField(name = "biz_type", alternateNames = "bizType")@ApiModelProperty(notes = " 业务类型：SHOP-店铺，ITEM-商品。")
+	@NotNull
 	private String bizType;
 
 	/**
@@ -52,6 +55,7 @@ public class AlipayOfflineMarketApplyorderBatchqueryModel extends AlipayObject {
 	/**
 	 * 系统集成商统一传入ISV
 	 */@JSONField(name = "op_role", alternateNames = "opRole")@ApiModelProperty(notes = " 系统集成商统一传入ISV")
+	@NotNull
 	private String opRole;
 
 	/**

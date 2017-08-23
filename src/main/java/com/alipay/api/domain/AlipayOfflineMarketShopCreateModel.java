@@ -5,6 +5,8 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 系统商需要通过该接口在口碑平台帮助商户创建门店信息。
  *
@@ -18,6 +20,7 @@ public class AlipayOfflineMarketShopCreateModel extends AlipayObject {
 	/**
 	 * 门店详细地址，地址字符长度在4-50个字符，注：不含省市区。门店详细地址按规范格式填写地址，以免影响门店搜索及活动报名：例1：道路+门牌号，“人民东路18号”；例2：道路+门牌号+标志性建筑+楼层，“四川北路1552号欢乐广场1楼”。
 	 */@ApiModelProperty(notes = " 门店详细地址，地址字符长度在4-50个字符，注：不含省市区。门店详细地址按规范格式填写地址，以免影响门店搜索及活动报名：例1：道路+门牌号，“人民东路18号”；例2：道路+门牌号+标志性建筑+楼层，“四川北路1552号欢乐广场1楼”。")
+	@NotNull
 	private String address;
 
 	/**
@@ -38,6 +41,7 @@ public class AlipayOfflineMarketShopCreateModel extends AlipayObject {
 	/**
 	 * 店铺接口业务版本号，新接入的ISV，请统一传入2.0。
 	 */@JSONField(name = "biz_version", alternateNames = "bizVersion")@ApiModelProperty(notes = " 店铺接口业务版本号，新接入的ISV，请统一传入2.0。")
+	@NotNull
 	private String bizVersion;
 
 	/**
@@ -78,16 +82,19 @@ public class AlipayOfflineMarketShopCreateModel extends AlipayObject {
 	/**
 	 * 类目id，请参考<a href="https://doc.open.alipay.com/doc2/detail.htm?treeId=205&articleId=104497&docType=1">商户入驻要求</a>。
 	 */@JSONField(name = "category_id", alternateNames = "categoryId")@ApiModelProperty(notes = " 类目id，请参考")
+		@NotNull
 	private String categoryId;
 
 	/**
 	 * 城市编码，国标码，详见国家统计局数据 <a href="http://aopsdkdownload.cn-hangzhou.alipay-pub.aliyun-inc.com/doc/2016.xls">点此下载</a>。
 	 */@JSONField(name = "city_code", alternateNames = "cityCode")@ApiModelProperty(notes = " 城市编码，国标码，详见国家统计局数据 ")
+	@NotNull
 	private String cityCode;
 
 	/**
 	 * 门店电话号码；支持座机和手机，只支持数字和+-号，在客户端对用户展现， 支持多个电话， 以英文逗号分隔。
 	 */@JSONField(name = "contact_number", alternateNames = "contactNumber")@ApiModelProperty(notes = " 门店电话号码；支持座机和手机，只支持数字和+-号，在客户端对用户展现， 支持多个电话， 以英文逗号分隔。")
+	@NotNull
 	private String contactNumber;
 
 	/**
@@ -98,6 +105,7 @@ public class AlipayOfflineMarketShopCreateModel extends AlipayObject {
 	/**
 	 * 区县编码，国标码，详见国家统计局数据 <a href="http://aopsdkdownload.cn-hangzhou.alipay-pub.aliyun-inc.com/doc/2016.xls">点此下载</a>。
 	 */@JSONField(name = "district_code", alternateNames = "districtCode")@ApiModelProperty(notes = " 区县编码，国标码，详见国家统计局数据 ")
+	@NotNull
 	private String districtCode;
 
 	/**
@@ -123,11 +131,13 @@ public class AlipayOfflineMarketShopCreateModel extends AlipayObject {
 	/**
 	 * ISV返佣id，门店创建、或者门店交易的返佣将通过此账号反给ISV，如果有口碑签订了返佣协议，则该字段作为返佣数据提取的依据。此字段必须是个合法uid，2088开头的16位支付宝会员账号，如果传入错误将无法创建门店。
 	 */@JSONField(name = "isv_uid", alternateNames = "isvUid")@ApiModelProperty(notes = " ISV返佣id，门店创建、或者门店交易的返佣将通过此账号反给ISV，如果有口碑签订了返佣协议，则该字段作为返佣数据提取的依据。此字段必须是个合法uid，2088开头的16位支付宝会员账号，如果传入错误将无法创建门店。")
+	@NotNull
 	private String isvUid;
 
 	/**
 	 * 纬度；最长15位字符（包括小数点）， 注：高德坐标系。经纬度是门店搜索和活动推荐的重要参数，录入时请确保经纬度参数准确。高德经纬度查询：http://lbs.amap.com/console/show/picker
 	 */@ApiModelProperty(notes = " 纬度；最长15位字符（包括小数点）， 注：高德坐标系。经纬度是门店搜索和活动推荐的重要参数，录入时请确保经纬度参数准确。高德经纬度查询：http://lbs.amap.com/console/show/picker")
+	@NotNull
 	private String latitude;
 
 	/**
@@ -158,16 +168,19 @@ public class AlipayOfflineMarketShopCreateModel extends AlipayObject {
 	/**
 	 * 经度；最长15位字符（包括小数点）， 注：高德坐标系。经纬度是门店搜索和活动推荐的重要参数，录入时请确保经纬度参数准确。高德经纬度查询：http://lbs.amap.com/console/show/picker
 	 */@ApiModelProperty(notes = " 经度；最长15位字符（包括小数点）， 注：高德坐标系。经纬度是门店搜索和活动推荐的重要参数，录入时请确保经纬度参数准确。高德经纬度查询：http://lbs.amap.com/console/show/picker")
+	@NotNull
 	private Long longitude;
 
 	/**
 	 * 门店首图，非常重要，推荐尺寸2000*1500。
 	 */@JSONField(name = "main_image", alternateNames = "mainImage")@ApiModelProperty(notes = " 门店首图，非常重要，推荐尺寸2000*1500。")
+	@NotNull
 	private String mainImage;
 
 	/**
 	 * 主门店名  比如：肯德基；主店名里不要包含分店名，如“万塘路店”。主店名长度不能超过20个字符。
 	 */@JSONField(name = "main_shop_name", alternateNames = "mainShopName")@ApiModelProperty(notes = " 主门店名  比如：肯德基；主店名里不要包含分店名，如“万塘路店”。主店名长度不能超过20个字符。")
+	@NotNull
 	private String mainShopName;
 
 	/**
@@ -224,6 +237,7 @@ online_pay：在线买单。ISV不可以指定此字段，ISV泛行业开店默�
 	/**
 	 * 省份编码，国标码，详见国家统计局数据 <a href="http://aopsdkdownload.cn-hangzhou.alipay-pub.aliyun-inc.com/doc/2016.xls">点此下载</a>。
 	 */@JSONField(name = "province_code", alternateNames = "provinceCode")@ApiModelProperty(notes = " 省份编码，国标码，详见国家统计局数据 ")
+	@NotNull
 	private String provinceCode;
 
 	/**
@@ -234,11 +248,13 @@ online_pay：在线买单。ISV不可以指定此字段，ISV泛行业开店默�
 	/**
 	 * 支持英文字母和数字，由开发者自行定义（不允许重复），在门店notify消息中也会带有该参数，以此标明本次notify消息是对哪个请求的回应。
 	 */@JSONField(name = "request_id", alternateNames = "requestId")@ApiModelProperty(notes = " 支持英文字母和数字，由开发者自行定义（不允许重复），在门店notify消息中也会带有该参数，以此标明本次notify消息是对哪个请求的回应。")
+	@NotNull
 	private String requestId;
 
 	/**
 	 * 外部门店编号；最长32位字符，该编号将作为收单接口的入参， 请开发者自行确保其唯一性。
 	 */@JSONField(name = "store_id", alternateNames = "storeId")@ApiModelProperty(notes = " 外部门店编号；最长32位字符，该编号将作为收单接口的入参， 请开发者自行确保其唯一性。")
+	@NotNull
 	private String storeId;
 
 	/**

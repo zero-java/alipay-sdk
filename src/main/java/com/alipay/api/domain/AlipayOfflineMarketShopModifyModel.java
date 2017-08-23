@@ -5,6 +5,8 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 系统商需要通过该接口在口碑平台帮助商户修改门店信息，所有的选项都为非必填项，需要修改什么信息就传入什么参数，不传入的参数，则保持不变。修改门店名、首图、门店图片、营业执照相关字段、是否在其他平台开店相关字段，会重新触发风控审核，修改其他字段不会触发风控审核。
  *
@@ -38,6 +40,7 @@ public class AlipayOfflineMarketShopModifyModel extends AlipayObject {
 	/**
 	 * 店铺接口业务版本号，新接入的ISV，请统一传入2.0。
 	 */@JSONField(name = "biz_version", alternateNames = "bizVersion")@ApiModelProperty(notes = " 店铺接口业务版本号，新接入的ISV，请统一传入2.0。")
+	@NotNull
 	private String bizVersion;
 
 	/**
@@ -215,11 +218,13 @@ online_pay：在线买单。ISV不可以指定此字段，ISV泛行业开店默�
 	/**
 	 * 外部请求ID; 标识ISV本次修改的请求，由开发者自定义，不同的请求使用不同的ID，在门店notify消息中也会带有该参数，以此标明本次notify消息是对哪个请求的回应
 	 */@JSONField(name = "request_id", alternateNames = "requestId")@ApiModelProperty(notes = " 外部请求ID; 标识ISV本次修改的请求，由开发者自定义，不同的请求使用不同的ID，在门店notify消息中也会带有该参数，以此标明本次notify消息是对哪个请求的回应")
+	@NotNull
 	private String requestId;
 
 	/**
 	 * 支付宝门店ID。
 	 */@JSONField(name = "shop_id", alternateNames = "shopId")@ApiModelProperty(notes = " 支付宝门店ID。")
+	@NotNull
 	private String shopId;
 
 	/**
