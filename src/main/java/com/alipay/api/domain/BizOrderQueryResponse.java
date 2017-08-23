@@ -2,6 +2,7 @@ package com.alipay.api.domain;
 
 import java.util.Date;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 
@@ -45,7 +46,7 @@ PAUSE_ITEM-恢复售卖商品
 	 * 流水上下文信息，JSON格式。根据action不同对应的结构也不同，JSON字段与含义可参考各个接口的请求参数。
 	 */
 	@ApiField("biz_context_info")
-	private String bizContextInfo;
+	private JSONObject bizContextInfo;
 
 	/**
 	 * 业务主体ID。根据biz_type不同可能对应shop_id或item_id。
@@ -130,10 +131,10 @@ PAUSE_ITEM-恢复售卖商品
 		this.applyId = applyId;
 	}
 
-	public String getBizContextInfo() {
+	public JSONObject getBizContextInfo() {
 		return this.bizContextInfo;
 	}
-	public void setBizContextInfo(String bizContextInfo) {
+	public void setBizContextInfo(JSONObject bizContextInfo) {
 		this.bizContextInfo = bizContextInfo;
 	}
 
