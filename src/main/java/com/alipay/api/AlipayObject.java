@@ -20,7 +20,6 @@ public abstract class AlipayObject implements Serializable {
      * 身份标识
      */
     @NotNull(groups = {AppAuth.class})
-    @JSONField(serialize = false)
     protected Identity identity;
 
     public Identity getIdentity() {
