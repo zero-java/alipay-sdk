@@ -33,7 +33,13 @@ public class FastJSONConverter implements Converter {
             throws AlipayApiException {
         NormalizerJSON normalizerJSON = clazz.getAnnotation(NormalizerJSON.class);
         String json = normalizerJSON!=null&&!normalizerJSON.value()?rsp:new String(new NormalizerJSONString(rsp).getNormalizerData());
-        JSONObject jsonObject = JSON.parseObject(json);
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = JSON.parseObject(json);
+        }catch (Exception e){
+            //尝试原字符串处理
+            jsonObject = JSON.parseObject(rsp);
+        }
         for(Object value : jsonObject.values()){
             if(value instanceof JSON){
                 return JSON.toJavaObject((JSON) value,clazz);
