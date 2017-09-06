@@ -6,7 +6,7 @@
 
     <groupId>com.yazuo.xiaoya.alipay.sdk</groupId>
     <artifactId>alipay-sdk</artifactId>
-    <version>3.0.4.RELEASE</version>
+    <version>3.0.6.RELEASE</version>
     <properties>
         <compilerArgument>-parameters</compilerArgument>
         <argLine>-Dfile.encoding=UTF-8</argLine>
@@ -34,17 +34,17 @@
         <dependency>
             <groupId>com.yazuo.xiaoya</groupId>
             <artifactId>enum</artifactId>
-            <version>1.0.13.RELEASE</version>
+            <version>1.0.15.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.yazuo.xiaoya</groupId>
             <artifactId>annotations</artifactId>
-            <version>1.0.13.RELEASE</version>
+            <version>1.0.15.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.yazuo.xiaoya</groupId>
             <artifactId>vo</artifactId>
-            <version>1.0.13.RELEASE</version>
+            <version>1.0.15.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
