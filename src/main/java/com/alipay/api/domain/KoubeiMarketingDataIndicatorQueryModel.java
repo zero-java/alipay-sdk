@@ -157,8 +157,8 @@ public class KoubeiMarketingDataIndicatorQueryModel extends AlipayObject {
         TradeQuery(KoubeiMarketingDataIndicatorQueryResponse.TradeQueryModel.class),
         TradeQueryByStore(KoubeiMarketingDataIndicatorQueryResponse.TradeQueryByStoreModel.class),
         CampaignQuery(KoubeiMarketingDataIndicatorQueryResponse.CampaignQueryModel.class),
-        CampaignQueryByStore(KoubeiMarketingDataIndicatorQueryResponse.CampaignQueryByStoreModel.class);
-
+        CampaignQueryByStore(KoubeiMarketingDataIndicatorQueryResponse.CampaignQueryByStoreModel.class),
+        ConponsQuery(KoubeiMarketingDataIndicatorQueryResponse.ConponsQueryModel.class);
         private Class clazz;
 
         BizType(Class clazz) {
