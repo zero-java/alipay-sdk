@@ -4,6 +4,9 @@ import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.Valid;
 
 /**
  * 智能营销方案查询
@@ -21,6 +24,7 @@ public class KoubeiMarketingCampaignInteligentPlanQueryModel extends AlipayObjec
      */
     @ApiModelProperty(notes = " 操作人信息")
     @JSONField(alternateNames = "operatorContext", name = "operator_context")
+    @Valid
     private PromoOperatorInfo operatorContext;
 
     /**
@@ -28,6 +32,7 @@ public class KoubeiMarketingCampaignInteligentPlanQueryModel extends AlipayObjec
      */
     @ApiModelProperty(notes = " 根据编号来获取对应的方案信息")
     @JSONField(alternateNames = "planCode", name = "plan_code")
+    @NotBlank
     private String planCode;
 
     public PromoOperatorInfo getOperatorContext() {
