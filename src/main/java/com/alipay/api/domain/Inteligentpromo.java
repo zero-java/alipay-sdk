@@ -1,5 +1,6 @@
 package com.alipay.api.domain;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
@@ -52,7 +53,7 @@ public class Inteligentpromo implements Serializable {
      */
     @ApiModelProperty(notes = " 活动扩展信息")
     @JSONField(alternateNames = "extInfo", name = "ext_info")
-    private String extInfo;
+    private JSONObject extInfo;
 
     /**
      * 活动关闭的时间
@@ -173,11 +174,11 @@ public class Inteligentpromo implements Serializable {
         this.desc = desc;
     }
 
-    public String getExtInfo() {
-        return this.extInfo;
+    public JSONObject getExtInfo() {
+        return extInfo;
     }
 
-    public void setExtInfo(String extInfo) {
+    public void setExtInfo(JSONObject extInfo) {
         this.extInfo = extInfo;
     }
 
