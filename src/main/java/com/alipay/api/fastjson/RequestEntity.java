@@ -5,6 +5,7 @@ import org.apache.http.NameValuePair;
 import java.util.List;
 
 /**
+ *
  * Created by scvzerng on 2017/8/1.
  */
 public class RequestEntity {

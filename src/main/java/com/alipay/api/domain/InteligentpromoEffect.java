@@ -6,6 +6,7 @@ import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -19,11 +20,11 @@ public class InteligentpromoEffect implements Serializable {
 
 
     /**
-     * 平均客单价
+     * 平均客单价提升比率
      */
-    @ApiModelProperty(notes = " 平均客单价")
-    @JSONField(alternateNames = "avgPrize", name = "avg_prize")
-    private String avgPrize;
+    @ApiModelProperty(notes = " 平均客单价提升比率")
+    @JSONField(alternateNames = "avgPrizeIncreate", name = "avg_prize_increate")
+    private String avgPrizeIncreate;
 
     /**
      * 成本
@@ -73,11 +74,11 @@ public class InteligentpromoEffect implements Serializable {
     private Long remainStockNum;
 
     /**
-     * 复购率
+     * 复购提升比率
      */
-    @ApiModelProperty(notes = " 复购率")
-    @JSONField(alternateNames = "repayRate", name = "repay_rate")
-    private Long repayRate;
+    @ApiModelProperty(notes = " 复购提升比率")
+    @JSONField(alternateNames = "repayRateIncreate", name = "repay_rate_increate")
+    private BigDecimal repayRateIncreate;
 
     /**
      * 发券数量
@@ -99,12 +100,12 @@ public class InteligentpromoEffect implements Serializable {
     @JSONField(alternateNames = "useCount", name = "use_count")
     private Long useCount;
 
-    public String getAvgPrize() {
-        return this.avgPrize;
+    public String getAvgPrizeIncreate() {
+        return avgPrizeIncreate;
     }
 
-    public void setAvgPrize(String avgPrize) {
-        this.avgPrize = avgPrize;
+    public void setAvgPrizeIncreate(String avgPrizeIncreate) {
+        this.avgPrizeIncreate = avgPrizeIncreate;
     }
 
     public String getCost() {
@@ -163,12 +164,13 @@ public class InteligentpromoEffect implements Serializable {
         this.remainStockNum = remainStockNum;
     }
 
-    public Long getRepayRate() {
-        return this.repayRate;
+
+    public BigDecimal getRepayRateIncreate() {
+        return repayRateIncreate;
     }
 
-    public void setRepayRate(Long repayRate) {
-        this.repayRate = repayRate;
+    public void setRepayRateIncreate(BigDecimal repayRateIncreate) {
+        this.repayRateIncreate = repayRateIncreate;
     }
 
     public Long getTakeCount() {

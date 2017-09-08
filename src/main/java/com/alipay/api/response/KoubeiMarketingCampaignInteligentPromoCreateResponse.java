@@ -1,29 +1,35 @@
 package com.alipay.api.response;
 
-import com.alipay.api.AlipayResponse;
+import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.internal.mapping.ApiField;
+import com.alipay.api.domain.Inteligentpromo;
+
+import com.alipay.api.AlipayResponse;
+import io.swagger.annotations.*;
 
 /**
  * ALIPAY API: koubei.marketing.campaign.inteligent.promo.create response.
- * 
+ *
  * @author auto create
- * @since 1.0, 2017-09-06 14:25:21
+ * @since 1.0, 2017-09-07 15:03:23
  */
+@ApiModel(description = " ALIPAY API: koubei.marketing.campaign.inteligent.promo.create response.")
 public class KoubeiMarketingCampaignInteligentPromoCreateResponse extends AlipayResponse {
 
-	private static final long serialVersionUID = 5287246233493742849L;
+    private static final long serialVersionUID = 5136473849842399285L;
 
-	/** 
-	 * 智能营销活动ID
-	 */
-	@ApiField("promo_id")
-	private String promoId;
+    /**
+     * 智能营销活动信息
+     */
+    @ApiModelProperty(notes = " 智能营销活动信息")
+    private Inteligentpromo promo;
 
-	public void setPromoId(String promoId) {
-		this.promoId = promoId;
-	}
-	public String getPromoId( ) {
-		return this.promoId;
-	}
+    public void setPromo(Inteligentpromo promo) {
+        this.promo = promo;
+    }
+
+    public Inteligentpromo getPromo() {
+        return this.promo;
+    }
 
 }
