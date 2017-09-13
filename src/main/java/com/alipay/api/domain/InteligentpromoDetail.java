@@ -26,6 +26,13 @@ public class InteligentpromoDetail implements Serializable {
      */
     @ApiModelProperty(notes = " 活动预算")
     private BudgetInfo budget;
+    /**
+     * 营销活动的id，也就是消费送
+     * 的活动id
+     */
+    @JSONField(alternateNames = "campId", name = "camp_id")
+    @ApiModelProperty(notes = " 营销活动的id，也就是消费送的活动id")
+    private String campId;
 
     /**
      * 活动限制信息
@@ -58,7 +65,7 @@ public class InteligentpromoDetail implements Serializable {
      */
     @ApiModelProperty(notes = " 智能营销子活动的结束时间")
     @JSONField(alternateNames = "gmtEnd", name = "gmt_end")
-    private String gmtEnd;
+    private Data gmtEnd;
 
     /**
      * 智能营销子活动的开始时间
@@ -169,11 +176,11 @@ public class InteligentpromoDetail implements Serializable {
         this.forecastEffect = forecastEffect;
     }
 
-    public String getGmtEnd() {
-        return this.gmtEnd;
+    public Data getGmtEnd() {
+        return gmtEnd;
     }
 
-    public void setGmtEnd(String gmtEnd) {
+    public void setGmtEnd(Data gmtEnd) {
         this.gmtEnd = gmtEnd;
     }
 
