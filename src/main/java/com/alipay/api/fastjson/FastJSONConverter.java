@@ -27,7 +27,9 @@ import java.util.Map;
  * Created by scvzerng on 2017/8/1.
  */
 public class FastJSONConverter implements Converter {
-
+   private static final String SUCCESS_KEY = "success";
+   private static final String ERROR_KEY = "error";
+   private static final String BIZ_ERROR = "40004";
 
     public <T extends AlipayResponse> T toResponse(String rsp, Class<T> clazz)
             throws AlipayApiException {
@@ -45,6 +47,15 @@ public class FastJSONConverter implements Converter {
                 return JSON.toJavaObject((JSON) value,clazz);
             }
         }
+
+       if(jsonObject.containsKey(SUCCESS_KEY)&&jsonObject.containsKey(ERROR_KEY)){
+            String error = jsonObject.getString(ERROR_KEY);
+           jsonObject.put("code",BIZ_ERROR);
+           jsonObject.put("message",error);
+           jsonObject.put("subCode",error);
+           jsonObject.put("subMsg",error);
+           return JSON.toJavaObject(jsonObject,clazz);
+       }
 //        return JSON.parseObject(rsp,clazz);
 //        JSONReader reader = new JSONValidatingReader(new ExceptionErrorListener());
 //        Object rootObj = reader.read(rsp);
