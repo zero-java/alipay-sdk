@@ -2,6 +2,7 @@ package com.alipay.api.domain;
 
 import java.util.List;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
@@ -99,7 +100,7 @@ public class ShopSummaryQueryResponse extends AlipayObject {
 	 * 图片集，是map转化成的json串，key是图片id,value是图片url
 	 */
 	@ApiField("pic_coll")
-	private String picColl;
+	private JSONObject picColl;
 
 	/**
 	 * 省份编码，国标码，详见国家统计局数据 <a href="http://aopsdkdownload.cn-hangzhou.alipay-pub.aliyun-inc.com/doc/AreaCodeList.zip">点此下载</a>
@@ -222,10 +223,10 @@ public class ShopSummaryQueryResponse extends AlipayObject {
 		this.mainShopName = mainShopName;
 	}
 
-	public String getPicColl() {
+	public JSONObject getPicColl() {
 		return this.picColl;
 	}
-	public void setPicColl(String picColl) {
+	public void setPicColl(JSONObject picColl) {
 		this.picColl = picColl;
 	}
 
