@@ -65,7 +65,7 @@ public class InteligentpromoDetail implements Serializable {
      */
     @ApiModelProperty(notes = " 智能营销子活动的结束时间")
     @JSONField(alternateNames = "gmtEnd", name = "gmt_end")
-    private Data gmtEnd;
+    private Date gmtEnd;
 
     /**
      * 智能营销子活动的开始时间
@@ -176,11 +176,19 @@ public class InteligentpromoDetail implements Serializable {
         this.forecastEffect = forecastEffect;
     }
 
-    public Data getGmtEnd() {
+    public String getCampId() {
+        return campId;
+    }
+
+    public void setCampId(String campId) {
+        this.campId = campId;
+    }
+
+    public Date getGmtEnd() {
         return gmtEnd;
     }
 
-    public void setGmtEnd(Data gmtEnd) {
+    public void setGmtEnd(Date gmtEnd) {
         this.gmtEnd = gmtEnd;
     }
 
