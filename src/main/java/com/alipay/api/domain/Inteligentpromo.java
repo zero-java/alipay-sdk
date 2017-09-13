@@ -86,7 +86,7 @@ public class Inteligentpromo implements Serializable {
     /**
      * 智能营销活动对应的名称
      */
-    @ApiModelProperty(notes = " 智能营销活动对应的名称")
+    @ApiModelProperty(notes = " 智能营销活动对应的名称",example = "全场智能营销活动",reference = "500")
     private String name;
 
     /**
@@ -99,14 +99,14 @@ public class Inteligentpromo implements Serializable {
     /**
      * 智能营销活动对应的方案编号
      */
-    @ApiModelProperty(notes = " 智能营销活动对应的方案编号")
+    @ApiModelProperty(notes = " 智能营销活动对应的方案编号",example = "20170901000000000007027911001170",reference = "100")
     @JSONField(alternateNames = "planId", name = "plan_id")
     private String planId;
 
     /**
      * 智能营销活动的id。创建接口中这个参数不用填，仅在查询接口中返回
      */
-    @ApiModelProperty(notes = " 智能营销活动的id。创建接口中这个参数不用填，仅在查询接口中返回")
+    @ApiModelProperty(notes = " 智能营销活动的id。创建接口中这个参数不用填，仅在查询接口中返回",example = "20170905000000000092980911009880",reference = "100")
     @JSONField(alternateNames = "promoId", name = "promo_id")
     private String promoId;
 
@@ -132,14 +132,14 @@ public class Inteligentpromo implements Serializable {
     /**
      * 智能营销活动对应的方案中的模板编号
      */
-    @ApiModelProperty(notes = " 智能营销活动对应的方案中的模板编号")
+    @ApiModelProperty(notes = " 智能营销活动对应的方案中的模板编号",example = "20170905000000000092980911033380",reference = "100")
     @JSONField(alternateNames = "templateId", name = "template_id")
     private String templateId;
 
     /**
      * 智能活动类型，值如下：RECOMMENDATION：系统推荐；REGISTRATION：报名
      */
-    @ApiModelProperty(notes = " 智能活动类型，值如下：RECOMMENDATION：系统推荐；REGISTRATION：报名")
+    @ApiModelProperty(notes = " 智能活动类型，值如下：RECOMMENDATION：系统推荐；REGISTRATION：报名",example = "RECOMMENDATION",reference = "32")
     private String type;
 
     public Boolean getAllowAutoDelay() {
