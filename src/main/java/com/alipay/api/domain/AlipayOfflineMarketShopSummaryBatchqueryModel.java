@@ -5,6 +5,8 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 门店摘要信息批量查询接口
  *
@@ -19,6 +21,7 @@ public class AlipayOfflineMarketShopSummaryBatchqueryModel extends AlipayObject 
 	 * 表示接口业务的调用方身份：ISV、 服务商身份标识。传入ISV代表系统集成商身份。传入PROVIDER代表服务商。
 	 */@JSONField(name = "op_role", alternateNames = "opRole")
 	@ApiModelProperty(notes = " 表示接口业务的调用方身份：ISV、 服务商身份标识。传入ISV代表系统集成商身份。传入PROVIDER代表服务商。",required = true,example = "ISV、PROVIDER",reference = "16")
+	@NotNull
 	private String opRole;
 
 	/**
@@ -42,6 +45,7 @@ public class AlipayOfflineMarketShopSummaryBatchqueryModel extends AlipayObject 
 	 KB_PROMOTER：口碑客推广者
 	 */@JSONField(name = "query_type", alternateNames = "queryType")
 	@ApiModelProperty(notes = " 门店数据查询类型，根据类型可以返回指定的门店数据，目前支持的类型如下：BRAND_RELATION ： 品牌商关联店铺MALL_SELF ：MALL自己的门店MALL_RELATION：MALL关联下的门店MERCHANT_SELF:商户自己的门店KB_PROMOTER：口碑客推广者",required = true,example = "BRAND_RELATION",reference = "20")
+	@NotNull
 	private String queryType;
 
 	/**
