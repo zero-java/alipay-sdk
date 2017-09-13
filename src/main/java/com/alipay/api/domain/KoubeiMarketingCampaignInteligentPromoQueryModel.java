@@ -17,12 +17,15 @@ public class KoubeiMarketingCampaignInteligentPromoQueryModel extends AlipayObje
 
 	/**
 	 * 操作人员上下文
-	 */@JSONField(name = "operator_context", alternateNames = "operatorContext")@ApiModelProperty(notes = " 操作人员上下文")
+	 */
+	@JSONField(name = "operator_context", alternateNames = "operatorContext")
+	@ApiModelProperty(notes = " 操作人员上下文")
 	private PromoOperatorInfo operatorContext;
 
 	/**
 	 * 智能营销活动id
-	 */@JSONField(name = "promo_id", alternateNames = "promoId")@ApiModelProperty(notes = " 智能营销活动id")
+	 */@JSONField(name = "promo_id", alternateNames = "promoId")
+	@ApiModelProperty(notes = " 智能营销活动id",example = "20170905000000000092980911009880",required = true,reference = "265")
 	private String promoId;
 
 	public PromoOperatorInfo getOperatorContext() {

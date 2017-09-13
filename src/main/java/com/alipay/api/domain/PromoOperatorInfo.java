@@ -21,21 +21,14 @@ public class PromoOperatorInfo implements Serializable {
     /**
      * 操作人id
      */
-    @ApiModelProperty(notes = " 操作人id")
+    @ApiModelProperty(notes = " 操作人id",example = "2088342364645765",reference = "32")
     @JSONField(alternateNames = "operatorId", name = "operator_id")
     private String operatorId;
 
     /**
-     * 操作人名称
-     */
-    @ApiModelProperty(notes = " 操作人名称")
-    @JSONField(alternateNames = "operatorName", name = "operator_name")
-    private String operatorName;
-
-    /**
      * 操作人类型
      */
-    @ApiModelProperty(notes = " 操作人类型")
+    @ApiModelProperty(notes = " 操作人类型",example = "SALES：口碑内部小二；MER：商户；MER_OPERATOR：商户员工；PROVIDER：服务商；PROVIDER_STAFF：服务商员工；",reference = "100")
     @JSONField(alternateNames = "operatorType", name = "operator_type")
     private String operatorType;
 
@@ -45,14 +38,6 @@ public class PromoOperatorInfo implements Serializable {
 
     public void setOperatorId(String operatorId) {
         this.operatorId = operatorId;
-    }
-
-    public String getOperatorName() {
-        return this.operatorName;
-    }
-
-    public void setOperatorName(String operatorName) {
-        this.operatorName = operatorName;
     }
 
     public String getOperatorType() {
