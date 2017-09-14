@@ -43,9 +43,11 @@ public class KoubeiMarketingDataIndicatorQueryModel extends AlipayObject {
      * 6，CampaignQueryByStore 门店活动数据查询
      * 7，ConponsQuery 商户券数据查询
      * 8，ConponsQueryByStore 门店券数据查询
+     * 9, PlanQuery 营销方案包效果
+     * 10，PlanQueryByStore 营销方案包门店效果
      */
     @JSONField(name = "biz_type", alternateNames = "bizType")
-    @ApiModelProperty(notes = "业务类型，可选值有六个1，MemberQuery商户会员数据查询2，MemberQueryByStore门店会员数据查询3，TradeQuery商户交易数据查询4，TradeQueryByStore门店交易数据查询5，CampaignQuery商户活动数据查询6，CampaignQueryByStore门店活动数据查询7，ConponsQuery商户券数据查询8，ConponsQueryByStore门店券数据查询")
+    @ApiModelProperty(notes = "业务类型，可选值有六个1，MemberQuery商户会员数据查询2，MemberQueryByStore门店会员数据查询3，TradeQuery商户交易数据查询4，TradeQueryByStore门店交易数据查询5，CampaignQuery商户活动数据查询6，CampaignQueryByStore门店活动数据查询7，ConponsQuery商户券数据查询8，ConponsQueryByStore门店券数据查询* 9, PlanQuery 营销方案包效果，10，PlanQueryByStore 营销方案包门店效果")
     @NotNull(message = "业务类型不能为空")
     private BizType bizType;
 
@@ -61,8 +63,8 @@ public class KoubeiMarketingDataIndicatorQueryModel extends AlipayObject {
      * camp_id：为活动ID
      * sort_field：为排序指标KEY
      * sort_type：ASC表示升序,DESC表示降序
+     * promo_id：为智能活动的id，当bizType= ‘PlanQuery'和bizType= ‘PlanQueryByStore'取这里的值；
      * store_Ids：为门店ID，多个门店使用逗号分隔
-     * 注意：
      * 注意：这个是JSON数组，必须以{开头，以}结尾，{}外层不能加双引号"",正确案例{"camp_id":"10000000000000000000000000000000","sort_field":"total_user_cnt","sort_type":"ASC","store_Ids":"20131133131,2031313"}，错误案例："{"camp_id":"10000000000000000000000000000000","sort_field":"total_user_cnt","sort_type":"ASC","store_Ids":"20131133131,2031313"}"
      */
     @JSONField(name = "ext_info", alternateNames = "extInfo")
@@ -95,6 +97,12 @@ public class KoubeiMarketingDataIndicatorQueryModel extends AlipayObject {
         @JSONField(name = "camp_id", alternateNames = "campId")
         @ApiModelProperty(notes = "活动ID")
         private String campId;
+        /**
+         * 方案ID
+         */
+        @JSONField(name = "promo_id", alternateNames = "promoId")
+        @ApiModelProperty(notes = "方案ID")
+        private String promoId;
         /**
          * 排序字段
          */
@@ -145,6 +153,14 @@ public class KoubeiMarketingDataIndicatorQueryModel extends AlipayObject {
         public void setStoreIds(String storeIds) {
             this.storeIds = storeIds;
         }
+
+        public String getPromoId() {
+            return promoId;
+        }
+
+        public void setPromoId(String promoId) {
+            this.promoId = promoId;
+        }
     }
 
     public enum Order {
@@ -158,7 +174,11 @@ public class KoubeiMarketingDataIndicatorQueryModel extends AlipayObject {
         TradeQueryByStore(KoubeiMarketingDataIndicatorQueryResponse.TradeQueryByStoreModel.class),
         CampaignQuery(KoubeiMarketingDataIndicatorQueryResponse.CampaignQueryModel.class),
         CampaignQueryByStore(KoubeiMarketingDataIndicatorQueryResponse.CampaignQueryByStoreModel.class),
-        ConponsQuery(KoubeiMarketingDataIndicatorQueryResponse.ConponsQueryModel.class);
+        ConponsQuery(KoubeiMarketingDataIndicatorQueryResponse.ConponsQueryModel.class),
+        ConponsQueryByStore(KoubeiMarketingDataIndicatorQueryResponse.ConponsQueryByStoreModel.class),
+        PlanQuery(KoubeiMarketingDataIndicatorQueryResponse.PlanQueryModel.class),
+        PlanQueryByStore(KoubeiMarketingDataIndicatorQueryResponse.PlanQueryByStoreModel.class);
+
         private Class clazz;
 
         BizType(Class clazz) {
