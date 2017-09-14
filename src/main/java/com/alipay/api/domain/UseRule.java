@@ -33,6 +33,22 @@ public class UseRule implements Serializable {
     @ApiModelProperty(notes = " 券的不可用时间")
     @JSONField(name = "forbidden_time", alternateNames = "forbiddenTime")
     private ForbbidenTime forbiddenTime;
+    /**
+     * 优惠券的使用支付渠道限制规
+     * 则，
+     * 不受支付渠道限制
+     * :USE_NO_LIMIT;
+     * 仅限储值卡支付时可用
+     * :USE_ON_CURRENT_PAY_C
+     * HANNEL;
+     * 储值卡支付时不可用
+     * :NOT_ALLOWED_USE;
+     * 【备注】
+     * 支付渠道限制不允许修改
+     */
+    @ApiModelProperty(notes = " 优惠券的使用支付渠道限制规则，不受支付渠道限制:USE_NO_LIMIT;仅限储值卡支付时可用:USE_ON_CURRENT_PAY_CHANNEL;储值卡支付时不可用:NOT_ALLOWED_USE;【备注】支付渠道限制不允许修改")
+    @JSONField(alternateNames = "limitRule", name = "limit_rule")
+    private String limitRule;
 
     /**
      * 券核销的最低消费门槛，单位元
@@ -67,6 +83,14 @@ public class UseRule implements Serializable {
 
     public JSONObject getExtInfo() {
         return extInfo;
+    }
+
+    public String getLimitRule() {
+        return limitRule;
+    }
+
+    public void setLimitRule(String limitRule) {
+        this.limitRule = limitRule;
     }
 
     public void setExtInfo(JSONObject extInfo) {

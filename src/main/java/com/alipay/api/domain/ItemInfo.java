@@ -56,6 +56,17 @@ public class ItemInfo implements Serializable {
     @ApiModelProperty(notes = " 单品券说明")
     @JSONField(name = "item_text", alternateNames = "itemText")
     private String itemText;
+    /**
+     * 券适用SKU的最低消费金额门
+     * 槛
+     * 如券适用A,B两个SKU，该字
+     * 段设置的值为100，则订单中
+     * 购买A,B两个SKU的合计金额
+     * 需大于100元才可用券
+     */
+    @ApiModelProperty(notes = " 券适用SKU的最低消费金额门槛如券适用A,B两个SKU，该字段设置的值为100，则订单中购买A,B两个SKU的合计金额需大于100元才可用券")
+    @JSONField(alternateNames = "skuMinConsume", name = "sku_min_consume")
+    private String skuMinConsume;
 
     /**
      * 最高优惠商品件数
@@ -78,6 +89,14 @@ public class ItemInfo implements Serializable {
     @ApiModelProperty(notes = " 单品的原价，单位元 必须为合法金额类型字符串，如9.99")
     @JSONField(name = "original_price", alternateNames = "originalPrice")
     private String originalPrice;
+
+    public String getSkuMinConsume() {
+        return skuMinConsume;
+    }
+
+    public void setSkuMinConsume(String skuMinConsume) {
+        this.skuMinConsume = skuMinConsume;
+    }
 
     public List<String> getItemIds() {
         return this.itemIds;
