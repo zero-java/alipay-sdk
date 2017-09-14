@@ -637,7 +637,42 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 		private BigDecimal totalRelativePeriodPidLossOrderAmt;//累计活动期环比同跨期商户流失会员订单金额
 		@JSONField(name = "total_relative_period_pid_loss_trade_amt")
 		private BigDecimal totalRelativePeriodPidLossTradeAmt;//累计活动期环比同跨期商户流失会员实收金额
+		@JSONField(name = "taken_online_trade_amt")
+		private BigDecimal takenOnlineTradeAmt;//线上引流活动金额
+		@JSONField(name = "taken_online_order_amt")
+		private BigDecimal takenOnlineOrderAmt;//线上引流订单金额
+		@JSONField(name="taken_online_trade_cnt")
+		private Integer takenOnlineTradeCnt;//线上引流活动笔数
+		@JSONField(name="taken_online_trade_avg_amt")
+		private BigDecimal takenOnlineTradeAvgAmt;//线上引流活动笔单价
+		@JSONField(name="taken_online_order_avg_amt")
+		private BigDecimal takenOnlineOrderAvgAmt;//线上引流订单笔单价
+		@JSONField(name="taken_online_user_cnt")
+		private Integer takenOnlineUserCnt;//线上引流会员数
 
+												//券扫码曝光次数
+		@JSONField(name="taken_arrival_ma_cnt")
+		private Integer takenArrivalMaCnt;//扫码领券量
+		@JSONField(name="taken_arrival_trade_cnt")
+		private Integer takenArrivalTradeCnt;//扫码核销笔数
+		@JSONField(name="taken_arrival_trade_amt")
+		private BigDecimal takenArrivalTradeAmt;//扫码核销活动金额
+		@JSONField(name="taken_arrival_order_amt")
+		private BigDecimal takenArrivalOrderAmt;//扫码核销订单金额
+		@JSONField(name="taken_arrival_avg_amt")
+		private BigDecimal takenArrivalAvgAmt;//扫码核销活动笔单价
+		@JSONField(name="taken_arrival_avg_order_amt")
+		private BigDecimal takenArrivalAvgOrderAmt;//扫码核销订单笔单价
+		@JSONField(name="taken_arrival_user_cnt")
+		private Integer takenArrivalUserCnt;//扫码核销会员数
+		@JSONField(name="camp_pre_order_avg_amt")
+		private BigDecimal campPreOrderAvgAmt;//活动前自然月订单笔单价
+		@JSONField(name="camp_pre_camp_trade_avg_amt")
+		private BigDecimal campPreCampTradeAvgAmt;//活动前自然月活动收益笔单价
+		@JSONField(name="camp_pre_trade_avg_amt")
+		private BigDecimal campPreTradeAvgAmt;//活动前自然月收益笔单价
+												//活动前自然月单品销量
+												//活动期单品销量
 		public Date getBizDate() {
 			return bizDate;
 		}
@@ -901,6 +936,135 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 		public void setTotalRelativePeriodPidLossTradeAmt(BigDecimal totalRelativePeriodPidLossTradeAmt) {
 			this.totalRelativePeriodPidLossTradeAmt = totalRelativePeriodPidLossTradeAmt;
 		}
+
+		public BigDecimal getTakenOnlineTradeAmt() {
+			return takenOnlineTradeAmt;
+		}
+
+		public void setTakenOnlineTradeAmt(BigDecimal takenOnlineTradeAmt) {
+			this.takenOnlineTradeAmt = takenOnlineTradeAmt;
+		}
+
+		public BigDecimal getTakenOnlineOrderAmt() {
+			return takenOnlineOrderAmt;
+		}
+
+		public void setTakenOnlineOrderAmt(BigDecimal takenOnlineOrderAmt) {
+			this.takenOnlineOrderAmt = takenOnlineOrderAmt;
+		}
+
+		public Integer getTakenOnlineTradeCnt() {
+			return takenOnlineTradeCnt;
+		}
+
+		public void setTakenOnlineTradeCnt(Integer takenOnlineTradeCnt) {
+			this.takenOnlineTradeCnt = takenOnlineTradeCnt;
+		}
+
+		public BigDecimal getTakenOnlineTradeAvgAmt() {
+			return takenOnlineTradeAvgAmt;
+		}
+
+		public void setTakenOnlineTradeAvgAmt(BigDecimal takenOnlineTradeAvgAmt) {
+			this.takenOnlineTradeAvgAmt = takenOnlineTradeAvgAmt;
+		}
+
+		public BigDecimal getTakenOnlineOrderAvgAmt() {
+			return takenOnlineOrderAvgAmt;
+		}
+
+		public void setTakenOnlineOrderAvgAmt(BigDecimal takenOnlineOrderAvgAmt) {
+			this.takenOnlineOrderAvgAmt = takenOnlineOrderAvgAmt;
+		}
+
+		public Integer getTakenOnlineUserCnt() {
+			return takenOnlineUserCnt;
+		}
+
+		public void setTakenOnlineUserCnt(Integer takenOnlineUserCnt) {
+			this.takenOnlineUserCnt = takenOnlineUserCnt;
+		}
+
+		public Integer getTakenArrivalMaCnt() {
+			return takenArrivalMaCnt;
+		}
+
+		public void setTakenArrivalMaCnt(Integer takenArrivalMaCnt) {
+			this.takenArrivalMaCnt = takenArrivalMaCnt;
+		}
+
+		public Integer getTakenArrivalTradeCnt() {
+			return takenArrivalTradeCnt;
+		}
+
+		public void setTakenArrivalTradeCnt(Integer takenArrivalTradeCnt) {
+			this.takenArrivalTradeCnt = takenArrivalTradeCnt;
+		}
+
+		public BigDecimal getTakenArrivalTradeAmt() {
+			return takenArrivalTradeAmt;
+		}
+
+		public void setTakenArrivalTradeAmt(BigDecimal takenArrivalTradeAmt) {
+			this.takenArrivalTradeAmt = takenArrivalTradeAmt;
+		}
+
+		public BigDecimal getTakenArrivalOrderAmt() {
+			return takenArrivalOrderAmt;
+		}
+
+		public void setTakenArrivalOrderAmt(BigDecimal takenArrivalOrderAmt) {
+			this.takenArrivalOrderAmt = takenArrivalOrderAmt;
+		}
+
+		public BigDecimal getTakenArrivalAvgAmt() {
+			return takenArrivalAvgAmt;
+		}
+
+		public void setTakenArrivalAvgAmt(BigDecimal takenArrivalAvgAmt) {
+			this.takenArrivalAvgAmt = takenArrivalAvgAmt;
+		}
+
+		public BigDecimal getTakenArrivalAvgOrderAmt() {
+			return takenArrivalAvgOrderAmt;
+		}
+
+		public void setTakenArrivalAvgOrderAmt(BigDecimal takenArrivalAvgOrderAmt) {
+			this.takenArrivalAvgOrderAmt = takenArrivalAvgOrderAmt;
+		}
+
+		public Integer getTakenArrivalUserCnt() {
+			return takenArrivalUserCnt;
+		}
+
+		public void setTakenArrivalUserCnt(Integer takenArrivalUserCnt) {
+			this.takenArrivalUserCnt = takenArrivalUserCnt;
+		}
+
+		public BigDecimal getCampPreCampTradeAvgAmt() {
+			return campPreCampTradeAvgAmt;
+		}
+
+		public void setCampPreCampTradeAvgAmt(BigDecimal campPreCampTradeAvgAmt) {
+			this.campPreCampTradeAvgAmt = campPreCampTradeAvgAmt;
+		}
+
+		public BigDecimal getCampPreTradeAvgAmt() {
+			return campPreTradeAvgAmt;
+		}
+
+		public void setCampPreTradeAvgAmt(BigDecimal campPreTradeAvgAmt) {
+			this.campPreTradeAvgAmt = campPreTradeAvgAmt;
+		}
+
+		public BigDecimal getCampPreOrderAvgAmt() {
+			return campPreOrderAvgAmt;
+		}
+
+		public void setCampPreOrderAvgAmt(BigDecimal campPreOrderAvgAmt) {
+			this.campPreOrderAvgAmt = campPreOrderAvgAmt;
+		}
+
 	}
 	/**
 	 * <p>ClassName:CampaignQueryByStoreModel.java </p>
@@ -962,6 +1126,39 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 		@JSONField(name = "recent_90d_new_user_cnt")
 		private Integer recent90dNewUserCnt;         //近90天新增会员数
 
+		@JSONField(name = "taken_online_trade_amt")
+		private BigDecimal takenOnlineTradeAmt;//线上引流活动金额
+		@JSONField(name = "taken_online_order_amt")
+		private BigDecimal takenOnlineOrderAmt;//线上引流订单金额
+		@JSONField(name="taken_online_trade_cnt")
+		private Integer takenOnlineTradeCnt;//线上引流活动笔数
+		@JSONField(name="taken_online_trade_avg_amt")
+		private BigDecimal takenOnlineTradeAvgAmt;//线上引流活动笔单价
+		@JSONField(name="taken_online_order_avg_amt")
+		private BigDecimal takenOnlineOrderAvgAmt;//线上引流订单笔单价
+		@JSONField(name="taken_online_user_cnt")
+		private Integer takenOnlineUserCnt;//线上引流会员数
+
+		@JSONField(name="taken_arrival_trade_cnt")
+		private Integer takenArrivalTradeCnt;//扫码核销笔数
+		@JSONField(name="taken_arrival_trade_amt")
+		private BigDecimal takenArrivalTradeAmt;//扫码核销活动金额
+		@JSONField(name="taken_arrival_order_amt")
+		private BigDecimal takenArrivalOrderAmt;//扫码核销订单金额
+		@JSONField(name="taken_arrival_avg_amt")
+		private BigDecimal takenArrivalAvgAmt;//扫码核销活动笔单价
+		@JSONField(name="taken_arrival_avg_order_amt")
+		private BigDecimal takenArrivalAvgOrderAmt;//扫码核销订单笔单价
+		@JSONField(name="taken_arrival_user_cnt")
+		private Integer takenArrivalUserCnt;//扫码核销会员数
+		@JSONField(name="camp_pre_order_avg_amt")
+		private BigDecimal campPreOrderAvgAmt;//活动前自然月订单笔单价
+		@JSONField(name="camp_pre_camp_trade_avg_amt")
+		private BigDecimal campPreCampTradeAvgAmt;//活动前自然月活动收益笔单价
+		@JSONField(name="camp_pre_trade_avg_amt")
+		private BigDecimal campPreTradeAvgAmt;//活动前自然月收益笔单价
+												//活动前自然月单品销量
+												//活动期单品销量
 		public Date getBizDate() {
 			return bizDate;
 		}
@@ -1160,6 +1357,126 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 
 		public void setRecent90dNewUserCnt(Integer recent90dNewUserCnt) {
 			this.recent90dNewUserCnt = recent90dNewUserCnt;
+		}
+
+		public BigDecimal getTakenOnlineTradeAmt() {
+			return takenOnlineTradeAmt;
+		}
+
+		public void setTakenOnlineTradeAmt(BigDecimal takenOnlineTradeAmt) {
+			this.takenOnlineTradeAmt = takenOnlineTradeAmt;
+		}
+
+		public BigDecimal getTakenOnlineOrderAmt() {
+			return takenOnlineOrderAmt;
+		}
+
+		public void setTakenOnlineOrderAmt(BigDecimal takenOnlineOrderAmt) {
+			this.takenOnlineOrderAmt = takenOnlineOrderAmt;
+		}
+
+		public Integer getTakenOnlineTradeCnt() {
+			return takenOnlineTradeCnt;
+		}
+
+		public void setTakenOnlineTradeCnt(Integer takenOnlineTradeCnt) {
+			this.takenOnlineTradeCnt = takenOnlineTradeCnt;
+		}
+
+		public BigDecimal getTakenOnlineTradeAvgAmt() {
+			return takenOnlineTradeAvgAmt;
+		}
+
+		public void setTakenOnlineTradeAvgAmt(BigDecimal takenOnlineTradeAvgAmt) {
+			this.takenOnlineTradeAvgAmt = takenOnlineTradeAvgAmt;
+		}
+
+		public BigDecimal getTakenOnlineOrderAvgAmt() {
+			return takenOnlineOrderAvgAmt;
+		}
+
+		public void setTakenOnlineOrderAvgAmt(BigDecimal takenOnlineOrderAvgAmt) {
+			this.takenOnlineOrderAvgAmt = takenOnlineOrderAvgAmt;
+		}
+
+		public Integer getTakenOnlineUserCnt() {
+			return takenOnlineUserCnt;
+		}
+
+		public void setTakenOnlineUserCnt(Integer takenOnlineUserCnt) {
+			this.takenOnlineUserCnt = takenOnlineUserCnt;
+		}
+
+		public Integer getTakenArrivalTradeCnt() {
+			return takenArrivalTradeCnt;
+		}
+
+		public void setTakenArrivalTradeCnt(Integer takenArrivalTradeCnt) {
+			this.takenArrivalTradeCnt = takenArrivalTradeCnt;
+		}
+
+		public BigDecimal getTakenArrivalTradeAmt() {
+			return takenArrivalTradeAmt;
+		}
+
+		public void setTakenArrivalTradeAmt(BigDecimal takenArrivalTradeAmt) {
+			this.takenArrivalTradeAmt = takenArrivalTradeAmt;
+		}
+
+		public BigDecimal getTakenArrivalOrderAmt() {
+			return takenArrivalOrderAmt;
+		}
+
+		public void setTakenArrivalOrderAmt(BigDecimal takenArrivalOrderAmt) {
+			this.takenArrivalOrderAmt = takenArrivalOrderAmt;
+		}
+
+		public BigDecimal getTakenArrivalAvgAmt() {
+			return takenArrivalAvgAmt;
+		}
+
+		public void setTakenArrivalAvgAmt(BigDecimal takenArrivalAvgAmt) {
+			this.takenArrivalAvgAmt = takenArrivalAvgAmt;
+		}
+
+		public BigDecimal getTakenArrivalAvgOrderAmt() {
+			return takenArrivalAvgOrderAmt;
+		}
+
+		public void setTakenArrivalAvgOrderAmt(BigDecimal takenArrivalAvgOrderAmt) {
+			this.takenArrivalAvgOrderAmt = takenArrivalAvgOrderAmt;
+		}
+
+		public Integer getTakenArrivalUserCnt() {
+			return takenArrivalUserCnt;
+		}
+
+		public void setTakenArrivalUserCnt(Integer takenArrivalUserCnt) {
+			this.takenArrivalUserCnt = takenArrivalUserCnt;
+		}
+
+		public BigDecimal getCampPreOrderAvgAmt() {
+			return campPreOrderAvgAmt;
+		}
+
+		public void setCampPreOrderAvgAmt(BigDecimal campPreOrderAvgAmt) {
+			this.campPreOrderAvgAmt = campPreOrderAvgAmt;
+		}
+
+		public BigDecimal getCampPreCampTradeAvgAmt() {
+			return campPreCampTradeAvgAmt;
+		}
+
+		public void setCampPreCampTradeAvgAmt(BigDecimal campPreCampTradeAvgAmt) {
+			this.campPreCampTradeAvgAmt = campPreCampTradeAvgAmt;
+		}
+
+		public BigDecimal getCampPreTradeAvgAmt() {
+			return campPreTradeAvgAmt;
+		}
+
+		public void setCampPreTradeAvgAmt(BigDecimal campPreTradeAvgAmt) {
+			this.campPreTradeAvgAmt = campPreTradeAvgAmt;
 		}
 	}
 	/**
@@ -1379,7 +1696,7 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 	 * <p>Company:雅座在线（北京）科技发展有限公司 </p>
 	 * @author zhangfei  2016年11月14日
 	 */
-	public class ConponsQueryByStoreModel implements Serializable  {
+	public static class ConponsQueryByStoreModel implements Serializable  {
 
 		private static final long serialVersionUID = -7922467944480347554L;
 
@@ -1624,5 +1941,84 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 			this.newUserCnt90d = newUserCnt90d;
 		}
 	}
+	/**
+	 * <p>PlanQueryModel.java </p>
+	 * <p>Description: 商户方案数据查询 </p>
+	 * <p>Company:雅座在线（北京）科技发展有限公司 </p>
+	 * @author zhangfei  2016年11月14日
+	 */
+	public static class PlanQueryModel implements Serializable{
+
+		@JSONField(name = "new_user_cnt")
+		private Integer	newUserCnt	;//新增会员数
+		@JSONField(name = "total_used_user_cnt")
+		private Integer	totalUsedUserCnt	;//累计核销会员数
+		@JSONField(name = "total_new_user_cnt")
+		private Integer	totalNewUserCnt	;//累计新增会员数
+
+		public Integer getNewUserCnt() {
+			return newUserCnt;
+		}
+
+		public void setNewUserCnt(Integer newUserCnt) {
+			this.newUserCnt = newUserCnt;
+		}
+
+		public Integer getTotalUsedUserCnt() {
+			return totalUsedUserCnt;
+		}
+
+		public void setTotalUsedUserCnt(Integer totalUsedUserCnt) {
+			this.totalUsedUserCnt = totalUsedUserCnt;
+		}
+
+		public Integer getTotalNewUserCnt() {
+			return totalNewUserCnt;
+		}
+
+		public void setTotalNewUserCnt(Integer totalNewUserCnt) {
+			this.totalNewUserCnt = totalNewUserCnt;
+		}
+	}
+	/**
+	 * <p>PlanQueryByStoreModel.java </p>
+	 * <p>Description: 门店方案数据查询 </p>
+	 * <p>Company:雅座在线（北京）科技发展有限公司 </p>
+	 * @author zhangfei  2016年11月14日
+	 */
+	public static class PlanQueryByStoreModel implements Serializable{
+
+		@JSONField(name = "new_user_cnt")
+		private Integer	newUserCnt	;//新增会员数
+		@JSONField(name = "total_used_user_cnt")
+		private Integer	totalUsedUserCnt	;//累计核销会员数
+		@JSONField(name = "total_new_user_cnt")
+		private Integer	totalNewUserCnt	;//累计新增会员数
+
+		public Integer getNewUserCnt() {
+			return newUserCnt;
+		}
+
+		public void setNewUserCnt(Integer newUserCnt) {
+			this.newUserCnt = newUserCnt;
+		}
+
+		public Integer getTotalUsedUserCnt() {
+			return totalUsedUserCnt;
+		}
+
+		public void setTotalUsedUserCnt(Integer totalUsedUserCnt) {
+			this.totalUsedUserCnt = totalUsedUserCnt;
+		}
+
+		public Integer getTotalNewUserCnt() {
+			return totalNewUserCnt;
+		}
+
+		public void setTotalNewUserCnt(Integer totalNewUserCnt) {
+			this.totalNewUserCnt = totalNewUserCnt;
+		}
+	}
+
 
 }
