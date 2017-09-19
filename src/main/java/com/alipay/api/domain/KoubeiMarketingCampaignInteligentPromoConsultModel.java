@@ -34,6 +34,12 @@ public class KoubeiMarketingCampaignInteligentPromoConsultModel extends AlipayOb
     private List<String> shopIds;
 
     /**
+     * 操作人信息
+     */
+    @ApiModelProperty(notes = " 操作人信息")
+    @JSONField(alternateNames = "operatorContext", name = "operator_context")
+    private PromoOperatorInfo operatorContext;
+    /**
      * 营销模板的编号，GENERAL_EXPERIENCE：全场体验；GENERAL_NORMAL：全场普通；ITEM_EXPERIENCE：单品体验；ITEM_NORMAL：单品普通
      */
     @ApiModelProperty(notes = " 营销模板的编号，GENERAL_EXPERIENCE：全场体验；GENERAL_NORMAL：全场普通；ITEM_EXPERIENCE：单品体验；ITEM_NORMAL：单品普通")
