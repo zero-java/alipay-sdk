@@ -1,26 +1,26 @@
 package com.alipay.api.request;
 
-import com.alipay.api.domain.KoubeiMarketingCampaignInteligentPromoQueryModel;
+import com.alipay.api.domain.KoubeiMarketingCampaignIntelligentPromoCreateModel;
 import java.util.Map;
 
 import com.alipay.api.AlipayRequest;
 import com.alipay.api.internal.util.AlipayHashMap;
-import com.alipay.api.response.KoubeiMarketingCampaignInteligentPromoQueryResponse;
+import com.alipay.api.response.KoubeiMarketingCampaignIntelligentPromoCreateResponse;
 import com.alipay.api.AlipayObject;
 
 /**
- * ALIPAY API: koubei.marketing.campaign.inteligent.promo.query request
+ * ALIPAY API: koubei.marketing.campaign.intelligent.promo.create request
  * 
  * @author auto create
- * @since 1.0, 2017-09-06 10:53:43
+ * @since 1.0, 2017-09-15 17:55:22
  */
-public class KoubeiMarketingCampaignInteligentPromoQueryRequest implements AlipayRequest<KoubeiMarketingCampaignInteligentPromoQueryResponse> {
+public class KoubeiMarketingCampaignIntelligentPromoCreateRequest implements AlipayRequest<KoubeiMarketingCampaignIntelligentPromoCreateResponse> {
 
 	private AlipayHashMap udfParams; // add user-defined text parameters
 	private String apiVersion="1.0";
 
 	/** 
-	* 只能营销方案详情查询
+	* 智能营销方案创建
 	 */
 	private String bizContent;
 
@@ -87,7 +87,7 @@ public class KoubeiMarketingCampaignInteligentPromoQueryRequest implements Alipa
 	}
 
 	public String getApiMethodName() {
-		return "koubei.marketing.campaign.inteligent.promo.query";
+		return "koubei.marketing.campaign.intelligent.promo.create";
 	}
 
 	public Map<String, String> getTextParams() {		
@@ -106,8 +106,8 @@ public class KoubeiMarketingCampaignInteligentPromoQueryRequest implements Alipa
 		this.udfParams.put(key, value);
 	}
 
-	public Class<KoubeiMarketingCampaignInteligentPromoQueryResponse> getResponseClass() {
-		return KoubeiMarketingCampaignInteligentPromoQueryResponse.class;
+	public Class<KoubeiMarketingCampaignIntelligentPromoCreateResponse> getResponseClass() {
+		return KoubeiMarketingCampaignIntelligentPromoCreateResponse.class;
 	}
 	
 

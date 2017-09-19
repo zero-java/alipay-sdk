@@ -1,26 +1,26 @@
 package com.alipay.api.request;
 
-import com.alipay.api.domain.KoubeiMarketingCampaignInteligentPromoBatchqueryModel;
+import com.alipay.api.domain.KoubeiMarketingCampaignIntelligentPromoModifyModel;
 import java.util.Map;
 
 import com.alipay.api.AlipayRequest;
 import com.alipay.api.internal.util.AlipayHashMap;
-import com.alipay.api.response.KoubeiMarketingCampaignInteligentPromoBatchqueryResponse;
+import com.alipay.api.response.KoubeiMarketingCampaignIntelligentPromoModifyResponse;
 import com.alipay.api.AlipayObject;
 
 /**
- * ALIPAY API: koubei.marketing.campaign.inteligent.promo.batchquery request
+ * ALIPAY API: koubei.marketing.campaign.intelligent.promo.modify request
  * 
  * @author auto create
- * @since 1.0, 2017-09-06 11:38:25
+ * @since 1.0, 2017-09-15 17:53:48
  */
-public class KoubeiMarketingCampaignInteligentPromoBatchqueryRequest implements AlipayRequest<KoubeiMarketingCampaignInteligentPromoBatchqueryResponse> {
+public class KoubeiMarketingCampaignIntelligentPromoModifyRequest implements AlipayRequest<KoubeiMarketingCampaignIntelligentPromoModifyResponse> {
 
 	private AlipayHashMap udfParams; // add user-defined text parameters
 	private String apiVersion="1.0";
 
 	/** 
-	* 智能营销方案批量查询
+	* 智能营销方案修改
 	 */
 	private String bizContent;
 
@@ -87,7 +87,7 @@ public class KoubeiMarketingCampaignInteligentPromoBatchqueryRequest implements 
 	}
 
 	public String getApiMethodName() {
-		return "koubei.marketing.campaign.inteligent.promo.batchquery";
+		return "koubei.marketing.campaign.intelligent.promo.modify";
 	}
 
 	public Map<String, String> getTextParams() {		
@@ -106,8 +106,8 @@ public class KoubeiMarketingCampaignInteligentPromoBatchqueryRequest implements 
 		this.udfParams.put(key, value);
 	}
 
-	public Class<KoubeiMarketingCampaignInteligentPromoBatchqueryResponse> getResponseClass() {
-		return KoubeiMarketingCampaignInteligentPromoBatchqueryResponse.class;
+	public Class<KoubeiMarketingCampaignIntelligentPromoModifyResponse> getResponseClass() {
+		return KoubeiMarketingCampaignIntelligentPromoModifyResponse.class;
 	}
 	
 

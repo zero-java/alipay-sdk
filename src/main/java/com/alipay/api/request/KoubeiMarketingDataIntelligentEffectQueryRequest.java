@@ -1,26 +1,26 @@
 package com.alipay.api.request;
 
-import com.alipay.api.domain.KoubeiMarketingCampaignInteligentPromoDeleteModel;
+import com.alipay.api.domain.KoubeiMarketingDataIntelligentEffectQueryModel;
 import java.util.Map;
 
 import com.alipay.api.AlipayRequest;
 import com.alipay.api.internal.util.AlipayHashMap;
-import com.alipay.api.response.KoubeiMarketingCampaignInteligentPromoDeleteResponse;
+import com.alipay.api.response.KoubeiMarketingDataIntelligentEffectQueryResponse;
 import com.alipay.api.AlipayObject;
 
 /**
- * ALIPAY API: koubei.marketing.campaign.inteligent.promo.delete request
+ * ALIPAY API: koubei.marketing.data.intelligent.effect.query request
  * 
  * @author auto create
- * @since 1.0, 2017-09-06 11:07:15
+ * @since 1.0, 2017-09-15 17:52:17
  */
-public class KoubeiMarketingCampaignInteligentPromoDeleteRequest implements AlipayRequest<KoubeiMarketingCampaignInteligentPromoDeleteResponse> {
+public class KoubeiMarketingDataIntelligentEffectQueryRequest implements AlipayRequest<KoubeiMarketingDataIntelligentEffectQueryResponse> {
 
 	private AlipayHashMap udfParams; // add user-defined text parameters
 	private String apiVersion="1.0";
 
 	/** 
-	* 智能营销活动下架
+	* 智能营销活动效果预测
 	 */
 	private String bizContent;
 
@@ -87,7 +87,7 @@ public class KoubeiMarketingCampaignInteligentPromoDeleteRequest implements Alip
 	}
 
 	public String getApiMethodName() {
-		return "koubei.marketing.campaign.inteligent.promo.delete";
+		return "koubei.marketing.data.intelligent.effect.query";
 	}
 
 	public Map<String, String> getTextParams() {		
@@ -106,8 +106,8 @@ public class KoubeiMarketingCampaignInteligentPromoDeleteRequest implements Alip
 		this.udfParams.put(key, value);
 	}
 
-	public Class<KoubeiMarketingCampaignInteligentPromoDeleteResponse> getResponseClass() {
-		return KoubeiMarketingCampaignInteligentPromoDeleteResponse.class;
+	public Class<KoubeiMarketingDataIntelligentEffectQueryResponse> getResponseClass() {
+		return KoubeiMarketingDataIntelligentEffectQueryResponse.class;
 	}
 	
 

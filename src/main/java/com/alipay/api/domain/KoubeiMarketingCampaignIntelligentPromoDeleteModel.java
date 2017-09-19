@@ -9,25 +9,20 @@ import io.swagger.annotations.*;
  * 智能营销活动下架
  *
  * @author auto create
- * @since 1.0, 2017-09-06 11:06:41
- */
-@ApiModel(description = " 智能营销活动下架")
-public class KoubeiMarketingCampaignInteligentPromoDeleteModel extends AlipayObject {
+ * @since 1.0, 2017-09-15 17:39:12
+ */@ApiModel(description = " 智能营销活动下架")
+public class KoubeiMarketingCampaignIntelligentPromoDeleteModel extends AlipayObject {
 
-	private static final long serialVersionUID = 5375671865543799956L;
+	private static final long serialVersionUID = 5162716874729999415L;
 
 	/**
 	 * 操作下架的操作人信息
-	 */
-	@ApiModelProperty(notes = " 操作下架的操作人信息")
-	@JSONField(alternateNames = "operatorContext", name = "operator_context")
+	 */@JSONField(name = "operator_context", alternateNames = "operatorContext")@ApiModelProperty(notes = " 操作下架的操作人信息")
 	private PromoOperatorInfo operatorContext;
 
 	/**
 	 * 智能营销活动的id
-	 */
-	@ApiModelProperty(notes = " 智能营销活动的id")
-	@JSONField(alternateNames = "promoId", name = "promo_id")
+	 */@JSONField(name = "promo_id", alternateNames = "promoId")@ApiModelProperty(notes = " 智能营销活动的id")
 	private String promoId;
 
 	public PromoOperatorInfo getOperatorContext() {
