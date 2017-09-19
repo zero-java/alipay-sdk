@@ -1,26 +1,33 @@
 package com.alipay.api.request;
 
-import com.alipay.api.AlipayObject;
-import com.alipay.api.AlipayRequest;
-import com.alipay.api.internal.util.AlipayHashMap;
-import com.alipay.api.response.KoubeiMarketingCampaignInteligentPlanQueryResponse;
-
+import com.alibaba.fastjson.annotation.*;
+import com.alipay.api.domain.KoubeiMarketingCampaignIntelligentPromoBatchqueryModel;
 import java.util.Map;
 
+import com.alipay.api.AlipayRequest;
+import com.alipay.api.internal.util.AlipayHashMap;
+import com.alipay.api.response.KoubeiMarketingCampaignIntelligentPromoBatchqueryResponse;
+import com.alipay.api.AlipayObject;
+import io.swagger.annotations.*;
+
 /**
- * ALIPAY API: koubei.marketing.campaign.inteligent.plan.query request
+ * ALIPAY API: koubei.marketing.campaign.intelligent.promo.batchquery request
  * 
  * @author auto create
- * @since 1.0, 2017-09-06 11:13:58
- */
-public class KoubeiMarketingCampaignInteligentPlanQueryRequest implements AlipayRequest<KoubeiMarketingCampaignInteligentPlanQueryResponse> {
+ * @since 1.0, 2017-09-15 17:52:50
+ */@ApiModel(description = " ALIPAY API: koubei.marketing.campaign.intelligent.promo.batchquery request")
+public class KoubeiMarketingCampaignIntelligentPromoBatchqueryRequest implements AlipayRequest<KoubeiMarketingCampaignIntelligentPromoBatchqueryResponse> {
 
+	@JSONField(name = "udf_params", alternateNames = "udfParams")
+	@ApiModelProperty(notes = "")
 	private AlipayHashMap udfParams; // add user-defined text parameters
+	@JSONField(name = "api_version", alternateNames = "apiVersion")
+	@ApiModelProperty(notes = "")
 	private String apiVersion="1.0";
 
 	/** 
-	* 智能营销方案查询
-	 */
+	* 智能营销方案批量查询
+	 */@JSONField(name = "biz_content", alternateNames = "bizContent")@ApiModelProperty(notes = " 智能营销方案批量查询")
 	private String bizContent;
 
 	public void setBizContent(String bizContent) {
@@ -29,12 +36,27 @@ public class KoubeiMarketingCampaignInteligentPlanQueryRequest implements Alipay
 	public String getBizContent() {
 		return this.bizContent;
 	}
+
+	@JSONField(name = "terminal_type", alternateNames = "terminalType")
+	@ApiModelProperty(notes = "")
 	private String terminalType;
-	private String terminalInfo;	
+	@JSONField(name = "terminal_info", alternateNames = "terminalInfo")
+	@ApiModelProperty(notes = "")
+	private String terminalInfo;
+	@JSONField(name = "prod_code", alternateNames = "prodCode")
+	@ApiModelProperty(notes = "")
 	private String prodCode;
+	@JSONField(name = "notify_url", alternateNames = "notifyUrl")
+	@ApiModelProperty(notes = "")
 	private String notifyUrl;
+	@JSONField(name = "return_url", alternateNames = "returnUrl")
+	@ApiModelProperty(notes = "")
 	private String returnUrl;
+	@JSONField(name = "need_encrypt", alternateNames = "needEncrypt")
+	@ApiModelProperty(notes = "")
 	private boolean needEncrypt=false;
+	@JSONField(name = "biz_model", alternateNames = "bizModel")
+	@ApiModelProperty(notes = "")
 	private AlipayObject bizModel=null;
 
 	public String getNotifyUrl() {
@@ -86,7 +108,7 @@ public class KoubeiMarketingCampaignInteligentPlanQueryRequest implements Alipay
 	}
 
 	public String getApiMethodName() {
-		return "koubei.marketing.campaign.inteligent.plan.query";
+		return "koubei.marketing.campaign.intelligent.promo.batchquery";
 	}
 
 	public Map<String, String> getTextParams() {		
@@ -105,8 +127,8 @@ public class KoubeiMarketingCampaignInteligentPlanQueryRequest implements Alipay
 		this.udfParams.put(key, value);
 	}
 
-	public Class<KoubeiMarketingCampaignInteligentPlanQueryResponse> getResponseClass() {
-		return KoubeiMarketingCampaignInteligentPlanQueryResponse.class;
+	public Class<KoubeiMarketingCampaignIntelligentPromoBatchqueryResponse> getResponseClass() {
+		return KoubeiMarketingCampaignIntelligentPromoBatchqueryResponse.class;
 	}
 	
 

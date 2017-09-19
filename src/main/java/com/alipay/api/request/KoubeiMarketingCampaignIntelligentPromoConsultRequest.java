@@ -1,20 +1,20 @@
 package com.alipay.api.request;
 
-import com.alipay.api.domain.KoubeiMarketingCampaignInteligentPromoConsultModel;
+import com.alipay.api.domain.KoubeiMarketingCampaignIntelligentPromoConsultModel;
 import java.util.Map;
 
 import com.alipay.api.AlipayRequest;
 import com.alipay.api.internal.util.AlipayHashMap;
-import com.alipay.api.response.KoubeiMarketingCampaignInteligentPromoConsultResponse;
+import com.alipay.api.response.KoubeiMarketingCampaignIntelligentPromoConsultResponse;
 import com.alipay.api.AlipayObject;
 
 /**
- * ALIPAY API: koubei.marketing.campaign.inteligent.promo.consult request
+ * ALIPAY API: koubei.marketing.campaign.intelligent.promo.consult request
  * 
  * @author auto create
- * @since 1.0, 2017-09-06 19:36:18
+ * @since 1.0, 2017-09-15 17:54:11
  */
-public class KoubeiMarketingCampaignInteligentPromoConsultRequest implements AlipayRequest<KoubeiMarketingCampaignInteligentPromoConsultResponse> {
+public class KoubeiMarketingCampaignIntelligentPromoConsultRequest implements AlipayRequest<KoubeiMarketingCampaignIntelligentPromoConsultResponse> {
 
 	private AlipayHashMap udfParams; // add user-defined text parameters
 	private String apiVersion="1.0";
@@ -87,7 +87,7 @@ public class KoubeiMarketingCampaignInteligentPromoConsultRequest implements Ali
 	}
 
 	public String getApiMethodName() {
-		return "koubei.marketing.campaign.inteligent.promo.consult";
+		return "koubei.marketing.campaign.intelligent.promo.consult";
 	}
 
 	public Map<String, String> getTextParams() {		
@@ -106,8 +106,8 @@ public class KoubeiMarketingCampaignInteligentPromoConsultRequest implements Ali
 		this.udfParams.put(key, value);
 	}
 
-	public Class<KoubeiMarketingCampaignInteligentPromoConsultResponse> getResponseClass() {
-		return KoubeiMarketingCampaignInteligentPromoConsultResponse.class;
+	public Class<KoubeiMarketingCampaignIntelligentPromoConsultResponse> getResponseClass() {
+		return KoubeiMarketingCampaignIntelligentPromoConsultResponse.class;
 	}
 	
 

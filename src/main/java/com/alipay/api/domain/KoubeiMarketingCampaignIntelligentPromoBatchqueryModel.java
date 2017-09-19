@@ -9,11 +9,11 @@ import io.swagger.annotations.*;
  * 智能营销方案批量查询
  *
  * @author auto create
- * @since 1.0, 2017-09-06 11:38:25
+ * @since 1.0, 2017-09-15 17:41:09
  */@ApiModel(description = " 智能营销方案批量查询")
-public class KoubeiMarketingCampaignInteligentPromoBatchqueryModel extends AlipayObject {
+public class KoubeiMarketingCampaignIntelligentPromoBatchqueryModel extends AlipayObject {
 
-	private static final long serialVersionUID = 2866236966781992673L;
+	private static final long serialVersionUID = 7892716666412589929L;
 
 	/**
 	 * 操作员上下文信息

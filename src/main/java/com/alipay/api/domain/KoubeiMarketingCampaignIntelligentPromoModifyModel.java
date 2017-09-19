@@ -9,21 +9,21 @@ import io.swagger.annotations.*;
  * 智能营销方案修改
  *
  * @author auto create
- * @since 1.0, 2017-09-06 10:53:59
+ * @since 1.0, 2017-09-15 17:39:47
  */@ApiModel(description = " 智能营销方案修改")
-public class KoubeiMarketingCampaignInteligentPromoModifyModel extends AlipayObject {
+public class KoubeiMarketingCampaignIntelligentPromoModifyModel extends AlipayObject {
 
-	private static final long serialVersionUID = 5166893446418586756L;
+	private static final long serialVersionUID = 3118652497314736915L;
 
 	/**
 	 * 操作人员上下文
-	 */@ApiModelProperty(notes = " 操作人员上下文")@JSONField(name = "operator_context", alternateNames = "operatorContext")
+	 */@JSONField(name = "operator_context", alternateNames = "operatorContext")@ApiModelProperty(notes = " 操作人员上下文")
 	private PromoOperatorInfo operatorContext;
 
 	/**
 	 * 方案信息
 	 */@ApiModelProperty(notes = " 方案信息")
-	private Inteligentpromo promo;
+	private IntelligentPromo promo;
 
 	public PromoOperatorInfo getOperatorContext() {
 		return this.operatorContext;
@@ -32,10 +32,10 @@ public class KoubeiMarketingCampaignInteligentPromoModifyModel extends AlipayObj
 		this.operatorContext = operatorContext;
 	}
 
-	public Inteligentpromo getPromo() {
+	public IntelligentPromo getPromo() {
 		return this.promo;
 	}
-	public void setPromo(Inteligentpromo promo) {
+	public void setPromo(IntelligentPromo promo) {
 		this.promo = promo;
 	}
 
