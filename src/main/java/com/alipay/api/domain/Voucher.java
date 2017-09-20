@@ -86,7 +86,7 @@ public class Voucher implements Serializable {
      * 必须晚于活动结束时间
      */
     @ApiModelProperty(notes = " 券有效期的结束时间 仅在券有效期类型为绝对有效期时生效 必须晚于活动结束时间")
-    @JSONField(name = "end_time", alternateNames = "endTime")
+    @JSONField(name = "end_time", alternateNames = "endTime",format = "yyyy-MM-dd HH:mm:ss")
     private Date endTime;
 
     /**
@@ -157,7 +157,7 @@ public class Voucher implements Serializable {
      * 仅在券有效期类型为绝对有效期时生效
      */
     @ApiModelProperty(notes = " 券有效期的开始时间 仅在券有效期类型为绝对有效期时生效")
-    @JSONField(name = "start_time", alternateNames = "startTime")
+    @JSONField(name = "start_time", alternateNames = "startTime",format = "yyyy-MM-dd HH:mm:ss")
     private Date startTime;
 
     /**

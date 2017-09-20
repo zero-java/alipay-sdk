@@ -3,8 +3,10 @@ package com.alipay.api.domain;
 import java.util.Date;
 import java.util.List;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
+import com.alipay.api.StringValueSerializing;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import io.swagger.annotations.*;
@@ -41,8 +43,8 @@ public class IntelligentPromoDetail extends AlipayObject {
 
 	/**
 	 * 活动扩展信息
-	 */@JSONField(name = "ext_info", alternateNames = "extInfo")@ApiModelProperty(notes = " 活动扩展信息")
-	private String extInfo;
+	 */@JSONField(name = "ext_info", alternateNames = "extInfo",serializeUsing = StringValueSerializing.class)@ApiModelProperty(notes = " 活动扩展信息")
+	private JSONObject extInfo;
 
 	/**
 	 * 营销活动预测效果
@@ -51,12 +53,12 @@ public class IntelligentPromoDetail extends AlipayObject {
 
 	/**
 	 * 智能营销子活动的结束时间
-	 */@JSONField(name = "gmt_end", alternateNames = "gmtEnd")@ApiModelProperty(notes = " 智能营销子活动的结束时间")
+	 */@JSONField(name = "gmt_end", alternateNames = "gmtEnd",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 智能营销子活动的结束时间")
 	private Date gmtEnd;
 
 	/**
 	 * 智能营销子活动的开始时间
-	 */@JSONField(name = "gmt_start", alternateNames = "gmtStart")@ApiModelProperty(notes = " 智能营销子活动的开始时间")
+	 */@JSONField(name = "gmt_start", alternateNames = "gmtStart",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 智能营销子活动的开始时间")
 	private Date gmtStart;
 
 	/**
@@ -122,10 +124,11 @@ public class IntelligentPromoDetail extends AlipayObject {
 		this.desc = desc;
 	}
 
-	public String getExtInfo() {
-		return this.extInfo;
+	public JSONObject getExtInfo() {
+		return extInfo;
 	}
-	public void setExtInfo(String extInfo) {
+
+	public void setExtInfo(JSONObject extInfo) {
 		this.extInfo = extInfo;
 	}
 

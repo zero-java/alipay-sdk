@@ -22,6 +22,10 @@ public class StringValueSerializing implements ObjectSerializer {
         for(Map.Entry<String,Object> entry :json.entrySet()){
             sb.append("\"").append(entry.getKey()).append("\"").append(":").append("\"").append(entry.getValue()).append("\"").append(",");
         }
-        serializer.write("{"+sb.substring(0,sb.lastIndexOf(","))+"}");
+        if(sb.length()>0){
+            serializer.write("{"+sb.substring(0,sb.lastIndexOf(","))+"}");
+        }else {
+            serializer.write("{}");
+        }
     }
 }

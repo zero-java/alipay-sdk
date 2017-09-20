@@ -3,8 +3,10 @@ package com.alipay.api.domain;
 import java.util.Date;
 import java.util.List;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
+import com.alipay.api.StringValueSerializing;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import io.swagger.annotations.*;
@@ -41,8 +43,8 @@ public class IntelligentPromo extends AlipayObject {
 
 	/**
 	 * 活动扩展信息
-	 */@JSONField(name = "ext_info", alternateNames = "extInfo")@ApiModelProperty(notes = " 活动扩展信息")
-	private String extInfo;
+	 */@JSONField(name = "ext_info", alternateNames = "extInfo",serializeUsing = StringValueSerializing.class)@ApiModelProperty(notes = " 活动扩展信息")
+	private JSONObject extInfo;
 
 	/**
 	 * 方案级别的效果预测
@@ -51,22 +53,22 @@ public class IntelligentPromo extends AlipayObject {
 
 	/**
 	 * 活动关闭的时间
-	 */@JSONField(name = "gmt_closed", alternateNames = "gmtClosed" )@ApiModelProperty(notes = " 活动关闭的时间")
+	 */@JSONField(name = "gmt_closed", alternateNames = "gmtClosed",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 活动关闭的时间")
 	private Date gmtClosed;
 
 	/**
 	 * 智能营销活动的生效时间
-	 */@JSONField(name = "gmt_enabled", alternateNames = "gmtEnabled")@ApiModelProperty(notes = " 智能营销活动的生效时间")
+	 */@JSONField(name = "gmt_enabled", alternateNames = "gmtEnabled",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 智能营销活动的生效时间")
 	private Date gmtEnabled;
 
 	/**
 	 * 智能营销活动的结束时间
-	 */@JSONField(name = "gmt_end", alternateNames = "gmtEnd")@ApiModelProperty(notes = " 智能营销活动的结束时间")
+	 */@JSONField(name = "gmt_end", alternateNames = "gmtEnd",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 智能营销活动的结束时间")
 	private Date gmtEnd;
 
 	/**
 	 * 智能营销活动开始时间
-	 */@JSONField(name = "gmt_start", alternateNames = "gmtStart")@ApiModelProperty(notes = " 智能营销活动开始时间")
+	 */@JSONField(name = "gmt_start", alternateNames = "gmtStart",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 智能营销活动开始时间")
 	private Date gmtStart;
 
 	/**
@@ -143,10 +145,11 @@ REJECTED：创建被驳回；ENABLING：生效中；ONLINE_WAIT_CONFIRM：上架
 		this.desc = desc;
 	}
 
-	public String getExtInfo() {
-		return this.extInfo;
+	public JSONObject getExtInfo() {
+		return extInfo;
 	}
-	public void setExtInfo(String extInfo) {
+
+	public void setExtInfo(JSONObject extInfo) {
 		this.extInfo = extInfo;
 	}
 
