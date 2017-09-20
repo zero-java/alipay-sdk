@@ -39,12 +39,12 @@ public class IntelligentPromoEffect extends AlipayObject {
 
 	/**
 	 * 时间范围左值
-	 */@JSONField(name = "gmt_from", alternateNames = "gmtFrom")@ApiModelProperty(notes = " 时间范围左值")
+	 */@JSONField(name = "gmt_from", alternateNames = "gmtFrom",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 时间范围左值")
 	private Date gmtFrom;
 
 	/**
 	 * 时间范围右值
-	 */@JSONField(name = "gmt_to", alternateNames = "gmtTo")@ApiModelProperty(notes = " 时间范围右值")
+	 */@JSONField(name = "gmt_to", alternateNames = "gmtTo",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 时间范围右值")
 	private Date gmtTo;
 
 	/**
