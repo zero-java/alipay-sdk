@@ -11,11 +11,11 @@ import io.swagger.annotations.*;
  * ALIPAY API: koubei.marketing.campaign.intelligent.promo.query response.
  * 
  * @author auto create
- * @since 1.0, 2017-09-15 17:53:18
+ * @since 1.0, 2017-09-20 10:27:54
  */@ApiModel(description = " ALIPAY API: koubei.marketing.campaign.intelligent.promo.query response.")
 public class KoubeiMarketingCampaignIntelligentPromoQueryResponse extends AlipayResponse {
 
-	private static final long serialVersionUID = 8445491823285627727L;
+	private static final long serialVersionUID = 4416278996911721947L;
 
 	/** 
 	 * 查询返回的营销活动模型

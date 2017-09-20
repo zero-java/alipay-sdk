@@ -1,6 +1,5 @@
 package com.alipay.api.request;
 
-import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.domain.KoubeiMarketingCampaignIntelligentPromoQueryModel;
 import java.util.Map;
 
@@ -8,26 +7,21 @@ import com.alipay.api.AlipayRequest;
 import com.alipay.api.internal.util.AlipayHashMap;
 import com.alipay.api.response.KoubeiMarketingCampaignIntelligentPromoQueryResponse;
 import com.alipay.api.AlipayObject;
-import io.swagger.annotations.*;
 
 /**
  * ALIPAY API: koubei.marketing.campaign.intelligent.promo.query request
  * 
  * @author auto create
- * @since 1.0, 2017-09-15 17:53:18
- */@ApiModel(description = " ALIPAY API: koubei.marketing.campaign.intelligent.promo.query request")
+ * @since 1.0, 2017-09-20 10:27:54
+ */
 public class KoubeiMarketingCampaignIntelligentPromoQueryRequest implements AlipayRequest<KoubeiMarketingCampaignIntelligentPromoQueryResponse> {
 
-	@JSONField(name = "udf_params", alternateNames = "udfParams")
-	@ApiModelProperty(notes = "")
 	private AlipayHashMap udfParams; // add user-defined text parameters
-	@JSONField(name = "api_version", alternateNames = "apiVersion")
-	@ApiModelProperty(notes = "")
 	private String apiVersion="1.0";
 
 	/** 
 	* 只能营销方案详情查询
-	 */@JSONField(name = "biz_content", alternateNames = "bizContent")@ApiModelProperty(notes = " 只能营销方案详情查询")
+	 */
 	private String bizContent;
 
 	public void setBizContent(String bizContent) {
@@ -36,27 +30,12 @@ public class KoubeiMarketingCampaignIntelligentPromoQueryRequest implements Alip
 	public String getBizContent() {
 		return this.bizContent;
 	}
-
-	@JSONField(name = "terminal_type", alternateNames = "terminalType")
-	@ApiModelProperty(notes = "")
 	private String terminalType;
-	@JSONField(name = "terminal_info", alternateNames = "terminalInfo")
-	@ApiModelProperty(notes = "")
-	private String terminalInfo;
-	@JSONField(name = "prod_code", alternateNames = "prodCode")
-	@ApiModelProperty(notes = "")
+	private String terminalInfo;	
 	private String prodCode;
-	@JSONField(name = "notify_url", alternateNames = "notifyUrl")
-	@ApiModelProperty(notes = "")
 	private String notifyUrl;
-	@JSONField(name = "return_url", alternateNames = "returnUrl")
-	@ApiModelProperty(notes = "")
 	private String returnUrl;
-	@JSONField(name = "need_encrypt", alternateNames = "needEncrypt")
-	@ApiModelProperty(notes = "")
 	private boolean needEncrypt=false;
-	@JSONField(name = "biz_model", alternateNames = "bizModel")
-	@ApiModelProperty(notes = "")
 	private AlipayObject bizModel=null;
 
 	public String getNotifyUrl() {

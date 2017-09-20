@@ -1,28 +1,28 @@
 package com.alipay.api.domain;
 
-import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
-import io.swagger.annotations.*;
 
 /**
  * 智能营销活动下架
  *
  * @author auto create
- * @since 1.0, 2017-09-15 17:39:12
- */@ApiModel(description = " 智能营销活动下架")
+ * @since 1.0, 2017-09-20 10:28:45
+ */
 public class KoubeiMarketingCampaignIntelligentPromoDeleteModel extends AlipayObject {
 
-	private static final long serialVersionUID = 5162716874729999415L;
+	private static final long serialVersionUID = 4328743347349619674L;
 
 	/**
 	 * 操作下架的操作人信息
-	 */@JSONField(name = "operator_context", alternateNames = "operatorContext")@ApiModelProperty(notes = " 操作下架的操作人信息")
+	 */
+	@ApiField("operator_context")
 	private PromoOperatorInfo operatorContext;
 
 	/**
 	 * 智能营销活动的id
-	 */@JSONField(name = "promo_id", alternateNames = "promoId")@ApiModelProperty(notes = " 智能营销活动的id")
+	 */
+	@ApiField("promo_id")
 	private String promoId;
 
 	public PromoOperatorInfo getOperatorContext() {

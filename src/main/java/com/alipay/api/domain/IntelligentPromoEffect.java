@@ -15,7 +15,7 @@ import io.swagger.annotations.*;
  */@ApiModel(description = " 智能营销活动效果")
 public class IntelligentPromoEffect extends AlipayObject {
 
-	private static final long serialVersionUID = 4112286272669987292L;
+	private static final long serialVersionUID = 8276914524661513472L;
 
 	/**
 	 * 平均客单价提升比例
@@ -39,12 +39,12 @@ public class IntelligentPromoEffect extends AlipayObject {
 
 	/**
 	 * 时间范围左值
-	 */@JSONField(name = "gmt_from", alternateNames = "gmtFrom",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 时间范围左值")
+	 */@JSONField(name = "gmt_from", alternateNames = "gmtFrom",format= "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 时间范围左值")
 	private Date gmtFrom;
 
 	/**
 	 * 时间范围右值
-	 */@JSONField(name = "gmt_to", alternateNames = "gmtTo",format = "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 时间范围右值")
+	 */@JSONField(name = "gmt_to", alternateNames = "gmtTo",format= "yyyy-MM-dd HH:mm:ss")@ApiModelProperty(notes = " 时间范围右值")
 	private Date gmtTo;
 
 	/**
