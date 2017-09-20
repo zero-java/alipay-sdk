@@ -1,34 +1,33 @@
 package com.alipay.api.domain;
 
+import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 智能营销方案创建
  *
  * @author auto create
  * @since 1.0, 2017-09-20 10:27:21
- */
+ */@ApiModel(description = " 智能营销方案创建")
 public class KoubeiMarketingCampaignIntelligentPromoCreateModel extends AlipayObject {
 
 	private static final long serialVersionUID = 3659469843494664381L;
 
 	/**
 	 * 创建营销方案的上下文信息
-	 */
-	@ApiField("operator_context")
+	 */@JSONField(name = "operator_context", alternateNames = "operatorContext")@ApiModelProperty(notes = " 创建营销方案的上下文信息")
 	private PromoOperatorInfo operatorContext;
 
 	/**
 	 * 代表了一次请求，作为业务幂等性控制
-	 */
-	@ApiField("out_request_no")
+	 */@JSONField(name = "out_request_no", alternateNames = "outRequestNo")@ApiModelProperty(notes = " 代表了一次请求，作为业务幂等性控制")
 	private String outRequestNo;
 
 	/**
 	 * 智能营销活动信息
-	 */
-	@ApiField("promo")
+	 */@ApiModelProperty(notes = " 智能营销活动信息")
 	private IntelligentPromo promo;
 
 	public PromoOperatorInfo getOperatorContext() {

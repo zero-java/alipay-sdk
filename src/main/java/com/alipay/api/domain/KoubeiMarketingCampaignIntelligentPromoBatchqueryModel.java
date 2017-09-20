@@ -1,34 +1,33 @@
 package com.alipay.api.domain;
 
+import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 智能营销方案批量查询
  *
  * @author auto create
  * @since 1.0, 2017-09-20 10:26:13
- */
+ */@ApiModel(description = " 智能营销方案批量查询")
 public class KoubeiMarketingCampaignIntelligentPromoBatchqueryModel extends AlipayObject {
 
 	private static final long serialVersionUID = 3759456224776383219L;
 
 	/**
 	 * 操作员上下文信息
-	 */
-	@ApiField("operator_context")
+	 */@JSONField(name = "operator_context", alternateNames = "operatorContext")@ApiModelProperty(notes = " 操作员上下文信息")
 	private PromoOperatorInfo operatorContext;
 
 	/**
 	 * 活动拥有者信息
-	 */
-	@ApiField("owner_info")
+	 */@JSONField(name = "owner_info", alternateNames = "ownerInfo")@ApiModelProperty(notes = " 活动拥有者信息")
 	private PromoOperatorInfo ownerInfo;
 
 	/**
 	 * 分页信息
-	 */
-	@ApiField("page_info")
+	 */@JSONField(name = "page_info", alternateNames = "pageInfo")@ApiModelProperty(notes = " 分页信息")
 	private PromoPageInfo pageInfo;
 
 	public PromoOperatorInfo getOperatorContext() {
