@@ -9,11 +9,11 @@ import io.swagger.annotations.*;
  * ALIPAY API: koubei.marketing.campaign.intelligent.promo.delete response.
  * 
  * @author auto create
- * @since 1.0, 2017-09-15 17:39:12
+ * @since 1.0, 2017-09-20 10:28:47
  */@ApiModel(description = " ALIPAY API: koubei.marketing.campaign.intelligent.promo.delete response.")
 public class KoubeiMarketingCampaignIntelligentPromoDeleteResponse extends AlipayResponse {
 
-	private static final long serialVersionUID = 1179389569729196759L;
+	private static final long serialVersionUID = 6675546425178962489L;
 
 	
 
