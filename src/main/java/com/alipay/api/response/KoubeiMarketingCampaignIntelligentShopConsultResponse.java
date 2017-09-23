@@ -16,7 +16,7 @@ import io.swagger.annotations.*;
  * @since 1.0, 2017-09-22 20:49:41
  */
 @ApiModel(description = " ALIPAY API: koubei.marketing.campaign.intelligent.shop.consult response.")
-public class KoubeiMarketingCampaignIntelligentShopConsultResponse {
+public class KoubeiMarketingCampaignIntelligentShopConsultResponse extends AlipayResponse{
 
     private static final long serialVersionUID = 8892425932423529583L;
 
