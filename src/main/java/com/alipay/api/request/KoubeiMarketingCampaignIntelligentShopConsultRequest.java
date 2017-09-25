@@ -1,26 +1,26 @@
 package com.alipay.api.request;
 
-import com.alipay.api.domain.KoubeiMarketingCampaignIntelligentPromoCreateModel;
+import com.alipay.api.domain.KoubeiMarketingCampaignIntelligentShopConsultModel;
 import java.util.Map;
 
 import com.alipay.api.AlipayRequest;
 import com.alipay.api.internal.util.AlipayHashMap;
-import com.alipay.api.response.KoubeiMarketingCampaignIntelligentPromoCreateResponse;
+import com.alipay.api.response.KoubeiMarketingCampaignIntelligentShopConsultResponse;
 import com.alipay.api.AlipayObject;
 
 /**
- * ALIPAY API: koubei.marketing.campaign.intelligent.promo.create request
+ * ALIPAY API: koubei.marketing.campaign.intelligent.shop.consult request
  * 
  * @author auto create
- * @since 1.0, 2017-09-20 10:27:25
+ * @since 1.0, 2017-09-22 11:48:30
  */
-public class KoubeiMarketingCampaignIntelligentPromoCreateRequest implements AlipayRequest<KoubeiMarketingCampaignIntelligentPromoCreateResponse> {
+public class KoubeiMarketingCampaignIntelligentShopConsultRequest implements AlipayRequest<KoubeiMarketingCampaignIntelligentShopConsultResponse> {
 
 	private AlipayHashMap udfParams; // add user-defined text parameters
 	private String apiVersion="1.0";
 
 	/** 
-	* 智能营销方案创建
+	* 智能营销门店咨询
 	 */
 	private String bizContent;
 
@@ -87,7 +87,7 @@ public class KoubeiMarketingCampaignIntelligentPromoCreateRequest implements Ali
 	}
 
 	public String getApiMethodName() {
-		return "koubei.marketing.campaign.intelligent.promo.create";
+		return "koubei.marketing.campaign.intelligent.shop.consult";
 	}
 
 	public Map<String, String> getTextParams() {		
@@ -106,8 +106,8 @@ public class KoubeiMarketingCampaignIntelligentPromoCreateRequest implements Ali
 		this.udfParams.put(key, value);
 	}
 
-	public Class<KoubeiMarketingCampaignIntelligentPromoCreateResponse> getResponseClass() {
-		return KoubeiMarketingCampaignIntelligentPromoCreateResponse.class;
+	public Class<KoubeiMarketingCampaignIntelligentShopConsultResponse> getResponseClass() {
+		return KoubeiMarketingCampaignIntelligentShopConsultResponse.class;
 	}
 	
 

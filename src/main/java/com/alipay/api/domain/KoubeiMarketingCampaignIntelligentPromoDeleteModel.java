@@ -9,11 +9,11 @@ import io.swagger.annotations.*;
  * 智能营销活动下架
  *
  * @author auto create
- * @since 1.0, 2017-09-15 17:39:12
+ * @since 1.0, 2017-09-20 10:28:45
  */@ApiModel(description = " 智能营销活动下架")
 public class KoubeiMarketingCampaignIntelligentPromoDeleteModel extends AlipayObject {
 
-	private static final long serialVersionUID = 5162716874729999415L;
+	private static final long serialVersionUID = 4328743347349619674L;
 
 	/**
 	 * 操作下架的操作人信息

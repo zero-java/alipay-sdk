@@ -9,11 +9,11 @@ import io.swagger.annotations.*;
  * 智能营销活动效果预测
  *
  * @author auto create
- * @since 1.0, 2017-09-15 17:41:37
+ * @since 1.0, 2017-09-20 10:28:11
  */@ApiModel(description = " 智能营销活动效果预测")
 public class KoubeiMarketingDataIntelligentEffectQueryModel extends AlipayObject {
 
-	private static final long serialVersionUID = 6156293687328237265L;
+	private static final long serialVersionUID = 2791656685841485171L;
 
 	/**
 	 * 操作人上下文信息
