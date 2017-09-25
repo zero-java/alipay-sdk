@@ -71,10 +71,7 @@ public class IntelligentPromoDetail extends AlipayObject {
 	 */@ApiModelProperty(notes = " 子营销活动名称")
 	private String name;
 
-	/**
-	 * 外部业务id，一般用于外部业务和营销方案子活动的对应关系
-	 */@JSONField(name = "out_biz_id", alternateNames = "outBizId")@ApiModelProperty(notes = " 外部业务id，一般用于外部业务和营销方案子活动的对应关系")
-	private String outBizId;
+
 
 	/**
 	 * 营销工具集合。主要是活动涉及到的奖品信息
@@ -85,11 +82,6 @@ public class IntelligentPromoDetail extends AlipayObject {
 	 * 投放渠道信息
 	 */@JSONField(name = "publish_channels", alternateNames = "publishChannels")@ApiModelProperty(notes = " 投放渠道信息")
 	private List<PublishChannel> publishChannels;
-
-	/**
-	 * 创建或修改时的请求幂等流水号
-	 */@JSONField(name = "request_id", alternateNames = "requestId")@ApiModelProperty(notes = " 创建或修改时的请求幂等流水号")
-	private String requestId;
 
 	/**
 	 * 子营销活动对应的模板id
@@ -167,12 +159,6 @@ public class IntelligentPromoDetail extends AlipayObject {
 		this.name = name;
 	}
 
-	public String getOutBizId() {
-		return this.outBizId;
-	}
-	public void setOutBizId(String outBizId) {
-		this.outBizId = outBizId;
-	}
 
 	public List<PromoTool> getPromoTools() {
 		return this.promoTools;
@@ -188,12 +174,7 @@ public class IntelligentPromoDetail extends AlipayObject {
 		this.publishChannels = publishChannels;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+
 
 	public String getTemplateId() {
 		return this.templateId;
