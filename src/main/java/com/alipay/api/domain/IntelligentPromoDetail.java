@@ -1,5 +1,6 @@
 package com.alipay.api.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
@@ -8,7 +9,14 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.StringValueSerializing;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
+import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 /**
  * 智能营销活动下属子活动
@@ -17,14 +25,15 @@ import io.swagger.annotations.*;
  * @since 1.0, 2017-09-19 18:01:55
  */
 @ApiModel(description = " 智能营销活动下属子活动")
-public class IntelligentPromoDetail extends AlipayObject {
+public class IntelligentPromoDetail implements Serializable {
 
-    private static final long serialVersionUID = 2823733356513935251L;
 
     /**
      * 活动预算
      */
     @ApiModelProperty(notes = " 活动预算")
+    @NotNull
+    @Valid
     private BudgetInfo budget;
 
     /**
@@ -38,12 +47,15 @@ public class IntelligentPromoDetail extends AlipayObject {
      * 活动限制信息
      */
     @ApiModelProperty(notes = " 活动限制信息")
+    @NotNull
+    @Valid
     private ConstraintInfo constraint;
 
     /**
      * 智能营销活动的子活动
      */
     @ApiModelProperty(notes = " 智能营销活动的子活动")
+    @NotBlank
     private String desc;
 
     /**
@@ -58,6 +70,7 @@ public class IntelligentPromoDetail extends AlipayObject {
      */
     @JSONField(name = "forecast_effect", alternateNames = "forecastEffect")
     @ApiModelProperty(notes = " 营销活动预测效果")
+    @Valid
     private IntelligentPromoEffect forecastEffect;
 
     /**
@@ -65,12 +78,14 @@ public class IntelligentPromoDetail extends AlipayObject {
      */
     @JSONField(name = "merchant_promo_type", alternateNames = "merchantPromoType")
     @ApiModelProperty(notes = " 自运营活动类型。DIRECT_SEND：直发奖；CONSUME_SEND：消费送")
+    @EnumCheck(enums = {"DIRECT_SEND","CONSUME_SEND"})
     private String merchantPromoType;
 
     /**
      * 子营销活动名称
      */
     @ApiModelProperty(notes = " 子营销活动名称")
+    @NotBlank
     private String name;
 
 
@@ -79,6 +94,8 @@ public class IntelligentPromoDetail extends AlipayObject {
      */
     @JSONField(name = "promo_tools", alternateNames = "promoTools")
     @ApiModelProperty(notes = " 营销工具集合。主要是活动涉及到的奖品信息")
+    @NotEmpty
+    @Valid
     private List<PromoTool> promoTools;
 
     /**
@@ -86,6 +103,8 @@ public class IntelligentPromoDetail extends AlipayObject {
      */
     @JSONField(name = "publish_channels", alternateNames = "publishChannels")
     @ApiModelProperty(notes = " 投放渠道信息")
+    @NotEmpty
+    @Valid
     private List<PublishChannel> publishChannels;
 
 
@@ -94,6 +113,7 @@ public class IntelligentPromoDetail extends AlipayObject {
      */
     @JSONField(name = "template_id", alternateNames = "templateId")
     @ApiModelProperty(notes = " 子营销活动对应的模板id")
+    @NotBlank
     private String templateId;
 
     public BudgetInfo getBudget() {

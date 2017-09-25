@@ -5,6 +5,7 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -16,13 +17,13 @@ import java.io.Serializable;
 @ApiModel(description = " 操作人信息")
 public class PromoOperatorInfo implements Serializable {
 
-    private static final long serialVersionUID = 4179532584924924463L;
 
     /**
      * 操作人id
      */
     @ApiModelProperty(notes = " 操作人id",example = "2088342364645765",reference = "32")
     @JSONField(alternateNames = "operatorId", name = "operator_id")
+    @NotNull
     private String operatorId;
 
     /**
@@ -30,6 +31,7 @@ public class PromoOperatorInfo implements Serializable {
      */
     @ApiModelProperty(notes = " 操作人类型",example = "SALES：口碑内部小二；MER：商户；MER_OPERATOR：商户员工；PROVIDER：服务商；PROVIDER_STAFF：服务商员工；",reference = "100")
     @JSONField(alternateNames = "operatorType", name = "operator_type")
+    @NotNull
     private String operatorType;
 
     public String getOperatorId() {

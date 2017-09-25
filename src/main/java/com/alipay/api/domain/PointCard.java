@@ -6,7 +6,10 @@ import java.util.Date;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import com.yazuo.xiaoya.common.annotation.validate.EndDate;
+import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * 集点卡工具
@@ -29,6 +32,7 @@ public class PointCard implements Serializable {
      */
     @ApiModelProperty(notes = " 工具的有效期的结束时间（必须晚于活动的结束时间）")
     @JSONField(name = "end_time", alternateNames = "endTime")
+    @EndDate(field = "startTime")
     private Date endTime;
 
     /**
@@ -41,6 +45,7 @@ public class PointCard implements Serializable {
      * 工具的名称
      */
     @ApiModelProperty(notes = " 工具的名称")
+    @NotBlank
     private String name;
 
     /**
@@ -55,6 +60,7 @@ public class PointCard implements Serializable {
      * 集点卡：POINT_CARD
      */
     @ApiModelProperty(notes = " 工具类型，目前支持： 集点卡：POINT_CARD")
+    @EnumCheck(enums = "POINT_CARD")
     private String type;
 
     public String getDesc() {

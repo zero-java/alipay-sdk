@@ -8,6 +8,7 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * 券的单品信息
@@ -48,6 +49,7 @@ public class ItemInfo implements Serializable {
      */
     @ApiModelProperty(notes = " 单品名称")
     @JSONField(name = "item_name", alternateNames = "itemName")
+    @NotBlank
     private String itemName;
 
     /**
@@ -55,6 +57,7 @@ public class ItemInfo implements Serializable {
      */
     @ApiModelProperty(notes = " 单品券说明")
     @JSONField(name = "item_text", alternateNames = "itemText")
+    @NotBlank
     private String itemText;
     /**
      * 券适用SKU的最低消费金额门

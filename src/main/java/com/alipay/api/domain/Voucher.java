@@ -9,7 +9,15 @@ import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
+import com.yazuo.xiaoya.common.annotation.validate.EndDate;
+import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
+import com.yazuo.xiaoya.common.enums.VoucherType;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 
 /**
  * 券对象
@@ -40,6 +48,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 延迟生效信息")
     @JSONField(name = "delay_info", alternateNames = "delayInfo")
+    @Valid
     private DelayInfo delayInfo;
 
     /**
@@ -54,6 +63,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券使用说明描述列表")
     @JSONField(name = "desc_detail_list", alternateNames = "descDetailList")
+    @Valid
     private List<VoucherDescDetail> descDetailList;
 
     /**
@@ -78,6 +88,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券生效的方式，目前支持以下方式 立即生效：IMMEDIATELY 延迟生效：DELAY 仅在券有效期类型为相对有效期时生效")
     @JSONField(name = "effect_type", alternateNames = "effectType")
+    @EnumCheck(enums = {"IMMEDIATELY","DELAY"})
     private String effectType;
 
     /**
@@ -87,6 +98,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券有效期的结束时间 仅在券有效期类型为绝对有效期时生效 必须晚于活动结束时间")
     @JSONField(name = "end_time", alternateNames = "endTime",format = "yyyy-MM-dd HH:mm:ss")
+    @EndDate(field = "startTime",required = false)
     private Date endTime;
 
     /**
@@ -104,12 +116,14 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 单品信息 兑换券不允许设置单品信息 减至券必须设置单品信息 其他类型券可按需设置")
     @JSONField(name = "item_info", alternateNames = "itemInfo")
+    @Valid
     private ItemInfo itemInfo;
 
     /**
      * 券LOGO文件ID，调用图片上传接口alipay.offline.material.image.upload获得
      */
     @ApiModelProperty(notes = " 券LOGO文件ID，调用图片上传接口alipay.offline.material.image.upload获得")
+    @NotBlank
     private String logo;
 
     /**
@@ -126,12 +140,14 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券叠加的属性，NO_MULTI:不可叠加;MULTI_USE_WITH_SINGLE:全场优惠和单品优惠的叠加；MULTI_USE_WITH_OTHERS:全场和其他所有优惠都可以叠加")
     @JSONField(name = "multi_use_mode", alternateNames = "multiUseMode")
+    @EnumCheck(enums = {"NO_MULTI","MULTI_USE_WITH_SINGLE","MULTI_USE_WITH_OTHERS"},required = false)
     private String multiUseMode;
 
     /**
      * 名称
      */
     @ApiModelProperty(notes = " 名称")
+    @NotBlank
     private String name;
 
     /**
@@ -141,6 +157,8 @@ public class Voucher implements Serializable {
      * 仅允许保留小数点后两位
      */
     @ApiModelProperty(notes = " 折扣率 仅当券类型为折扣券时有效 有效折扣率取值范围0.11-0.99 仅允许保留小数点后两位")
+    @DecimalMin("0.11")
+    @DecimalMax("0.99")
     private String rate;
 
     /**
@@ -165,9 +183,14 @@ public class Voucher implements Serializable {
      * EXCHANGE：兑换券
      * MONEY：代金券
      * REDUCETO：减至券
+     * COUPON: 红包
+     * PER_FULL_CUT: 每满减
+     * BUY_A_SEND_A: 买A送A券
+     * BUY_A_SEND_B: 买A送B券
      * RATE：折扣券
      */
-    @ApiModelProperty(notes = " 券类型，目前支持以下类型： EXCHANGE：兑换券 MONEY：代金券 REDUCETO：减至券 RATE：折扣券")
+    @ApiModelProperty(notes = " 券类型，目前支持以下类型： EXCHANGE：兑换券 MONEY：代金券 REDUCETO：减至券 RATE：折扣券 COUPON: 红包 PER_FULL_CUT: 每满减")
+    @EnumCheck(enums = {"EXCHANGE","MONEY","REDUCETO","COUPON","PER_FULL_CUT","RATE","BUY_A_SEND_A","BUY_A_SEND_B"})
     private String type;
 
     /**
@@ -176,6 +199,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券的使用说明 使用须知最多6条，且每条最多100字")
     @JSONField(name = "use_instructions", alternateNames = "useInstructions")
+    @Size(min = 1,max = 6)
     private List<String> useInstructions;
 
     /**
@@ -183,6 +207,8 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券的使用规则信息")
     @JSONField(name = "use_rule", alternateNames = "useRule")
+    @NotNull
+    @Valid
     private UseRule useRule;
 
     /**
@@ -192,6 +218,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券有效期类型，目前支持以下类型： RELATIVE：相对有效期 FIXED：绝对有效期")
     @JSONField(name = "validate_type", alternateNames = "validateType")
+    @EnumCheck(enums = {"RELATIVE","FIXED"})
     private String validateType;
 
     /**
@@ -202,6 +229,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 该字段仅在兑换券条件下(即券类型为EXCHANGE)，用于设置兑换券的核销方式 USER_CLICK:用户自己点击券上的按钮核销 MERCHANT_SCAN：商户通过APP扫码核销 其他情况下此字段为空")
     @JSONField(name = "verify_mode", alternateNames = "verifyMode")
+    @EnumCheck(enums = {"USER_CLICK","MERCHANT_SCAN"},required = false)
     private String verifyMode;
 
     /**
@@ -226,6 +254,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券面额，单位元 必须为合法金额类型字符串 券类型为代金券、减至券时，券面额必须设置 单品减至券的券面额必须低于单品原价")
     @JSONField(name = "worth_value", alternateNames = "worthValue")
+    @Min(0)
     private String worthValue;
 
     public String getBrandName() {

@@ -5,6 +5,7 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
+import javax.validation.constraints.Min;
 import java.io.Serializable;
 
 /**
@@ -34,6 +35,7 @@ public class SendRule implements Serializable {
      */
     @ApiModelProperty(notes = " 发券最低消费金额，单位元 活动类型为消费送且不是消费送礼包时设置 多营销工具之间不允许设置重复值")
     @JSONField(name = "min_cost", alternateNames = "minCost")
+    @Min(0)
     private String minCost;
 
     /**
@@ -49,6 +51,7 @@ public class SendRule implements Serializable {
      */
     @ApiModelProperty(notes = " 发券数目 最少发1张券，最多发5张券")
     @JSONField(name = "send_num", alternateNames = "sendNum")
+    @Min(0)
     private String sendNum;
 
     public String getAllowRepeatSend() {

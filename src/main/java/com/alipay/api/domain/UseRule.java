@@ -8,7 +8,9 @@ import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
+import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * 券的使用规则信息
@@ -48,6 +50,7 @@ public class UseRule implements Serializable {
      */
     @ApiModelProperty(notes = " 优惠券的使用支付渠道限制规则，不受支付渠道限制:USE_NO_LIMIT;仅限储值卡支付时可用:USE_ON_CURRENT_PAY_CHANNEL;储值卡支付时不可用:NOT_ALLOWED_USE;【备注】支付渠道限制不允许修改")
     @JSONField(alternateNames = "limitRule", name = "limit_rule")
+    @EnumCheck(enums = {"USE_NO_LIMIT","USE_ON_CURRENT_PAY_CHANNEL","NOT_ALLOWED_USE"},required = false)
     private String limitRule;
 
     /**
@@ -72,6 +75,7 @@ public class UseRule implements Serializable {
      */
     @ApiModelProperty(notes = " 券适用门店列表仅品牌商发起的招商活动可为空直发奖类型活动必须与活动适用门店一致最多支持10w家门店")
     @JSONField(name = "suit_shops", alternateNames = "suitShops")
+    @NotEmpty
     private List<String> suitShops;
 
     /**

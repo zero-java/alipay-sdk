@@ -5,6 +5,8 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -22,6 +24,7 @@ public class PromoTool implements Serializable {
      */
     @ApiModelProperty(notes = " 集点卡工具，仅在活动类型为POINT_SEND时才有效且必填，其他活动类型此字段必须为null")
     @JSONField(name = "point_card", alternateNames = "pointCard")
+    @Valid
     private PointCard pointCard;
 
     /**
@@ -29,6 +32,8 @@ public class PromoTool implements Serializable {
      */
     @ApiModelProperty(notes = " 奖品发放的规则")
     @JSONField(name = "send_rule", alternateNames = "sendRule")
+    @NotNull
+    @Valid
     private SendRule sendRule;
 
     /**
@@ -41,6 +46,7 @@ public class PromoTool implements Serializable {
      * 券对象，当活动类型为POINT_SEND时为null，其他活动类型此字段必填
      */
     @ApiModelProperty(notes = " 券对象，当活动类型为POINT_SEND时为null，其他活动类型此字段必填")
+    @Valid
     private Voucher voucher;
 
     /**

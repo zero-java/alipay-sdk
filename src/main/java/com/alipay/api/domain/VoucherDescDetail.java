@@ -8,6 +8,7 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * 券的使用说明描述
@@ -35,6 +36,7 @@ public class VoucherDescDetail implements Serializable {
      * 券说明的标题
      */
     @ApiModelProperty(notes = " 券说明的标题")
+    @NotBlank
     private String title;
 
     /**

@@ -8,6 +8,7 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * 活动限制信息
@@ -57,6 +58,7 @@ public class ConstraintInfo implements Serializable {
      */
     @ApiModelProperty(notes = " 活动适用的门店列表 仅品牌商发起的招商活动可为空 最多支持10w家门店")
     @JSONField(name = "suit_shops", alternateNames = "suitShops")
+    @NotEmpty
     private List<String> suitShops;
 
     /**
