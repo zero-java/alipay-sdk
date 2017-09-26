@@ -136,7 +136,6 @@ public class IntelligentPromo extends AlipayObject {
      */
     @JSONField(name = "promo_id", alternateNames = "promoId")
     @ApiModelProperty(notes = " 智能营销活动的id。创建接口中这个参数不用填，仅在查询接口中返回")
-    @NotBlank
     private String promoId;
 
     /**

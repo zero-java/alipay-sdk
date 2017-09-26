@@ -103,7 +103,6 @@ public class IntelligentPromoDetail implements Serializable {
      */
     @JSONField(name = "publish_channels", alternateNames = "publishChannels")
     @ApiModelProperty(notes = " 投放渠道信息")
-    @NotEmpty
     @Valid
     private List<PublishChannel> publishChannels;
 

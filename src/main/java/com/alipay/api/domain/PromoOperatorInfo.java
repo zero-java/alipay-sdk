@@ -3,7 +3,9 @@ package com.alipay.api.domain;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import io.swagger.annotations.*;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -23,7 +25,7 @@ public class PromoOperatorInfo implements Serializable {
      */
     @ApiModelProperty(notes = " 操作人id",example = "2088342364645765",reference = "32")
     @JSONField(alternateNames = "operatorId", name = "operator_id")
-    @NotNull
+    @NotBlank
     private String operatorId;
 
     /**
@@ -31,7 +33,7 @@ public class PromoOperatorInfo implements Serializable {
      */
     @ApiModelProperty(notes = " 操作人类型",example = "SALES：口碑内部小二；MER：商户；MER_OPERATOR：商户员工；PROVIDER：服务商；PROVIDER_STAFF：服务商员工；",reference = "100")
     @JSONField(alternateNames = "operatorType", name = "operator_type")
-    @NotNull
+    @EnumCheck(enums = {"SALES","MER","MER_OPERATOR","PROVIDER","PROVIDER_STAFF"})
     private String operatorType;
 
     public String getOperatorId() {
