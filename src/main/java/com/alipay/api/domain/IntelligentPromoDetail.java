@@ -10,6 +10,7 @@ import com.alipay.api.StringValueSerializing;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
+import com.yazuo.xiaoya.common.validate.Create;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -55,7 +56,7 @@ public class IntelligentPromoDetail implements Serializable {
      * 智能营销活动的子活动
      */
     @ApiModelProperty(notes = " 智能营销活动的子活动")
-    @NotBlank
+    @NotBlank(groups = Create.class)
     private String desc;
 
     /**
@@ -71,6 +72,7 @@ public class IntelligentPromoDetail implements Serializable {
     @JSONField(name = "forecast_effect", alternateNames = "forecastEffect")
     @ApiModelProperty(notes = " 营销活动预测效果")
     @Valid
+    @Null(groups = Create.class)
     private IntelligentPromoEffect forecastEffect;
 
     /**

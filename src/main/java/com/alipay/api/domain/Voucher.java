@@ -12,6 +12,7 @@ import com.alipay.api.internal.mapping.ApiListField;
 import com.yazuo.xiaoya.common.annotation.validate.EndDate;
 import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import com.yazuo.xiaoya.common.enums.VoucherType;
+import com.yazuo.xiaoya.common.validate.Create;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -123,7 +124,7 @@ public class Voucher implements Serializable {
      * 券LOGO文件ID，调用图片上传接口alipay.offline.material.image.upload获得
      */
     @ApiModelProperty(notes = " 券LOGO文件ID，调用图片上传接口alipay.offline.material.image.upload获得")
-    @NotBlank
+    @NotBlank(groups = Create.class)
     private String logo;
 
     /**

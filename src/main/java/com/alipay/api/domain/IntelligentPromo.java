@@ -11,6 +11,7 @@ import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import com.yazuo.xiaoya.common.annotation.validate.EndDate;
 import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
+import com.yazuo.xiaoya.common.validate.Create;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -59,7 +60,7 @@ public class IntelligentPromo extends AlipayObject {
      * 智能活动描述
      */
     @ApiModelProperty(notes = " 智能活动描述")
-    @NotBlank
+    @NotBlank(groups = Create.class)
     private String desc;
 
     /**
@@ -119,7 +120,7 @@ public class IntelligentPromo extends AlipayObject {
      */
     @JSONField(name = "owner_info", alternateNames = "ownerInfo")
     @ApiModelProperty(notes = " 智能活动对应的归属人信息")
-    @NotNull
+    @NotNull(groups = Create.class)
     @Valid
     private PromoOperatorInfo ownerInfo;
 
