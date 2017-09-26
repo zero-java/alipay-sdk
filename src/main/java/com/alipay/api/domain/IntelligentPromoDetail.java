@@ -87,7 +87,7 @@ public class IntelligentPromoDetail implements Serializable {
      * 子营销活动名称
      */
     @ApiModelProperty(notes = " 子营销活动名称")
-    @NotBlank
+    @NotBlank(groups = Create.class)
     private String name;
 
 

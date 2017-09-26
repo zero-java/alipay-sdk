@@ -52,7 +52,7 @@ public class IntelligentPromo extends AlipayObject {
      */
     @JSONField(name = "creator_info", alternateNames = "creatorInfo")
     @ApiModelProperty(notes = " 创建人信息")
-    @NotNull
+    @NotNull(groups = Create.class)
     @Valid
     private PromoOperatorInfo creatorInfo;
 
@@ -77,6 +77,7 @@ public class IntelligentPromo extends AlipayObject {
     @JSONField(name = "forecast_effect", alternateNames = "forecastEffect")
     @ApiModelProperty(notes = " 方案级别的效果预测")
     @Valid
+    @Null(groups = Create.class)
     private IntelligentPromoEffect forecastEffect;
 
     /**
@@ -112,7 +113,7 @@ public class IntelligentPromo extends AlipayObject {
      * 智能营销活动对应的名称
      */
     @ApiModelProperty(notes = " 智能营销活动对应的名称")
-    @NotBlank
+    @NotBlank(groups = Create.class)
     private String name;
 
     /**
