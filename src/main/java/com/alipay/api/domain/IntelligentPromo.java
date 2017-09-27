@@ -48,6 +48,12 @@ public class IntelligentPromo extends AlipayObject {
     private String auditStatus;
 
     /**
+     * 创建活动时填入的外部流水号，这个只在查询时使用，创建和修改无效
+     */
+    @JSONField(name = "create_request_no", alternateNames = "createRequestNo")
+    @ApiModelProperty(notes = " 创建活动时填入的外部流水号，这个只在查询时使用，创建和修改无效")
+    private String createRequestNo;
+    /**
      * 创建人信息
      */
     @JSONField(name = "creator_info", alternateNames = "creatorInfo")
@@ -331,4 +337,11 @@ public class IntelligentPromo extends AlipayObject {
         this.type = type;
     }
 
+    public String getCreateRequestNo() {
+        return createRequestNo;
+    }
+
+    public void setCreateRequestNo(String createRequestNo) {
+        this.createRequestNo = createRequestNo;
+    }
 }
