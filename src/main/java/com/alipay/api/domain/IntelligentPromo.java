@@ -11,6 +11,7 @@ import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import com.yazuo.xiaoya.common.annotation.validate.EndDate;
 import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
+import com.yazuo.xiaoya.common.validate.Create;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -57,7 +58,7 @@ public class IntelligentPromo extends AlipayObject {
      */
     @JSONField(name = "creator_info", alternateNames = "creatorInfo")
     @ApiModelProperty(notes = " 创建人信息")
-    @NotNull
+    @NotNull(groups = Create.class)
     @Valid
     private PromoOperatorInfo creatorInfo;
 
@@ -65,7 +66,7 @@ public class IntelligentPromo extends AlipayObject {
      * 智能活动描述
      */
     @ApiModelProperty(notes = " 智能活动描述")
-    @NotBlank
+    @NotBlank(groups = Create.class)
     private String desc;
 
     /**
@@ -82,6 +83,7 @@ public class IntelligentPromo extends AlipayObject {
     @JSONField(name = "forecast_effect", alternateNames = "forecastEffect")
     @ApiModelProperty(notes = " 方案级别的效果预测")
     @Valid
+    @Null(groups = Create.class)
     private IntelligentPromoEffect forecastEffect;
 
     /**
@@ -117,7 +119,7 @@ public class IntelligentPromo extends AlipayObject {
      * 智能营销活动对应的名称
      */
     @ApiModelProperty(notes = " 智能营销活动对应的名称")
-    @NotBlank
+    @NotBlank(groups = Create.class)
     private String name;
 
     /**
@@ -125,7 +127,7 @@ public class IntelligentPromo extends AlipayObject {
      */
     @JSONField(name = "owner_info", alternateNames = "ownerInfo")
     @ApiModelProperty(notes = " 智能活动对应的归属人信息")
-    @NotNull
+    @NotNull(groups = Create.class)
     @Valid
     private PromoOperatorInfo ownerInfo;
 
@@ -142,7 +144,6 @@ public class IntelligentPromo extends AlipayObject {
      */
     @JSONField(name = "promo_id", alternateNames = "promoId")
     @ApiModelProperty(notes = " 智能营销活动的id。创建接口中这个参数不用填，仅在查询接口中返回")
-    @NotBlank
     private String promoId;
 
     /**
