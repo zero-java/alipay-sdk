@@ -47,7 +47,9 @@ import com.alipay.api.internal.util.json.JSONWriter;
  * @version $Id: AlipayMobilePublicMultiMediaClient.java, v 0.1 Aug 15, 2014 10:19:01 AM yikai.hu Exp $
  */
 public class AlipayMobilePublicMultiMediaClient /*implements AlipayClient */{
-//
+
+
+    //
 //    private static final String DEFAULT_CHARSET = AlipayConstants.CHARSET_UTF8;
 //    private static final String METHOD_POST     = "POST";
 //    private static final String METHOD_GET      = "GET";

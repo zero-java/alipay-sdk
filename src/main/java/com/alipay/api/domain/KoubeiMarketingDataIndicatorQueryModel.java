@@ -6,6 +6,7 @@ import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 
 import com.alipay.api.response.KoubeiMarketingDataIndicatorQueryResponse;
+import com.yazuo.xiaoya.common.annotation.validate.EndDate;
 import io.swagger.annotations.*;
 
 
@@ -56,7 +57,7 @@ public class KoubeiMarketingDataIndicatorQueryModel extends AlipayObject {
      */
     @JSONField(name = "end_date", alternateNames = "endDate",format = "yyyyMMdd")
     @ApiModelProperty(notes = "结束日期格式:yyyyMMdd")
-    @NotNull(message = "结束日期不能为空")
+    @EndDate(field = "beginDate",is = EndDate.Type.GREATER_THAN_EQUALS)
     private Date endDate;
 
     /**
