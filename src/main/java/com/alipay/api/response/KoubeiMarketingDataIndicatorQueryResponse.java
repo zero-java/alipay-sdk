@@ -1955,6 +1955,12 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 		private Integer	totalUsedUserCnt	;//累计核销会员数
 		@JSONField(name = "total_new_user_cnt")
 		private Integer	totalNewUserCnt	;//累计新增会员数
+		@JSONField(name = "total_taken_online_user_cnt")
+		private Integer totalTakenOnlineUserCnt;//累计线上引流会员数：
+		@JSONField(name = "total_offline_trade_user_cnt")
+		private Integer totalOfflineTradeUserCnt;//累计线下支付会员数：
+		@JSONField(name = "total_repay_user_cnt")
+		private Integer totalRepayUserCnt;//累计回头会员数
 
 		public Integer getNewUserCnt() {
 			return newUserCnt;
@@ -1978,6 +1984,30 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 
 		public void setTotalNewUserCnt(Integer totalNewUserCnt) {
 			this.totalNewUserCnt = totalNewUserCnt;
+		}
+
+		public Integer getTotalTakenOnlineUserCnt() {
+			return totalTakenOnlineUserCnt;
+		}
+
+		public void setTotalTakenOnlineUserCnt(Integer totalTakenOnlineUserCnt) {
+			this.totalTakenOnlineUserCnt = totalTakenOnlineUserCnt;
+		}
+
+		public Integer getTotalOfflineTradeUserCnt() {
+			return totalOfflineTradeUserCnt;
+		}
+
+		public void setTotalOfflineTradeUserCnt(Integer totalOfflineTradeUserCnt) {
+			this.totalOfflineTradeUserCnt = totalOfflineTradeUserCnt;
+		}
+
+		public Integer getTotalRepayUserCnt() {
+			return totalRepayUserCnt;
+		}
+
+		public void setTotalRepayUserCnt(Integer totalRepayUserCnt) {
+			this.totalRepayUserCnt = totalRepayUserCnt;
 		}
 	}
 	/**
@@ -1994,6 +2024,12 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 		private Integer	totalUsedUserCnt	;//累计核销会员数
 		@JSONField(name = "total_new_user_cnt")
 		private Integer	totalNewUserCnt	;//累计新增会员数
+		@JSONField(name = "total_taken_online_user_cnt")
+		private Integer totalTakenOnlineUserCnt;//累计线上引流会员数：
+		@JSONField(name = "total_offline_trade_user_cnt")
+		private Integer totalOfflineTradeUserCnt;//累计线下支付会员数：
+		@JSONField(name = "total_repay_user_cnt")
+		private Integer totalRepayUserCnt;//累计回头会员数
 
 		public Integer getNewUserCnt() {
 			return newUserCnt;
@@ -2017,6 +2053,30 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 
 		public void setTotalNewUserCnt(Integer totalNewUserCnt) {
 			this.totalNewUserCnt = totalNewUserCnt;
+		}
+
+		public Integer getTotalTakenOnlineUserCnt() {
+			return totalTakenOnlineUserCnt;
+		}
+
+		public void setTotalTakenOnlineUserCnt(Integer totalTakenOnlineUserCnt) {
+			this.totalTakenOnlineUserCnt = totalTakenOnlineUserCnt;
+		}
+
+		public Integer getTotalOfflineTradeUserCnt() {
+			return totalOfflineTradeUserCnt;
+		}
+
+		public void setTotalOfflineTradeUserCnt(Integer totalOfflineTradeUserCnt) {
+			this.totalOfflineTradeUserCnt = totalOfflineTradeUserCnt;
+		}
+
+		public Integer getTotalRepayUserCnt() {
+			return totalRepayUserCnt;
+		}
+
+		public void setTotalRepayUserCnt(Integer totalRepayUserCnt) {
+			this.totalRepayUserCnt = totalRepayUserCnt;
 		}
 	}
 
