@@ -2,9 +2,11 @@ package com.alipay.api.domain;
 
 import java.util.Date;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.AlipayResponse;
+import com.alipay.api.StringValueSerializing;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
@@ -32,9 +34,9 @@ public class KoubeiMarketingDataIntelligentIndicatorQueryModel extends AlipayObj
      * sort_type：ASC表示升序,DESC表示降序
      * store_Ids：为门店ID，多个门店使用逗号分隔
      */
-    @JSONField(name = "ext_info", alternateNames = "extInfo")
+    @JSONField(name = "ext_info", alternateNames = "extInfo", serializeUsing = StringValueSerializing.class)
     @ApiModelProperty("拓展信息")
-    private KoubeiMarketingDataIndicatorQueryModel.ExtInfo extInfo;
+    private JSONObject extInfo;
 
     /**
      * 操作人信息
@@ -46,8 +48,8 @@ public class KoubeiMarketingDataIntelligentIndicatorQueryModel extends AlipayObj
     /**
      * 获取的报告时间,格式:yyyyMMdd
      */
-    @ApiModelProperty(notes = " 获取的报告时间,格式:yyyyMMdd")
-    @JSONField(alternateNames = "reportDate", name = "report_date", format = "yyyyMMdd")
+    @ApiModelProperty(notes = " 获取的报告时间,格式:yyyy-MM-dd HH:mm:ss")
+    @JSONField(alternateNames = "reportDate", name = "report_date", format = "yyyy-MM-dd HH:mm:ss")
     private Date reportDate;
 
     public KoubeiMarketingDataIndicatorQueryModel.BizType getBizType() {
@@ -58,11 +60,11 @@ public class KoubeiMarketingDataIntelligentIndicatorQueryModel extends AlipayObj
         this.bizType = bizType;
     }
 
-    public KoubeiMarketingDataIndicatorQueryModel.ExtInfo getExtInfo() {
+    public JSONObject getExtInfo() {
         return extInfo;
     }
 
-    public void setExtInfo(KoubeiMarketingDataIndicatorQueryModel.ExtInfo extInfo) {
+    public void setExtInfo(JSONObject extInfo) {
         this.extInfo = extInfo;
     }
 
