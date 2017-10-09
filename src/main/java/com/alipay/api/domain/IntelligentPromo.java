@@ -24,12 +24,12 @@ import javax.validation.constraints.Null;
  * 智能营销活动模型
  *
  * @author auto create
- * @since 1.0, 2017-09-19 19:00:51
+ * @since 1.0, 2017-10-01 20:35:19
  */
 @ApiModel(description = " 智能营销活动模型")
 public class IntelligentPromo extends AlipayObject {
 
-    private static final long serialVersionUID = 7249628995217951694L;
+    private static final long serialVersionUID = 4562319489945444332L;
 
     /**
      * 是否允许自动续期
@@ -40,10 +40,10 @@ public class IntelligentPromo extends AlipayObject {
     private Boolean allowAutoDelay;
 
     /**
-     * 审批状态。APPROVING：审批中；REJECTED：已驳回；PASS：已通过；
+     * 审批状态。APPROVING：审批中；REJECTED：已驳回；PASS：已通过；（注意：修改接口不能传递该值）
      */
     @JSONField(name = "audit_status", alternateNames = "auditStatus")
-    @ApiModelProperty(notes = " 审批状态。APPROVING：审批中；REJECTED：已驳回；PASS：已通过；")
+    @ApiModelProperty(notes = " 审批状态。APPROVING：审批中；REJECTED：已驳回；PASS：已通过；（注意：修改接口不能传递该值）")
     @EnumCheck(enums = {"APPROVING","REJECTED","PASS"},required = false)
     private String auditStatus;
 
@@ -53,6 +53,7 @@ public class IntelligentPromo extends AlipayObject {
     @JSONField(name = "create_request_no", alternateNames = "createRequestNo")
     @ApiModelProperty(notes = " 创建活动时填入的外部流水号，这个只在查询时使用，创建和修改无效")
     private String createRequestNo;
+
     /**
      * 创建人信息
      */
@@ -70,10 +71,10 @@ public class IntelligentPromo extends AlipayObject {
     private String desc;
 
     /**
-     * 活动扩展信息。活动推荐会返回扩展信息，推荐完以后，这里的信息要在活动效果预测，创建接口中带回来
+     * 活动扩展信息。活动推荐会返回扩展信息，推荐完以后，这里的信息要在活动效果预测，创建接口中带回来,  如果原方案已结束，需要将该方案进行续签，则需要传递该方案的promoId到扩展字段，key：parentSmartPromoId
      */
     @JSONField(name = "ext_info", alternateNames = "extInfo", serializeUsing = StringValueSerializing.class)
-    @ApiModelProperty(notes = " 活动扩展信息。活动推荐会返回扩展信息，推荐完以后，这里的信息要在活动效果预测，创建接口中带回来")
+    @ApiModelProperty(notes = " 活动扩展信息。活动推荐会返回扩展信息，推荐完以后，这里的信息要在活动效果预测，创建接口中带回来,  如果原方案已结束，需要将该方案进行续签，则需要传递该方案的promoId到扩展字段，key：parentSmartPromoId")
     @NotNull
     private JSONObject extInfo;
 
@@ -132,6 +133,13 @@ public class IntelligentPromo extends AlipayObject {
     private PromoOperatorInfo ownerInfo;
 
     /**
+     * 智能营销方案父id，如果需要续签智能营销活动，则会对于原有智能营销方案的id
+     */
+    @JSONField(name = "parent_promo_id", alternateNames = "parentPromoId")
+    @ApiModelProperty(notes = " 智能营销方案父id，如果需要续签智能营销活动，则会对于原有智能营销方案的id")
+    private String parentPromoId;
+
+    /**
      * 智能营销活动对应的方案编号
      */
     @JSONField(name = "plan_id", alternateNames = "planId")
@@ -155,19 +163,26 @@ public class IntelligentPromo extends AlipayObject {
     private List<IntelligentPromoDetail> promos;
 
     /**
-     * 智能营销活动状态。CREATED：已创建；ENABLED：已生效；CLOSED：已关闭；FINISHED：已完结
+     * 智能营销活动状态。CREATED：已创建；ENABLED：已生效；CLOSED：已关闭；FINISHED：已完结（注意：修改接口不能传递该值）
      */
-    @ApiModelProperty(notes = " 智能营销活动状态。CREATED：已创建；ENABLED：已生效；CLOSED：已关闭；FINISHED：已完结")
+    @ApiModelProperty(notes = " 智能营销活动状态。CREATED：已创建；ENABLED：已生效；CLOSED：已关闭；FINISHED：已完结（注意：修改接口不能传递该值）")
     @EnumCheck(enums = {"CREATED","ENABLED","CLOSED","FINISHED"},required = false)
     private String status;
 
     /**
+     * 该智能营销方案如果续签多次，则会返回该方案对应的所有智能营销子方案的promo_id
+     */
+    @JSONField(name = "sub_promo_ids", alternateNames = "subPromoIds")
+    @ApiModelProperty(notes = " 该智能营销方案如果续签多次，则会返回该方案对应的所有智能营销子方案的promo_id")
+    private List<String> subPromoIds;
+
+    /**
      * 活动展示状态。已创建：CREATED；
-     * REJECTED：创建被驳回；ENABLING：生效中；ONLINE_WAIT_CONFIRM：上架待确认；PUBLISHED：已发布（活动未到开始时间）；ENABLED：已发布已开始；OFFLINE_WAIT_CONFIRM：下架待确认；CLOSING：下架中；CLOSED：已下架（人为干预下架）；FINISHED：已结束（活动到期自然结束）
+     * REJECTED：创建被驳回；ENABLING：生效中；ONLINE_WAIT_CONFIRM：上架待确认；PUBLISHED：已发布（活动未到开始时间）；ENABLED：已发布已开始；OFFLINE_WAIT_CONFIRM：下架待确认；CLOSING：下架中；CLOSED：已下架（人为干预下架）；FINISHED：已结束（活动到期自然结束）；MODIFYING：修改中；MODIFY_WAIT_CONFIRM：修改待确认；（注意：修改接口不能传递该值）
      */
     @JSONField(name = "sub_status", alternateNames = "subStatus")
-    @ApiModelProperty(notes = " 活动展示状态。已创建：CREATED；REJECTED：创建被驳回；ENABLING：生效中；ONLINE_WAIT_CONFIRM：上架待确认；PUBLISHED：已发布（活动未到开始时间）；ENABLED：已发布已开始；OFFLINE_WAIT_CONFIRM：下架待确认；CLOSING：下架中；CLOSED：已下架（人为干预下架）；FINISHED：已结束（活动到期自然结束）")
-    @EnumCheck(enums = {"CREATED","REJECTED","ENABLING","ONLINE_WAIT_CONFIRM","PUBLISHED","ENABLED","OFFLINE_WAIT_CONFIRM","CLOSING","CLOSED","FINISHED"},required = false)
+    @ApiModelProperty(notes = " 活动展示状态。已创建：CREATED；REJECTED：创建被驳回；ENABLING：生效中；ONLINE_WAIT_CONFIRM：上架待确认；PUBLISHED：已发布（活动未到开始时间）；ENABLED：已发布已开始；OFFLINE_WAIT_CONFIRM：下架待确认；CLOSING：下架中；CLOSED：已下架（人为干预下架）；FINISHED：已结束（活动到期自然结束）；MODIFYING：修改中；MODIFY_WAIT_CONFIRM：修改待确认；（注意：修改接口不能传递该值）")
+    @EnumCheck(enums = {"CREATED","REJECTED","ENABLING","ONLINE_WAIT_CONFIRM","PUBLISHED","ENABLED","OFFLINE_WAIT_CONFIRM","CLOSING","CLOSED","FINISHED","MODIFYING","MODIFY_WAIT_CONFIRM"},required = false)
     private String subStatus;
 
     /**
@@ -179,9 +194,9 @@ public class IntelligentPromo extends AlipayObject {
     private String templateId;
 
     /**
-     * 智能活动类型，值如下：RECOMMENDATION：系统推荐；REGISTRATION：报名
+     * 智能活动类型，值如下：RECOMMENDATION：系统推荐；REGISTRATION：报名。在创建时，这个字段需要ISV自己进行决策，在推荐接口会返回优惠力度，比如代金券面额等信息，ISV判断如果优惠力度比这个大或者相同，就用RECOMMENDATION，其他情况用REGISTRATION
      */
-    @ApiModelProperty(notes = " 智能活动类型，值如下：RECOMMENDATION：系统推荐；REGISTRATION：报名")
+    @ApiModelProperty(notes = " 智能活动类型，值如下：RECOMMENDATION：系统推荐；REGISTRATION：报名。在创建时，这个字段需要ISV自己进行决策，在推荐接口会返回优惠力度，比如代金券面额等信息，ISV判断如果优惠力度比这个大或者相同，就用RECOMMENDATION，其他情况用REGISTRATION")
     @EnumCheck(enums = {"RECOMMENDATION","REGISTRATION"})
     private String type;
 
@@ -199,6 +214,14 @@ public class IntelligentPromo extends AlipayObject {
 
     public void setAuditStatus(String auditStatus) {
         this.auditStatus = auditStatus;
+    }
+
+    public String getCreateRequestNo() {
+        return this.createRequestNo;
+    }
+
+    public void setCreateRequestNo(String createRequestNo) {
+        this.createRequestNo = createRequestNo;
     }
 
     public PromoOperatorInfo getCreatorInfo() {
@@ -281,6 +304,14 @@ public class IntelligentPromo extends AlipayObject {
         this.ownerInfo = ownerInfo;
     }
 
+    public String getParentPromoId() {
+        return this.parentPromoId;
+    }
+
+    public void setParentPromoId(String parentPromoId) {
+        this.parentPromoId = parentPromoId;
+    }
+
     public String getPlanId() {
         return this.planId;
     }
@@ -313,6 +344,14 @@ public class IntelligentPromo extends AlipayObject {
         this.status = status;
     }
 
+    public List<String> getSubPromoIds() {
+        return this.subPromoIds;
+    }
+
+    public void setSubPromoIds(List<String> subPromoIds) {
+        this.subPromoIds = subPromoIds;
+    }
+
     public String getSubStatus() {
         return this.subStatus;
     }
@@ -337,11 +376,4 @@ public class IntelligentPromo extends AlipayObject {
         this.type = type;
     }
 
-    public String getCreateRequestNo() {
-        return createRequestNo;
-    }
-
-    public void setCreateRequestNo(String createRequestNo) {
-        this.createRequestNo = createRequestNo;
-    }
 }
