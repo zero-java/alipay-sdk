@@ -1,40 +1,34 @@
 package com.alipay.api.domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
-import com.yazuo.xiaoya.common.annotation.validate.EndDate;
-import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import io.swagger.annotations.*;
-import org.hibernate.validator.constraints.NotBlank;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * 智能营销活动效果
  *
  * @author auto create
- * @since 1.0, 2017-09-15 17:46:18
+ * @since 1.0, 2017-09-30 18:17:21
  */
 @ApiModel(description = " 智能营销活动效果")
-public class IntelligentPromoEffect implements Serializable {
+public class IntelligentPromoEffect extends AlipayObject {
+
+    private static final long serialVersionUID = 6842927774271312155L;
 
     /**
      * 平均客单价提升比例
      */
     @JSONField(name = "avg_prize_increase", alternateNames = "avgPrizeIncrease")
     @ApiModelProperty(notes = " 平均客单价提升比例")
-    @NotBlank
     private String avgPrizeIncrease;
 
     /**
      * 成本
      */
     @ApiModelProperty(notes = " 成本")
-    @NotBlank
     private String cost;
 
     /**
@@ -42,7 +36,6 @@ public class IntelligentPromoEffect implements Serializable {
      */
     @JSONField(name = "current_total_amount", alternateNames = "currentTotalAmount")
     @ApiModelProperty(notes = " 当前效益")
-    @NotBlank
     private String currentTotalAmount;
 
     /**
@@ -50,7 +43,6 @@ public class IntelligentPromoEffect implements Serializable {
      */
     @JSONField(name = "effect_id", alternateNames = "effectId")
     @ApiModelProperty(notes = " 营销活动的预期效果id")
-    @NotBlank
     private String effectId;
 
     /**
@@ -65,14 +57,12 @@ public class IntelligentPromoEffect implements Serializable {
      */
     @JSONField(name = "gmt_to", alternateNames = "gmtTo", format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(notes = " 时间范围右值")
-    @EndDate(field = "gmtFrom")
     private Date gmtTo;
 
     /**
      * 成交额
      */
     @ApiModelProperty(notes = " 成交额")
-    @NotBlank
     private String gmv;
 
     /**
@@ -80,7 +70,6 @@ public class IntelligentPromoEffect implements Serializable {
      */
     @JSONField(name = "remain_stock_num", alternateNames = "remainStockNum")
     @ApiModelProperty(notes = " 剩余库存数")
-    @NotNull
     private Long remainStockNum;
 
     /**
@@ -88,22 +77,26 @@ public class IntelligentPromoEffect implements Serializable {
      */
     @JSONField(name = "repay_rate_increase", alternateNames = "repayRateIncrease")
     @ApiModelProperty(notes = " 复购率提升比例")
-    @NotBlank
     private String repayRateIncrease;
+
+    /**
+     * 发券量提升比例
+     */
+    @JSONField(name = "send_count_increase", alternateNames = "sendCountIncrease")
+    @ApiModelProperty(notes = " 发券量提升比例")
+    private String sendCountIncrease;
 
     /**
      * 发券数量
      */
     @JSONField(name = "take_count", alternateNames = "takeCount")
     @ApiModelProperty(notes = " 发券数量")
-    @NotNull
     private Long takeCount;
 
     /**
      * 营销活动效果类型。FORECAST：预估；STATISTICS：统计
      */
     @ApiModelProperty(notes = " 营销活动效果类型。FORECAST：预估；STATISTICS：统计")
-    @EnumCheck(enums = {"FORECAST","STATISTICS"})
     private String type;
 
     /**
@@ -111,7 +104,6 @@ public class IntelligentPromoEffect implements Serializable {
      */
     @JSONField(name = "use_count", alternateNames = "useCount")
     @ApiModelProperty(notes = " 核销量")
-    @NotNull
     private Long useCount;
 
     public String getAvgPrizeIncrease() {
@@ -184,6 +176,14 @@ public class IntelligentPromoEffect implements Serializable {
 
     public void setRepayRateIncrease(String repayRateIncrease) {
         this.repayRateIncrease = repayRateIncrease;
+    }
+
+    public String getSendCountIncrease() {
+        return this.sendCountIncrease;
+    }
+
+    public void setSendCountIncrease(String sendCountIncrease) {
+        this.sendCountIncrease = sendCountIncrease;
     }
 
     public Long getTakeCount() {
