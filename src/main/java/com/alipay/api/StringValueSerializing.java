@@ -14,7 +14,7 @@ import java.util.Map;
 public class StringValueSerializing implements ObjectSerializer {
     @Override
     public void write(JSONSerializer serializer, Object object, Object fieldName, Type fieldType, int features) throws IOException {
-        if(object==null) return;
+        if(object==null) object = new JSONObject();
         if(!(object instanceof JSONObject)){
             throw new IllegalArgumentException("无法为非JSONObject对象序列化fieldName:"+fieldName);
         }
@@ -23,6 +23,9 @@ public class StringValueSerializing implements ObjectSerializer {
         for(Map.Entry<String,Object> entry :json.entrySet()){
             sb.append("\"").append(entry.getKey()).append("\"").append(":").append("\"").append(entry.getValue()).append("\"").append(",");
         }
-        serializer.write("{"+sb.substring(0,sb.lastIndexOf(","))+"}");
+        if(sb.length()==0)
+            serializer.write("{}");
+        else
+            serializer.write("{"+sb.substring(0,sb.lastIndexOf(","))+"}");
     }
 }
