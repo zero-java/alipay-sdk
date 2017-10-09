@@ -6,6 +6,7 @@ import java.util.List;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
+import com.alipay.api.StringValueSerializing;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import com.yazuo.xiaoya.common.annotation.validate.EndDate;
@@ -72,7 +73,7 @@ public class IntelligentPromo extends AlipayObject {
     /**
      * 活动扩展信息。活动推荐会返回扩展信息，推荐完以后，这里的信息要在活动效果预测，创建接口中带回来,  如果原方案已结束，需要将该方案进行续签，则需要传递该方案的promoId到扩展字段，key：parentSmartPromoId
      */
-    @JSONField(name = "ext_info", alternateNames = "extInfo")
+    @JSONField(name = "ext_info", alternateNames = "extInfo", serializeUsing = StringValueSerializing.class)
     @ApiModelProperty(notes = " 活动扩展信息。活动推荐会返回扩展信息，推荐完以后，这里的信息要在活动效果预测，创建接口中带回来,  如果原方案已结束，需要将该方案进行续签，则需要传递该方案的promoId到扩展字段，key：parentSmartPromoId")
     @NotNull
     private JSONObject extInfo;
