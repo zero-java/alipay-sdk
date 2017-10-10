@@ -2018,6 +2018,8 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 	 */
 	public static class PlanQueryByStoreModel implements Serializable{
 
+		@JSONField(name = "shop_id")
+		private String shopId;//门店Id
 		@JSONField(name = "new_user_cnt")
 		private Integer	newUserCnt	;//新增会员数
 		@JSONField(name = "total_used_user_cnt")
@@ -2030,6 +2032,14 @@ public class KoubeiMarketingDataIndicatorQueryResponse extends AlipayResponse {
 		private Integer totalOfflineTradeUserCnt;//累计线下支付会员数：
 		@JSONField(name = "total_repay_user_cnt")
 		private Integer totalRepayUserCnt;//累计回头会员数
+
+		public String getShopId() {
+			return shopId;
+		}
+
+		public void setShopId(String shopId) {
+			this.shopId = shopId;
+		}
 
 		public Integer getNewUserCnt() {
 			return newUserCnt;
