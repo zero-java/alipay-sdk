@@ -67,7 +67,6 @@ public class IntelligentPromo extends AlipayObject {
      * 智能活动描述
      */
     @ApiModelProperty(notes = " 智能活动描述")
-    @NotBlank(groups = Create.class)
     private String desc;
 
     /**
