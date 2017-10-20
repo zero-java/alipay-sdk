@@ -1,34 +1,33 @@
 package com.alipay.api.domain;
 
+import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 口碑商户人群组列表查询接口
  *
  * @author auto create
  * @since 1.0, 2017-02-15 16:31:23
- */
+ */@ApiModel(description = " 口碑商户人群组列表查询接口")
 public class KoubeiMarketingCampaignCrowdBatchqueryModel extends AlipayObject {
 
 	private static final long serialVersionUID = 5295542615416957579L;
 
 	/**
 	 * 人群名称
-	 */
-	@ApiField("name")
+	 */@ApiModelProperty(notes = " 人群名称")
 	private String name;
 
 	/**
 	 * 分页页码，从1开始计数,如果不填写默认为1
-	 */
-	@ApiField("page_number")
+	 */@JSONField(alternateNames = "pageNumber", name = "page_number")@ApiModelProperty(notes = " 分页页码，从1开始计数,如果不填写默认为1")
 	private String pageNumber;
 
 	/**
 	 * 分页大小，每页显示的数目，如果不填写默认为20
-	 */
-	@ApiField("page_size")
+	 */@JSONField(alternateNames = "pageSize", name = "page_size")@ApiModelProperty(notes = " 分页大小，每页显示的数目，如果不填写默认为20")
 	private String pageSize;
 
 	public String getName() {
