@@ -126,9 +126,9 @@ public class KoubeiMarketingCampaignCrowdCreateModel extends AlipayObject {
         /**
          * 符合参数集合
          */
-//        @JSONField(name = "sub_tags", alternateNames = "subTags")
-//        @ApiModelProperty(notes = " 符合参数集合")
-//        private List<CreateTags> subTags;    //符合参数集合
+        @JSONField(name = "sub_tags", alternateNames = "subTags")
+        @ApiModelProperty(notes = " 符合参数集合")
+        private List<CreateTags> subTags;    //符合参数集合
 
         public String getTagCode() {
             return tagCode;
@@ -154,13 +154,13 @@ public class KoubeiMarketingCampaignCrowdCreateModel extends AlipayObject {
             this.value = value;
         }
 
-//        public List<CreateTags> getSubTags() {
-//            return subTags;
-//        }
-//
-//        public void setSubTags(List<CreateTags> subTags) {
-//            this.subTags = subTags;
-//        }
+        public List<CreateTags> getSubTags() {
+            return subTags;
+        }
+
+        public void setSubTags(List<CreateTags> subTags) {
+            this.subTags = subTags;
+        }
 
     }
 
