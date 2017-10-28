@@ -37,6 +37,38 @@ public class KoubeiMarketingCampaignIntelligentShopConsultModel extends AlipayOb
     @JSONField(alternateNames = "planId", name = "plan_id")
     private String planId;
 
+    /**
+     * 外部业务id，请尽量保持足够的复杂，方便定位数据来源
+     */@JSONField(name = "out_request_no", alternateNames = "outRequestNo")@ApiModelProperty(notes = " 外部业务id，请尽量保持足够的复杂，方便定位数据来源")
+    private String outRequestNo;
+
+    /**
+     * 营销模板的编号，默认（不传值时）GENERAL_EXPERIENCE
+     GENERAL_EXPERIENCE：全场体验；
+     GENERAL_NORMAL：全场普通；
+     GENERAL_20171212：全场2017双12版；
+     CROWD_EXPERIENCE：人群体验；
+     CROWD_NORMAL：人群普通；
+     CROWD_20171212：人群2017双12版；
+     */@JSONField(name = "template_code", alternateNames = "templateCode")@ApiModelProperty(notes = " 营销模板的编号，默认（不传值时）GENERAL_EXPERIENCEGENERAL_EXPERIENCE：全场体验；GENERAL_NORMAL：全场普通；GENERAL_20171212：全场2017双12版；CROWD_EXPERIENCE：人群体验；CROWD_NORMAL：人群普通；CROWD_20171212：人群2017双12版；")
+    private String templateCode;
+
+    public String getOutRequestNo() {
+        return outRequestNo;
+    }
+
+    public void setOutRequestNo(String outRequestNo) {
+        this.outRequestNo = outRequestNo;
+    }
+
+    public String getTemplateCode() {
+        return templateCode;
+    }
+
+    public void setTemplateCode(String templateCode) {
+        this.templateCode = templateCode;
+    }
+
     public PromoOperatorInfo getOperatorContext() {
         return this.operatorContext;
     }
