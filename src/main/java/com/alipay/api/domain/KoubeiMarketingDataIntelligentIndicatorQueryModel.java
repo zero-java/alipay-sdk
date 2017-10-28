@@ -52,6 +52,19 @@ public class KoubeiMarketingDataIntelligentIndicatorQueryModel extends AlipayObj
     @JSONField(alternateNames = "reportDate", name = "report_date", format = "yyyy-MM-dd HH:mm:ss")
     private Date reportDate;
 
+    /**
+     * 外部业务id，请保持足够复杂，方便排查数据来源
+     */@JSONField(name = "out_request_no", alternateNames = "outRequestNo")@ApiModelProperty(notes = "外部业务id，请保持足够复杂，方便排查数据来源")
+    private String outRequestNo;
+
+    public String getOutRequestNo() {
+        return outRequestNo;
+    }
+
+    public void setOutRequestNo(String outRequestNo) {
+        this.outRequestNo = outRequestNo;
+    }
+
     public KoubeiMarketingDataIndicatorQueryModel.BizType getBizType() {
         return bizType;
     }

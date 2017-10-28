@@ -30,6 +30,19 @@ public class KoubeiMarketingCampaignIntelligentPromoBatchqueryModel extends Alip
 	 */@JSONField(name = "page_info", alternateNames = "pageInfo")@ApiModelProperty(notes = " 分页信息")
 	private PromoPageInfo pageInfo;
 
+	/**
+	 * 外部业务id，请保持足够复杂，方便排查数据来源
+	 */@JSONField(name = "out_request_no", alternateNames = "outRequestNo")@ApiModelProperty(notes = "外部业务id，请保持足够复杂，方便排查数据来源")
+	private String outRequestNo;
+
+	public String getOutRequestNo() {
+		return outRequestNo;
+	}
+
+	public void setOutRequestNo(String outRequestNo) {
+		this.outRequestNo = outRequestNo;
+	}
+
 	public PromoOperatorInfo getOperatorContext() {
 		return this.operatorContext;
 	}

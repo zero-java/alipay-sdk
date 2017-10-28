@@ -21,8 +21,8 @@ public class KoubeiMarketingCampaignIntelligentPromoModifyModel extends AlipayOb
 	private PromoOperatorInfo operatorContext;
 
 	/**
-	 * 代表了一次请求，作为业务幂等性控制
-	 */@JSONField(name = "out_request_no", alternateNames = "outRequestNo")@ApiModelProperty(notes = " 代表了一次请求，作为业务幂等性控制")
+	 * 外部业务id，请保持足够复杂，方便排查数据来源
+	 */@JSONField(name = "out_request_no", alternateNames = "outRequestNo")@ApiModelProperty(notes = "外部业务id，请保持足够复杂，方便排查数据来源")
 	private String outRequestNo;
 
 	/**
