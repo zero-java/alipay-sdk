@@ -53,6 +53,13 @@ public class IntelligentPromoDetail implements Serializable {
     private ConstraintInfo constraint;
 
     /**
+     * 圈人限制条件
+     */
+    @ApiModelProperty(notes = " 圈人限制条件")
+    @JSONField(name = "crowd_constraint", alternateNames = "crowdConstraint")
+    private CrowdConstraintInfo crowdConstraint;
+
+    /**
      * 智能营销活动的子活动
      */
     @ApiModelProperty(notes = " 智能营销活动的子活动")
@@ -80,7 +87,7 @@ public class IntelligentPromoDetail implements Serializable {
      */
     @JSONField(name = "merchant_promo_type", alternateNames = "merchantPromoType")
     @ApiModelProperty(notes = " 自运营活动类型。DIRECT_SEND：直发奖；CONSUME_SEND：消费送")
-    @EnumCheck(enums = {"DIRECT_SEND","CONSUME_SEND"})
+    @EnumCheck(enums = {"DIRECT_SEND", "CONSUME_SEND"})
     private String merchantPromoType;
 
     /**
@@ -206,4 +213,11 @@ public class IntelligentPromoDetail implements Serializable {
         this.templateId = templateId;
     }
 
+    public CrowdConstraintInfo getCrowdConstraint() {
+        return crowdConstraint;
+    }
+
+    public void setCrowdConstraint(CrowdConstraintInfo crowdConstraint) {
+        this.crowdConstraint = crowdConstraint;
+    }
 }
