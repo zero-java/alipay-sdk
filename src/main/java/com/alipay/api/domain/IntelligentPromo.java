@@ -164,8 +164,8 @@ public class IntelligentPromo extends AlipayObject {
     /**
      * 智能营销活动状态。CREATED：已创建；ENABLED：已生效；CLOSED：已关闭；FINISHED：已完结（注意：修改接口不能传递该值）
      */
-    @ApiModelProperty(notes = " 智能营销活动状态。CREATED：已创建；ENABLED：已生效；CLOSED：已关闭；FINISHED：已完结（注意：修改接口不能传递该值）")
-    @EnumCheck(enums = {"CREATED","ENABLED","CLOSED","FINISHED"},required = false)
+    @ApiModelProperty(notes = " 智能营销活动状态。CREATED：已创建；ENABLED：已生效；CLOSED：已关闭；FINISHED：已完结（注意：修改接口不能传递该值）DISABLED:已失效（有两种 情况会是失效状态，一种是服 务商创建方案，商户驳回，一 种是服务商创建方案，商户未 确认，活动到期。）（注意：修改方案的动作不需要传递 方案状态）")
+    @EnumCheck(enums = {"CREATED","ENABLED","CLOSED","FINISHED","DISABLED"},required = false)
     private String status;
 
     /**
@@ -181,7 +181,7 @@ public class IntelligentPromo extends AlipayObject {
      */
     @JSONField(name = "sub_status", alternateNames = "subStatus")
     @ApiModelProperty(notes = " 活动展示状态。已创建：CREATED；REJECTED：创建被驳回；ENABLING：生效中；ONLINE_WAIT_CONFIRM：上架待确认；PUBLISHED：已发布（活动未到开始时间）；ENABLED：已发布已开始；OFFLINE_WAIT_CONFIRM：下架待确认；CLOSING：下架中；CLOSED：已下架（人为干预下架）；FINISHED：已结束（活动到期自然结束）；MODIFYING：修改中；MODIFY_WAIT_CONFIRM：修改待确认；（注意：修改接口不能传递该值）")
-    @EnumCheck(enums = {"CREATED","REJECTED","ENABLING","ONLINE_WAIT_CONFIRM","PUBLISHED","ENABLED","OFFLINE_WAIT_CONFIRM","CLOSING","CLOSED","FINISHED","MODIFYING","MODIFY_WAIT_CONFIRM"},required = false)
+    @EnumCheck(enums = {"CREATED","REJECTED","ENABLING","ONLINE_WAIT_CONFIRM","PUBLISHED","ENABLED","OFFLINE_WAIT_CONFIRM","CLOSING","CLOSED","FINISHED","MODIFYING","MODIFY_WAIT_CONFIRM","DISABLED"},required = false)
     private String subStatus;
 
     /**
