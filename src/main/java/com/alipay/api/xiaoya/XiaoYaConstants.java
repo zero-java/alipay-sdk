@@ -20,6 +20,9 @@ public class XiaoYaConstants {
         urlMaps.put(new KoubeiMarketingCampaignActivityOfflineRequest().getApiMethodName(),"/gateway/actives/offline");
         urlMaps.put(new KoubeiMarketingCampaignBenefitSendRequest().getApiMethodName(),"/gateway/coupons/benefit");
         urlMaps.put(new AlipayOfflineMaterialImageUploadRequest().getApiMethodName(),"/gateway/file/upload");
+        urlMaps.put(new AlipayOpenAuthTokenAppRequest().getApiMethodName(),"/gateway/token/query");
+        urlMaps.put(new AlipaySystemOauthTokenRequest().getApiMethodName(),"/gateway/token/code");
+        urlMaps.put(new AlipayUserInfoShareRequest().getApiMethodName(),"/gateway/token/user");
     }
 
     public static Map<String,String> getUrlMap(){
