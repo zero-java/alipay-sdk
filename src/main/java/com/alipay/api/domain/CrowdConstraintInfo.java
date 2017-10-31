@@ -29,7 +29,7 @@ public class CrowdConstraintInfo extends AlipayObject {
     private List<KoubeiMarketingCampaignCrowdCreateModel.CreateTags> crowdCondition;
 
     /**
-     * 圈人名称
+     * 圈人名称 限笔单价30到50的老顾客
      */
     @ApiField("crowd_name")
     @JSONField(name = "crowd_name", alternateNames = "crowdName")
