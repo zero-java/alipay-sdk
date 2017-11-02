@@ -53,7 +53,6 @@ public class KoubeiMarketingCampaignIntelligentPromoConsultModel extends AlipayO
      */
     @JSONField(name = "template_code", alternateNames = "templateCode")
     @ApiModelProperty(notes = " 营销模板的编号，GENERAL_EXPERIENCE：全场体验；GENERAL_NORMAL：全场普通；ITEM_EXPERIENCE：单品体验；ITEM_NORMAL：单品普通")
-    @EnumCheck(enums = {"GENERAL_EXPERIENCE","GENERAL_NORMAL","ITEM_EXPERIENCE","ITEM_NORMAL"})
     private String templateCode;
 
     /**

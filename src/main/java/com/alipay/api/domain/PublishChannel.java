@@ -50,11 +50,12 @@ public class PublishChannel implements Serializable {
      * PAYMENT_RESULT：支付成功页；
      * MERCHANT_CROWD：口令送；
      * EXTERNAL_MEDIA : 外部媒体
+     * TRAFFIC_CHANNEL:(双十二新增判断引流券)
      * ISV_ENTERPRISE_BENIFIT :T:ISV企业福利,只有活动类型为DIRECT_SEND时才支持;
      * URL_WITH_TOKEN：外部发奖活动，只有活动类型为DIRECT_SEND时才支持；
      */
     @ApiModelProperty(notes = " 渠道类型，目前支持以下类型： QR_CODE：二维码投放； SHORT_LINK：短连接投放； SHOP_DETAIL：店铺页投放； PAYMENT_RESULT：支付成功页； MERCHANT_CROWD：口令送； URL_WITH_TOKEN：外部发奖活动，只有活动类型为DIRECT_SEND时才支持；ISV_ENTERPRISE_BENIFIT :T:ISV企业福利,只有活动类型为DIRECT_SEND时才支持")
-    @EnumCheck(enums = {"QR_CODE", "SHORT_LINK", "SHOP_DETAIL", "PAYMENT_RESULT", "MERCHANT_CROWD", "URL_WITH_TOKEN", "ISV_ENTERPRISE_BENIFIT", "EXTERNAL_MEDIA"})
+    @EnumCheck(enums = {"QR_CODE", "SHORT_LINK", "SHOP_DETAIL", "PAYMENT_RESULT", "MERCHANT_CROWD", "URL_WITH_TOKEN", "ISV_ENTERPRISE_BENIFIT", "EXTERNAL_MEDIA","TRAFFIC_CHANNEL"})
     private String type;
 
     public JSONObject getConfig() {
