@@ -39,19 +39,37 @@ public class KoubeiMarketingCampaignIntelligentShopConsultModel extends AlipayOb
 
     /**
      * 外部业务id，请尽量保持足够的复杂，方便定位数据来源
-     */@JSONField(name = "out_request_no", alternateNames = "outRequestNo")@ApiModelProperty(notes = " 外部业务id，请尽量保持足够的复杂，方便定位数据来源")
+     */
+    @JSONField(name = "out_request_no", alternateNames = "outRequestNo")
+    @ApiModelProperty(notes = " 外部业务id，请尽量保持足够的复杂，方便定位数据来源")
     private String outRequestNo;
 
     /**
      * 营销模板的编号，默认（不传值时）GENERAL_EXPERIENCE
-     GENERAL_EXPERIENCE：全场体验；
-     GENERAL_NORMAL：全场普通；
-     GENERAL_20171212：全场2017双12版；
-     CROWD_EXPERIENCE：人群体验；
-     CROWD_NORMAL：人群普通；
-     CROWD_20171212：人群2017双12版；
-     */@JSONField(name = "template_code", alternateNames = "templateCode")@ApiModelProperty(notes = " 营销模板的编号，默认（不传值时）GENERAL_EXPERIENCEGENERAL_EXPERIENCE：全场体验；GENERAL_NORMAL：全场普通；GENERAL_20171212：全场2017双12版；CROWD_EXPERIENCE：人群体验；CROWD_NORMAL：人群普通；CROWD_20171212：人群2017双12版；")
+     * GENERAL_EXPERIENCE：全场体验；
+     * GENERAL_NORMAL：全场普通；
+     * GENERAL_20171212：全场2017双12版；
+     * CROWD_EXPERIENCE：人群体验；
+     * CROWD_NORMAL：人群普通；
+     * CROWD_20171212：人群2017双12版；
+     */
+    @JSONField(name = "template_code", alternateNames = "templateCode")
+    @ApiModelProperty(notes = " 营销模板的编号，默认（不传值时）GENERAL_EXPERIENCEGENERAL_EXPERIENCE：全场体验；GENERAL_NORMAL：全场普通；GENERAL_20171212：全场2017双12版；CROWD_EXPERIENCE：人群体验；CROWD_NORMAL：人群普通；CROWD_20171212：人群2017双12版；")
     private String templateCode;
+
+    /**
+     * 当前页码，默认：“1”
+     */
+    @JSONField(name = "page_index", alternateNames = "pageIndex")
+    @ApiModelProperty(notes = "当前页码，默认：“1”")
+    private String pageIndex;
+
+    /**
+     * 每页项数[1, 500]， 默认500
+     */
+    @JSONField(name = "page_size", alternateNames = "pageSize")
+    @ApiModelProperty(notes = "每页项数[1, 500]， 默认500")
+    private String pageSize;
 
     public String getOutRequestNo() {
         return outRequestNo;
@@ -93,4 +111,19 @@ public class KoubeiMarketingCampaignIntelligentShopConsultModel extends AlipayOb
         this.planId = planId;
     }
 
+    public String getPageIndex() {
+        return pageIndex;
+    }
+
+    public void setPageIndex(String pageIndex) {
+        this.pageIndex = pageIndex;
+    }
+
+    public String getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(String pageSize) {
+        this.pageSize = pageSize;
+    }
 }
