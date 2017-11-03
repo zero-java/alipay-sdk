@@ -23,7 +23,7 @@ public class XiaoYaConstants {
         urlMaps.put(new AlipayOpenAuthTokenAppRequest().getApiMethodName(),"/gateway/token/query");
         urlMaps.put(new AlipaySystemOauthTokenRequest().getApiMethodName(),"/gateway/token/code");
         urlMaps.put(new AlipayUserInfoShareRequest().getApiMethodName(),"/gateway/token/user");
-        urlMaps.put(new AlipayOfflineMarketShopCategoryQueryRequest().getApiMethodName(),"/gateway/provider");
+        urlMaps.put(new AlipayOfflineProviderShopactionRecordRequest().getApiMethodName(),"/gateway/provider/shopAction");
     }
 
     public static Map<String,String> getUrlMap(){
