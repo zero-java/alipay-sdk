@@ -24,7 +24,7 @@ public class ArrayValueSerializing implements ObjectSerializer {
             serializer.write("\"\"");
         } else{
             String res = JSON.toJSONString(list);
-            res = res.replaceAll("\"","\\\"");
+//            res = res.replaceAll("\"","\\\"");
             serializer.write(res);
         }
     }
