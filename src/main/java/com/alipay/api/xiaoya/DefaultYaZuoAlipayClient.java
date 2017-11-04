@@ -80,7 +80,12 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
             }
         } else {
             AlipayObject model = request.getBizModel();
-            model.getIdentity().setAppId(appId);
+            Identity identity =  model.getIdentity();
+            if(identity == null){
+                identity = new Identity();
+            }
+            identity.setAppId(appId);
+            model.setIdentity(identity);
             String body = JSON.toJSONString(model);
             String result = execute(serverUrl + methodUrl, body);
             String respStr = new String(new NormalizerJSONString(result).getNormalizerData());
