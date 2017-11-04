@@ -21,6 +21,13 @@ public class KoubeiMarketingCampaignIntelligentShopConsultResponse extends Alipa
     private static final long serialVersionUID = 8892425932423529583L;
 
     /**
+     * 总共项数
+     */
+    @ApiModelProperty(notes = " 总共项数")
+    @ApiField("items")
+    private String items;
+
+    /**
      * 智能营销方案符合标准的门店列表
      */
     @ApiModelProperty(notes = " 智能营销方案符合标准的门店列表")
@@ -36,4 +43,11 @@ public class KoubeiMarketingCampaignIntelligentShopConsultResponse extends Alipa
         return this.shops;
     }
 
+    public String getItems() {
+        return items;
+    }
+
+    public void setItems(String items) {
+        this.items = items;
+    }
 }
