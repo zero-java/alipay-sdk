@@ -109,6 +109,7 @@ public class XiaoYaConstants {
         urlMaps.put(new AlipayUserInfoAuthRequest().getApiMethodName(), "/gateway/token/userauth");//授权登陆
         urlMaps.put(new AlipayUserAccountUseridBatchqueryRequest().getApiMethodName(), "/gateway/token/useridbatch");//根据用户手机号查询用户信息
         urlMaps.put(new AlipayUserInfoShareRequest().getApiMethodName(), "/gateway/token/user");//查询用户信息  已实现
+        urlMaps.put(new AlipayUserUserinfoShareRequest().getApiMethodName(),"/gateway/token/userinfo");//查询用户信息老接口
         urlMaps.put(new AlipayOpenAuthTokenAppQueryRequest().getApiMethodName(), "/gateway/token/appquery");//应用授权查询
         urlMaps.put(new AlipayOpenAuthTokenAppRequest().getApiMethodName(), "/gateway/token/query");//换取应用授权令牌  已实现
         urlMaps.put(new AlipaySystemOauthTokenRequest().getApiMethodName(), "/gateway/token/code");//auth_code换取access_token与user_id  已实现
