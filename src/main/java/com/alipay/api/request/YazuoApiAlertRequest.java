@@ -11,6 +11,7 @@ import java.util.Map;
  * Created by jason.guan on 2017/11/15
  */
 public class YazuoApiAlertRequest implements AlipayRequest<YazuoApiAlertResponse> {
+    private AlipayObject bizModel=null;
     /**
      * 获取TOP的API名称。
      *
@@ -187,7 +188,7 @@ public class YazuoApiAlertRequest implements AlipayRequest<YazuoApiAlertResponse
 
     @Override
     public AlipayObject getBizModel() {
-        return null;
+        return this.bizModel;
     }
 
     /**
@@ -197,6 +198,6 @@ public class YazuoApiAlertRequest implements AlipayRequest<YazuoApiAlertResponse
      */
     @Override
     public void setBizModel(AlipayObject bizModel) {
-
+        this.bizModel = bizModel;
     }
 }
