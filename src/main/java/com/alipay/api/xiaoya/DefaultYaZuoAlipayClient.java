@@ -79,14 +79,17 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
                 });
             }
         } else {
+            String body = "";
             AlipayObject model = request.getBizModel();
-            Identity identity =  model.getIdentity();
-            if(identity == null){
-                identity = new Identity();
+            if(model !=null ){
+                Identity identity =  model.getIdentity();
+                if(identity == null){
+                    identity = new Identity();
+                }
+                identity.setAppId(appId);
+                model.setIdentity(identity);
+                body = JSON.toJSONString(model);
             }
-            identity.setAppId(appId);
-            model.setIdentity(identity);
-            String body = JSON.toJSONString(model);
             String result = execute(serverUrl + methodUrl, body);
             String respStr = new String(new NormalizerJSONString(result).getNormalizerData());
             genericResponse = JSONObject.parseObject(respStr, new TypeReference<GenericResponse<T>>(request.getResponseClass()) {
@@ -105,7 +108,7 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
             String resEntityStr = EntityUtils.toString(response.getEntity());
             return new String(resEntityStr.getBytes(charset), charset);
         } else if (response.getStatusLine().getStatusCode() == 404) {
-            throw new Exception("404出错了");
+            throw new Exception("人有失足,马有失蹄；404出错，请求地址不存在");
         } else {
             throw new Exception();
         }
@@ -134,7 +137,7 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
             String resEntityStr = EntityUtils.toString(httpResponse.getEntity());
             return new String(resEntityStr.getBytes(charset), charset);
         } else if (httpResponse.getStatusLine().getStatusCode() == 404) {
-            throw new Exception("404调用出错了");
+            throw new Exception("人有失足,马有失蹄。404出错，请求地址不存在");
         } else {
             throw new Exception();
         }
