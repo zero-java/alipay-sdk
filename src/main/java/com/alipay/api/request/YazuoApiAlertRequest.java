@@ -163,7 +163,7 @@ public class YazuoApiAlertRequest implements AlipayRequest<YazuoApiAlertResponse
      */
     @Override
     public Class<YazuoApiAlertResponse> getResponseClass() {
-        return null;
+        return YazuoApiAlertResponse.class;
     }
 
     /**
