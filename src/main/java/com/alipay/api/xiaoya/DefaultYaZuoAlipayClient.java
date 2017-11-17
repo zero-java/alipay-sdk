@@ -1,11 +1,13 @@
 package com.alipay.api.xiaoya;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alipay.api.*;
 import com.alipay.api.domain.AlipayOfflineMaterialImageUploadModel;
+import com.alipay.api.internal.util.AlipayLogger;
 import com.alipay.api.internal.util.StringUtils;
 import com.alipay.api.request.AlipayOfflineMaterialImageUploadRequest;
 import com.yazuo.xiaoya.common.Identity;
@@ -92,8 +94,16 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
             }
             String result = execute(serverUrl + methodUrl, body);
             String respStr = new String(new NormalizerJSONString(result).getNormalizerData());
-            genericResponse = JSONObject.parseObject(respStr, new TypeReference<GenericResponse<T>>(request.getResponseClass()) {
-            });
+            try{
+                genericResponse = JSONObject.parseObject(respStr, new TypeReference<GenericResponse<T>>(request.getResponseClass()) {});
+            }catch(JSONException e) {
+                AlipayLogger.logBizError("response数据转换异常："+result);
+                genericResponse.setCode("60000");
+                genericResponse.setMessage(result);
+                genericResponse.setSubMessage("response数据转换异常");
+            }
+
+
         }
         return genericResponse;
     }
