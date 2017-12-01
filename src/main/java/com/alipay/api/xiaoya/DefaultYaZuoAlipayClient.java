@@ -22,12 +22,7 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
 import java.nio.charset.Charset;
@@ -43,6 +38,11 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
     private String appSercet;
     private static final String charset = "UTF-8";
     private static final int timeout = 15000;
+    private static HttpClient client;
+
+    static {
+        client = HttpClientBuilder.create().build();
+    }
 
     /**
      * 初始化小雅HTTP Client,serverUrl，appId，appSercet为必填项，用于判断请求的服务器地址和调用方的标识信息
@@ -113,7 +113,6 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
     }
 
     private static String execute(String url, String body) throws Exception {
-        HttpClient client = HttpClientBuilder.create().build();
         HttpPost post = new HttpPost(url);
         HttpEntity entity = new StringEntity(body, charset);
         post.setEntity(entity);
@@ -133,7 +132,6 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
     }
 
     private static String upload(Identity identity, String fileName, String url, byte[] content) throws Exception {
-        HttpClient httpClient = HttpClientBuilder.create().build();
         HttpPost httpPost = new HttpPost(url);
         RequestConfig requestConfig = RequestConfig.custom()
                 .setConnectTimeout(timeout).setConnectionRequestTimeout(timeout)
@@ -150,7 +148,7 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
         builder.addTextBody("fileName", fileName, ContentType.create("text/plain", Charset.forName(charset)));
         HttpEntity httpEntity = builder.build();
         httpPost.setEntity(httpEntity);
-        HttpResponse httpResponse = httpClient.execute(httpPost);
+        HttpResponse httpResponse = client.execute(httpPost);
         if (httpResponse.getStatusLine().getStatusCode() == 200) {
             String resEntityStr = EntityUtils.toString(httpResponse.getEntity());
             return new String(resEntityStr.getBytes(charset), charset);
