@@ -1,8 +1,12 @@
 package com.alipay.api.response;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alipay.api.domain.KoubeiMarketingCampaignCrowdCreateModel;
 import com.alipay.api.internal.mapping.ApiField;
 
 import com.alipay.api.AlipayResponse;
+
+import java.util.List;
 
 /**
  * ALIPAY API: koubei.marketing.campaign.tags.query response.
@@ -24,13 +28,13 @@ label:描述信息
 标签相关的详细信息参见附件。<a href="http://aopsdkdownload.cn-hangzhou.alipay-pub.aliyun-inc.com/doc/tags%26usecase.zip">标签信息</a>
 	 */
 	@ApiField("tags")
-	private String tags;
+	private JSONObject tags;
 
-	public void setTags(String tags) {
+	public JSONObject getTags() {
+		return tags;
+	}
+
+	public void setTags(JSONObject tags) {
 		this.tags = tags;
 	}
-	public String getTags( ) {
-		return this.tags;
-	}
-
 }
