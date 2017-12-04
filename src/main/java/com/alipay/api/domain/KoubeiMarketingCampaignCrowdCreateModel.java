@@ -128,7 +128,7 @@ public class KoubeiMarketingCampaignCrowdCreateModel extends AlipayObject {
          * 符合参数集合
          */
         @JSONField(name = "sub_tags", alternateNames = "subTags")
-        @ApiModelProperty(notes = " 符合参数集合")
+//        @ApiModelProperty(notes = " 符合参数集合")
         private List<CreateTags> subTags;    //符合参数集合
 
         public String getTagCode() {

@@ -16,17 +16,13 @@ import com.yazuo.xiaoya.common.response.GenericResponse;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
 import java.nio.charset.Charset;
@@ -41,6 +37,12 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
     private String appId;
     private String appSercet;
     private static final String charset = "UTF-8";
+    private static final int timeout = 15000;
+    private static HttpClient client;
+
+    static {
+        client = HttpClientBuilder.create().build();
+    }
 
     /**
      * 初始化小雅HTTP Client,serverUrl，appId，appSercet为必填项，用于判断请求的服务器地址和调用方的标识信息
@@ -96,23 +98,28 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
             String respStr = new String(new NormalizerJSONString(result).getNormalizerData());
             try{
                 genericResponse = JSONObject.parseObject(respStr, new TypeReference<GenericResponse<T>>(request.getResponseClass()) {});
-            }catch(JSONException e) {
-                AlipayLogger.logBizError("response数据转换异常："+result);
-                genericResponse.setCode("60000");
-                genericResponse.setMessage(result);
-                genericResponse.setSubMessage("response数据转换异常");
+            }catch(JSONException exception) {
+                try{
+                    genericResponse = JSONObject.parseObject(result, new TypeReference<GenericResponse<T>>(request.getResponseClass()) {});
+                }catch(JSONException exception2) {
+                    AlipayLogger.logBizError("response数据转换异常："+result);
+                    genericResponse.setCode("60000");
+                    genericResponse.setMessage(result);
+                    genericResponse.setSubMessage("response数据转换异常");
+                }
             }
-
-
         }
         return genericResponse;
     }
 
     private static String execute(String url, String body) throws Exception {
-        HttpClient client = HttpClientBuilder.create().build();
         HttpPost post = new HttpPost(url);
         HttpEntity entity = new StringEntity(body, charset);
         post.setEntity(entity);
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setConnectTimeout(timeout).setConnectionRequestTimeout(timeout)
+                .setSocketTimeout(timeout).build();
+        post.setConfig(requestConfig);
         HttpResponse response = client.execute(post);
         if (response.getStatusLine().getStatusCode() == 200) {
             String resEntityStr = EntityUtils.toString(response.getEntity());
@@ -125,12 +132,11 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
     }
 
     private static String upload(Identity identity, String fileName, String url, byte[] content) throws Exception {
-        HttpParams httpParameters = new BasicHttpParams();
-        httpParameters.setParameter("charset", charset);
-        HttpConnectionParams.setConnectionTimeout(httpParameters, 10000);
-        HttpConnectionParams.setSoTimeout(httpParameters, 15000);
-        HttpClient httpClient = new DefaultHttpClient(httpParameters);
         HttpPost httpPost = new HttpPost(url);
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setConnectTimeout(timeout).setConnectionRequestTimeout(timeout)
+                .setSocketTimeout(timeout).build();
+        httpPost.setConfig(requestConfig);
         MultipartEntityBuilder builder = MultipartEntityBuilder.create();
         builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
         builder.setCharset(Charset.forName(charset));      //ContentType.create(type)
@@ -142,7 +148,7 @@ public class DefaultYaZuoAlipayClient implements YaZuoAlipayClient {
         builder.addTextBody("fileName", fileName, ContentType.create("text/plain", Charset.forName(charset)));
         HttpEntity httpEntity = builder.build();
         httpPost.setEntity(httpEntity);
-        HttpResponse httpResponse = httpClient.execute(httpPost);
+        HttpResponse httpResponse = client.execute(httpPost);
         if (httpResponse.getStatusLine().getStatusCode() == 200) {
             String resEntityStr = EntityUtils.toString(httpResponse.getEntity());
             return new String(resEntityStr.getBytes(charset), charset);
