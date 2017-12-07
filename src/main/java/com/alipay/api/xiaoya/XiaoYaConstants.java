@@ -115,6 +115,7 @@ public class XiaoYaConstants {
         urlMaps.put(new AlipaySystemOauthTokenRequest().getApiMethodName(), "/gateway/token/code");//auth_code换取access_token与user_id  已实现
         urlMaps.put(new AlipayOfflineProviderShopactionRecordRequest().getApiMethodName(),"/gateway/provider/shopAction");//回传的商户操作行为信息调用接口  已实现
         urlMaps.put(new YazuoApiAlertRequest().getApiMethodName(),"/gateway/alert/list");
+        urlMaps.put(new KoubeiMarketingCampaignTagsQueryRequest().getApiMethodName(),"/gateway/marketingcampaigntags/querytags");
     }
 
     public static Map<String, String> getUrlMap() {
