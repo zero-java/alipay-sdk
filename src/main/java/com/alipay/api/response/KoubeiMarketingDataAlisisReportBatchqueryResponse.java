@@ -1,47 +1,54 @@
 package com.alipay.api.response;
 
 import java.util.List;
+
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import com.alipay.api.domain.AlisisReport;
 
 import com.alipay.api.AlipayResponse;
+import io.swagger.annotations.*;
 
 /**
  * ALIPAY API: koubei.marketing.data.alisis.report.batchquery response.
- * 
+ *
  * @author auto create
  * @since 1.0, 2016-10-28 10:26:26
  */
+@ApiModel(description = " ALIPAY API: koubei.marketing.data.alisis.report.batchquery response.")
 public class KoubeiMarketingDataAlisisReportBatchqueryResponse extends AlipayResponse {
 
-	private static final long serialVersionUID = 2695562563471175116L;
+    private static final long serialVersionUID = 2695562563471175116L;
 
-	/** 
-	 * 报表列表信息
-	 */
-	@ApiListField("report_list")
-	@ApiField("alisis_report")
-	private List<AlisisReport> reportList;
+    /**
+     * 报表列表信息
+     */
+    @ApiModelProperty(notes = " 报表列表信息")
+    @ApiListField("report_list")
+    @ApiField("alisis_report")
+    private List<AlisisReport> reportList;
 
-	/** 
-	 * 总记录数
-	 */
-	@ApiField("total_count")
-	private String totalCount;
+    /**
+     * 总记录数
+     */
+    @ApiModelProperty(notes = " 总记录数")
+    @ApiField("total_count")
+    private String totalCount;
 
-	public void setReportList(List<AlisisReport> reportList) {
-		this.reportList = reportList;
-	}
-	public List<AlisisReport> getReportList( ) {
-		return this.reportList;
-	}
+    public void setReportList(List<AlisisReport> reportList) {
+        this.reportList = reportList;
+    }
 
-	public void setTotalCount(String totalCount) {
-		this.totalCount = totalCount;
-	}
-	public String getTotalCount( ) {
-		return this.totalCount;
-	}
+    public List<AlisisReport> getReportList() {
+        return this.reportList;
+    }
+
+    public void setTotalCount(String totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public String getTotalCount() {
+        return this.totalCount;
+    }
 
 }

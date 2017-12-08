@@ -2,6 +2,7 @@ package com.alipay.api.domain;
 
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 券明细信息
@@ -9,103 +10,118 @@ import com.alipay.api.internal.mapping.ApiField;
  * @author auto create
  * @since 1.0, 2017-04-10 14:29:41
  */
+@ApiModel(description = " 券明细信息")
 public class VoucherDetail extends AlipayObject {
 
-	private static final long serialVersionUID = 1569654216875887243L;
+    private static final long serialVersionUID = 1569654216875887243L;
 
-	/**
-	 * 优惠券面额，它应该会等于商家出资加上其他出资方出资
-	 */
-	@ApiField("amount")
-	private String amount;
+    /**
+     * 优惠券面额，它应该会等于商家出资加上其他出资方出资
+     */
+    @ApiModelProperty(notes = " 优惠券面额，它应该会等于商家出资加上其他出资方出资")
+    @ApiField("amount")
+    private String amount;
 
-	/**
-	 * 券id
-	 */
-	@ApiField("id")
-	private String id;
+    /**
+     * 券id
+     */
+    @ApiModelProperty(notes = " 券id")
+    @ApiField("id")
+    private String id;
 
-	/**
-	 * 优惠券备注信息
-	 */
-	@ApiField("memo")
-	private String memo;
+    /**
+     * 优惠券备注信息
+     */
+    @ApiModelProperty(notes = " 优惠券备注信息")
+    @ApiField("memo")
+    private String memo;
 
-	/**
-	 * 商家出资（特指发起交易的商家出资金额）
-	 */
-	@ApiField("merchant_contribute")
-	private String merchantContribute;
+    /**
+     * 商家出资（特指发起交易的商家出资金额）
+     */
+    @ApiModelProperty(notes = " 商家出资（特指发起交易的商家出资金额）")
+    @ApiField("merchant_contribute")
+    private String merchantContribute;
 
-	/**
-	 * 券名称
-	 */
-	@ApiField("name")
-	private String name;
+    /**
+     * 券名称
+     */
+    @ApiModelProperty(notes = " 券名称")
+    @ApiField("name")
+    private String name;
 
-	/**
-	 * 其他出资方出资金额，可能是支付宝，可能是品牌商，或者其他方，也可能是他们的一起出资
-	 */
-	@ApiField("other_contribute")
-	private String otherContribute;
+    /**
+     * 其他出资方出资金额，可能是支付宝，可能是品牌商，或者其他方，也可能是他们的一起出资
+     */
+    @ApiModelProperty(notes = " 其他出资方出资金额，可能是支付宝，可能是品牌商，或者其他方，也可能是他们的一起出资")
+    @ApiField("other_contribute")
+    private String otherContribute;
 
-	/**
-	 * 当前有三种类型：
-ALIPAY_FIX_VOUCHER - 全场代金券
-ALIPAY_DISCOUNT_VOUCHER - 折扣券
-ALIPAY_ITEM_VOUCHER - 单品优惠
-注：不排除将来新增其他类型的可能，商家接入时注意兼容性避免硬编码
-	 */
-	@ApiField("type")
-	private String type;
+    /**
+     * 当前有三种类型：
+     * ALIPAY_FIX_VOUCHER - 全场代金券
+     * ALIPAY_DISCOUNT_VOUCHER - 折扣券
+     * ALIPAY_ITEM_VOUCHER - 单品优惠
+     * 注：不排除将来新增其他类型的可能，商家接入时注意兼容性避免硬编码
+     */
+    @ApiModelProperty(notes = " 当前有三种类型：ALIPAY_FIX_VOUCHER - 全场代金券ALIPAY_DISCOUNT_VOUCHER - 折扣券ALIPAY_ITEM_VOUCHER - 单品优惠注：不排除将来新增其他类型的可能，商家接入时注意兼容性避免硬编码")
+    @ApiField("type")
+    private String type;
 
-	public String getAmount() {
-		return this.amount;
-	}
-	public void setAmount(String amount) {
-		this.amount = amount;
-	}
+    public String getAmount() {
+        return this.amount;
+    }
 
-	public String getId() {
-		return this.id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
 
-	public String getMemo() {
-		return this.memo;
-	}
-	public void setMemo(String memo) {
-		this.memo = memo;
-	}
+    public String getId() {
+        return this.id;
+    }
 
-	public String getMerchantContribute() {
-		return this.merchantContribute;
-	}
-	public void setMerchantContribute(String merchantContribute) {
-		this.merchantContribute = merchantContribute;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return this.name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getMemo() {
+        return this.memo;
+    }
 
-	public String getOtherContribute() {
-		return this.otherContribute;
-	}
-	public void setOtherContribute(String otherContribute) {
-		this.otherContribute = otherContribute;
-	}
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
 
-	public String getType() {
-		return this.type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+    public String getMerchantContribute() {
+        return this.merchantContribute;
+    }
+
+    public void setMerchantContribute(String merchantContribute) {
+        this.merchantContribute = merchantContribute;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getOtherContribute() {
+        return this.otherContribute;
+    }
+
+    public void setOtherContribute(String otherContribute) {
+        this.otherContribute = otherContribute;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
 }

@@ -2,74 +2,75 @@ package com.alipay.api.domain;
 
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 收货人地址
  *
  * @author auto create
  * @since 1.0, 2016-10-26 17:43:42
- */
+ */@ApiModel(description = " 收货人地址")
 public class DeliverAddress extends AlipayObject {
 
 	private static final long serialVersionUID = 1375725346566985276L;
 
 	/**
 	 * 地址
-	 */
+	 */@ApiModelProperty(notes = " 地址")
 	@ApiField("address")
 	private String address;
 
 	/**
 	 * 区域编码
-	 */
+	 */@ApiModelProperty(notes = " 区域编码")
 	@ApiField("address_code")
 	private String addressCode;
 
 	/**
 	 * 是否默认收货地址
-	 */
+	 */@ApiModelProperty(notes = " 是否默认收货地址")
 	@ApiField("default_deliver_address")
 	private String defaultDeliverAddress;
 
 	/**
 	 * 收货人所在区县
-	 */
+	 */@ApiModelProperty(notes = " 收货人所在区县")
 	@ApiField("deliver_area")
 	private String deliverArea;
 
 	/**
 	 * 收货人所在城市
-	 */
+	 */@ApiModelProperty(notes = " 收货人所在城市")
 	@ApiField("deliver_city")
 	private String deliverCity;
 
 	/**
 	 * 收货人全名
-	 */
+	 */@ApiModelProperty(notes = " 收货人全名")
 	@ApiField("deliver_fullname")
 	private String deliverFullname;
 
 	/**
 	 * 收货地址的联系人移动电话
-	 */
+	 */@ApiModelProperty(notes = " 收货地址的联系人移动电话")
 	@ApiField("deliver_mobile")
 	private String deliverMobile;
 
 	/**
 	 * 收货地址的联系人固定电话
-	 */
+	 */@ApiModelProperty(notes = " 收货地址的联系人固定电话")
 	@ApiField("deliver_phone")
 	private String deliverPhone;
 
 	/**
 	 * 收货人所在省份
-	 */
+	 */@ApiModelProperty(notes = " 收货人所在省份")
 	@ApiField("deliver_province")
 	private String deliverProvince;
 
 	/**
 	 * 邮政编码
-	 */
+	 */@ApiModelProperty(notes = " 邮政编码")
 	@ApiField("zip")
 	private String zip;
 

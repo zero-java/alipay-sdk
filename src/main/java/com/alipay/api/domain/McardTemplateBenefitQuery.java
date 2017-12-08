@@ -6,55 +6,56 @@ import java.util.List;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 会员卡模板外部权益查询结果模型
  *
  * @author auto create
  * @since 1.0, 2017-04-20 22:02:34
- */
+ */@ApiModel(description = " 会员卡模板外部权益查询结果模型")
 public class McardTemplateBenefitQuery extends AlipayObject {
 
 
 	/**
 	 * 权益描述信息
-	 */
+	 */@ApiModelProperty(notes = " 权益描述信息")
 	@ApiField("benefit_desc")
 	private List<String> benefitDesc;
 
 	/**
 	 * 权益ID
-	 */
+	 */@ApiModelProperty(notes = " 权益ID")
 	@ApiField("benefit_id")
 	private String benefitId;
 
 	/**
 	 * 权益结束时间
-	 */
+	 */@ApiModelProperty(notes = " 权益结束时间")
 	@ApiField("end_date")
 	private Date endDate;
 
 	/**
 	 * 会员卡模板权益扩展信息：JSON格式; openUrl 说明：跳转到商户的优惠活动页面
-	 */
+	 */@ApiModelProperty(notes = " 会员卡模板权益扩展信息：JSON格式; openUrl 说明：跳转到商户的优惠活动页面")
 	@ApiField("ext_info")
 	private JSONObject extInfo;
 
 	/**
 	 * 权益开始时间
-	 */
+	 */@ApiModelProperty(notes = " 权益开始时间")
 	@ApiField("start_date")
 	private Date startDate;
 
 	/**
 	 * 会员卡模板ID
-	 */
+	 */@ApiModelProperty(notes = " 会员卡模板ID")
 	@ApiField("template_id")
 	private String templateId;
 
 	/**
 	 * 权益标题
-	 */
+	 */@ApiModelProperty(notes = " 权益标题")
 	@ApiField("title")
 	private String title;
 
