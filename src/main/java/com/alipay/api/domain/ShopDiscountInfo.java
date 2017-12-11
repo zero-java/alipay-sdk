@@ -2,45 +2,46 @@ package com.alipay.api.domain;
 
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 店铺优惠信息查询
  *
  * @author auto create
  * @since 1.0, 2016-10-31 11:21:25
- */
+ */@ApiModel(description = " 店铺优惠信息查询")
 public class ShopDiscountInfo extends AlipayObject {
 
 	private static final long serialVersionUID = 3518558188427879485L;
 
 	/**
 	 * 图片url
-	 */
+	 */@ApiModelProperty(notes = " 图片url")
 	@ApiField("cover")
 	private String cover;
 
 	/**
 	 * 优惠信息描述
-	 */
+	 */@ApiModelProperty(notes = " 优惠信息描述")
 	@ApiField("description")
 	private String description;
 
 	/**
 	 * 是否全场。
 全场：Y，单品：N
-	 */
+	 */@ApiModelProperty(notes = " 是否全场。全场：Y，单品：N")
 	@ApiField("is_all")
 	private String isAll;
 
 	/**
 	 * 支付宝商品id
-	 */
+	 */@ApiModelProperty(notes = " 支付宝商品id")
 	@ApiField("item_id")
 	private String itemId;
 
 	/**
 	 * 子类型
-	 */
+	 */@ApiModelProperty(notes = " 子类型")
 	@ApiField("promo_sub_type")
 	private String promoSubType;
 
@@ -48,25 +49,25 @@ public class ShopDiscountInfo extends AlipayObject {
 	 * 优惠类型。
 优惠：discount
 商品：item
-	 */
+	 */@ApiModelProperty(notes = " 优惠类型。优惠：discount商品：item")
 	@ApiField("promotion_type")
 	private String promotionType;
 
 	/**
 	 * 领用模式。自动领用：AUTO_OBTAIN。手动领用：OBTAIN
-	 */
+	 */@ApiModelProperty(notes = " 领用模式。自动领用：AUTO_OBTAIN。手动领用：OBTAIN")
 	@ApiField("purchase_mode")
 	private String purchaseMode;
 
 	/**
 	 * 已用数量
-	 */
+	 */@ApiModelProperty(notes = " 已用数量")
 	@ApiField("sales_quantity")
 	private String salesQuantity;
 
 	/**
 	 * 优惠信息标题
-	 */
+	 */@ApiModelProperty(notes = " 优惠信息标题")
 	@ApiField("subject")
 	private String subject;
 

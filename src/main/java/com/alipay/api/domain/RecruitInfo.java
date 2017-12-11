@@ -4,44 +4,45 @@ import java.util.Date;
 
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 招商信息
  *
  * @author auto create
  * @since 1.0, 2016-12-27 16:58:19
- */
+ */@ApiModel(description = " 招商信息")
 public class RecruitInfo extends AlipayObject {
 
 	private static final long serialVersionUID = 2697236659486833199L;
 
 	/**
 	 * 招商结束时间
-	 */
+	 */@ApiModelProperty(notes = " 招商结束时间")
 	@ApiField("end_time")
 	private Date endTime;
 
 	/**
 	 * 是否参与门店参与了招商
-	 */
+	 */@ApiModelProperty(notes = " 是否参与门店参与了招商")
 	@ApiField("exclude_constraint_shops")
 	private Boolean excludeConstraintShops;
 
 	/**
 	 * 招商方案id
-	 */
+	 */@ApiModelProperty(notes = " 招商方案id")
 	@ApiField("plan_id")
 	private String planId;
 
 	/**
 	 * 招商开始时间
-	 */
+	 */@ApiModelProperty(notes = " 招商开始时间")
 	@ApiField("start_time")
 	private Date startTime;
 
 	/**
 	 * 招商状态
-	 */
+	 */@ApiModelProperty(notes = " 招商状态")
 	@ApiField("status")
 	private String status;
 

@@ -7,113 +7,114 @@ import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
+import io.swagger.annotations.*;
 
 /**
  * 活动详情
  *
  * @author auto create
  * @since 1.0, 2016-12-27 16:58:19
- */
+ */@ApiModel(description = " 活动详情")
 public class CampDetail extends AlipayObject {
 
 	private static final long serialVersionUID = 4463638769423974154L;
 
 	/**
 	 * 活动工单列表
-	 */
+	 */@ApiModelProperty(notes = " 活动工单列表")
 	@ApiListField("activity_orders")
 	@ApiField("activity_order_d_t_o")
 	private List<ActivityOrderDTO> activityOrders;
 
 	/**
 	 * 活动子状态，如审核中
-	 */
+	 */@ApiModelProperty(notes = " 活动子状态，如审核中")
 	@ApiField("audit_status")
 	private String auditStatus;
 
 	/**
 	 * 是否自动续期该活动,Y表示是，N表示否，默认为N
-	 */
+	 */@ApiModelProperty(notes = " 是否自动续期该活动,Y表示是，N表示否，默认为N")
 	@ApiField("auto_delay_flag")
 	private String autoDelayFlag;
 
 	/**
 	 * 预算信息
-	 */
+	 */@ApiModelProperty(notes = " 预算信息")
 	@ApiField("budget_info")
 	private BudgetInfo budgetInfo;
 
 	/**
 	 * 活动约束信息
-	 */
+	 */@ApiModelProperty(notes = " 活动约束信息")
 	@ApiField("constraint_info")
 	private ConstraintInfo constraintInfo;
 
 	/**
 	 * 活动描述
-	 */
+	 */@ApiModelProperty(notes = " 活动描述")
 	@ApiField("desc")
 	private String desc;
 
 	/**
 	 * 活动结束时间
-	 */
+	 */@ApiModelProperty(notes = " 活动结束时间")
 	@ApiField("end_time")
 	private Date endTime;
 
 	/**
 	 * 扩展参数
-	 */
+	 */@ApiModelProperty(notes = " 扩展参数")
 	@ApiField("ext_info")
 	private JSONObject extInfo;
 
 	/**
 	 * 活动id
-	 */
+	 */@ApiModelProperty(notes = " 活动id")
 	@ApiField("id")
 	private String id;
 
 	/**
 	 * 活动名称
-	 */
+	 */@ApiModelProperty(notes = " 活动名称")
 	@ApiField("name")
 	private String name;
 
 	/**
 	 * 营销工具
-	 */
+	 */@ApiModelProperty(notes = " 营销工具")
 	@ApiListField("promo_tools")
 	@ApiField("promo_tool")
 	private List<PromoTool> promoTools;
 
 	/**
 	 * 投放渠道信息
-	 */
+	 */@ApiModelProperty(notes = " 投放渠道信息")
 	@ApiListField("publish_channels")
 	@ApiField("publish_channel")
 	private List<PublishChannel> publishChannels;
 
 	/**
 	 * 招商信息
-	 */
+	 */@ApiModelProperty(notes = " 招商信息")
 	@ApiField("recruit_info")
 	private RecruitInfo recruitInfo;
 
 	/**
 	 * 活动开始时间
-	 */
+	 */@ApiModelProperty(notes = " 活动开始时间")
 	@ApiField("start_time")
 	private Date startTime;
 
 	/**
 	 * 活动状态,CREATED:草稿，ENABLED：生效，DISABLED：无效，STARTED：启动，CLOSED：停止，FINISHED：完成
-	 */
+	 */@ApiModelProperty(notes = " 活动状态,CREATED:草稿，ENABLED：生效，DISABLED：无效，STARTED：启动，CLOSED：停止，FINISHED：完成")
 	@ApiField("status")
 	private String status;
 
 	/**
 	 * 活动类型.DIRECT_SEND:直发奖,CONSUME_SEND:消费送
-	 */
+	 */@ApiModelProperty(notes = " 活动类型.DIRECT_SEND:直发奖,CONSUME_SEND:消费送")
 	@ApiField("type")
 	private String type;
 

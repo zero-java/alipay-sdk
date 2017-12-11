@@ -2,26 +2,27 @@ package com.alipay.api.domain;
 
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 门店评分信息模型
  *
  * @author auto create
  * @since 1.0, 2017-02-15 10:04:25
- */
+ */@ApiModel(description = " 门店评分信息模型")
 public class ShopCommentInfo extends AlipayObject {
 
 	private static final long serialVersionUID = 5349629362258588839L;
 
 	/**
 	 * 门店评分，评分越高，门店质量越高
-	 */
+	 */@ApiModelProperty(notes = " 门店评分，评分越高，门店质量越高")
 	@ApiField("score")
 	private String score;
 
 	/**
 	 * 门店星级，0~5,越高，店铺质量越高
-	 */
+	 */@ApiModelProperty(notes = " 门店星级，0~5,越高，店铺质量越高")
 	@ApiField("star")
 	private String star;
 

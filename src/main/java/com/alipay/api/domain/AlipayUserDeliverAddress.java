@@ -2,74 +2,75 @@ package com.alipay.api.domain;
 
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 会员收货地址信息（alipay.user.info.share使用）
  *
  * @author auto create
  * @since 1.0, 2017-04-10 11:06:01
- */
+ */@ApiModel(description = " 会员收货地址信息（alipay.user.info.share使用）")
 public class AlipayUserDeliverAddress extends AlipayObject {
 
 	private static final long serialVersionUID = 5626743573338526961L;
 
 	/**
 	 * 地址
-	 */
+	 */@ApiModelProperty(notes = " 地址")
 	@ApiField("address")
 	private String address;
 
 	/**
 	 * 区域编码
-	 */
+	 */@ApiModelProperty(notes = " 区域编码")
 	@ApiField("address_code")
 	private String addressCode;
 
 	/**
 	 * 是否默认收货地址
-	 */
+	 */@ApiModelProperty(notes = " 是否默认收货地址")
 	@ApiField("default_deliver_address")
 	private String defaultDeliverAddress;
 
 	/**
 	 * 区/县
-	 */
+	 */@ApiModelProperty(notes = " 区/县")
 	@ApiField("deliver_area")
 	private String deliverArea;
 
 	/**
 	 * 市
-	 */
+	 */@ApiModelProperty(notes = " 市")
 	@ApiField("deliver_city")
 	private String deliverCity;
 
 	/**
 	 * 收货人全名
-	 */
+	 */@ApiModelProperty(notes = " 收货人全名")
 	@ApiField("deliver_fullname")
 	private String deliverFullname;
 
 	/**
 	 * 收货地址的联系人移动电话
-	 */
+	 */@ApiModelProperty(notes = " 收货地址的联系人移动电话")
 	@ApiField("deliver_mobile")
 	private String deliverMobile;
 
 	/**
 	 * 收货地址的联系人固定电话
-	 */
+	 */@ApiModelProperty(notes = " 收货地址的联系人固定电话")
 	@ApiField("deliver_phone")
 	private String deliverPhone;
 
 	/**
 	 * 省
-	 */
+	 */@ApiModelProperty(notes = " 省")
 	@ApiField("deliver_province")
 	private String deliverProvince;
 
 	/**
 	 * 邮编
-	 */
+	 */@ApiModelProperty(notes = " 邮编")
 	@ApiField("zip")
 	private String zip;
 

@@ -1,59 +1,68 @@
 package com.alipay.api.response;
 
 import java.util.List;
+
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 
 import com.alipay.api.AlipayResponse;
+import io.swagger.annotations.*;
 
 /**
  * ALIPAY API: alipay.offline.market.shop.batchquery response.
- * 
+ *
  * @author auto create
  * @since 1.0, 2017-04-07 18:27:29
  */
+@ApiModel(description = " ALIPAY API: alipay.offline.market.shop.batchquery response.")
 public class AlipayOfflineMarketShopBatchqueryResponse extends AlipayResponse {
 
-	private static final long serialVersionUID = 2542368663327693791L;
+    private static final long serialVersionUID = 2542368663327693791L;
 
-	/** 
-	 * 当前页码
-	 */
-	@ApiField("current_pageno")
-	private String currentPageno;
+    /**
+     * 当前页码
+     */
+    @ApiModelProperty(notes = " 当前页码")
+    @ApiField("current_pageno")
+    private String currentPageno;
 
-	/** 
-	 * 门店列表ID，逗号分隔
-	 */
-	@ApiListField("shop_ids")
-	@ApiField("string")
-	private List<String> shopIds;
+    /**
+     * 门店列表ID，逗号分隔
+     */
+    @ApiModelProperty(notes = " 门店列表ID，逗号分隔")
+    @ApiListField("shop_ids")
+    @ApiField("string")
+    private List<String> shopIds;
 
-	/** 
-	 * 总页码数目
-	 */
-	@ApiField("total_pageno")
-	private String totalPageno;
+    /**
+     * 总页码数目
+     */
+    @ApiModelProperty(notes = " 总页码数目")
+    @ApiField("total_pageno")
+    private String totalPageno;
 
-	public void setCurrentPageno(String currentPageno) {
-		this.currentPageno = currentPageno;
-	}
-	public String getCurrentPageno( ) {
-		return this.currentPageno;
-	}
+    public void setCurrentPageno(String currentPageno) {
+        this.currentPageno = currentPageno;
+    }
 
-	public void setShopIds(List<String> shopIds) {
-		this.shopIds = shopIds;
-	}
-	public List<String> getShopIds( ) {
-		return this.shopIds;
-	}
+    public String getCurrentPageno() {
+        return this.currentPageno;
+    }
 
-	public void setTotalPageno(String totalPageno) {
-		this.totalPageno = totalPageno;
-	}
-	public String getTotalPageno( ) {
-		return this.totalPageno;
-	}
+    public void setShopIds(List<String> shopIds) {
+        this.shopIds = shopIds;
+    }
+
+    public List<String> getShopIds() {
+        return this.shopIds;
+    }
+
+    public void setTotalPageno(String totalPageno) {
+        this.totalPageno = totalPageno;
+    }
+
+    public String getTotalPageno() {
+        return this.totalPageno;
+    }
 
 }

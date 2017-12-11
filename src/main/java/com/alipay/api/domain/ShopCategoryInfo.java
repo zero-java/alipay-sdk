@@ -2,32 +2,33 @@ package com.alipay.api.domain;
 
 import com.alipay.api.AlipayObject;
 import com.alipay.api.internal.mapping.ApiField;
+import io.swagger.annotations.*;
 
 /**
  * 门店类目信息
  *
  * @author auto create
  * @since 1.0, 2017-02-15 10:04:25
- */
+ */@ApiModel(description = " 门店类目信息")
 public class ShopCategoryInfo extends AlipayObject {
 
 	private static final long serialVersionUID = 6278383794622679528L;
 
 	/**
 	 * 类目编号
-	 */
+	 */@ApiModelProperty(notes = " 类目编号")
 	@ApiField("category_id")
 	private String categoryId;
 
 	/**
 	 * 类目层级,目前最多支持1、2、3三级
-	 */
+	 */@ApiModelProperty(notes = " 类目层级,目前最多支持1、2、3三级")
 	@ApiField("category_level")
 	private String categoryLevel;
 
 	/**
 	 * 类目名称
-	 */
+	 */@ApiModelProperty(notes = " 类目名称")
 	@ApiField("category_name")
 	private String categoryName;
 
