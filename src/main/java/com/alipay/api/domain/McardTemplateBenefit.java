@@ -6,9 +6,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
-import com.alipay.api.AlipayObject;
-import com.alipay.api.StringValueSerializing;
-import com.alipay.api.internal.mapping.ApiField;
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.yazuo.xiaoya.common.annotation.validate.EndDate;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
@@ -44,7 +42,8 @@ public class McardTemplateBenefit implements Serializable {
      * 会员卡模板权益扩展信息：JSON格式; openUrl 说明：跳转到商户的优惠活动页面
      */
     @ApiModelProperty(notes = " 会员卡模板权益扩展信息：JSON格式; openUrl 说明：跳转到商户的优惠活动页面")
-    @JSONField(alternateNames = "extInfo", name = "ext_info", serializeUsing = StringValueSerializing.class)
+    @JSONField(alternateNames = "extInfo", name = "ext_info")
+    @JSONString
     private JSONObject extInfo;
 
     /**

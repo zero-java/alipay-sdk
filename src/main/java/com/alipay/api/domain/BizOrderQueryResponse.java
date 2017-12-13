@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayObject;
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
@@ -47,6 +48,7 @@ PAUSE_ITEM-恢复售卖商品
 	 * 流水上下文信息，JSON格式。根据action不同对应的结构也不同，JSON字段与含义可参考各个接口的请求参数。
 	 */@ApiModelProperty(notes = " 流水上下文信息，JSON格式。根据action不同对应的结构也不同，JSON字段与含义可参考各个接口的请求参数。")
 	@ApiField("biz_context_info")
+	@JSONString
 	private JSONObject bizContextInfo;
 
 	/**

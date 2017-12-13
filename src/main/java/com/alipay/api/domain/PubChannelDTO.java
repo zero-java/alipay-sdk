@@ -1,8 +1,6 @@
 package com.alipay.api.domain;
 
-import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
-import com.alipay.api.StringValueSerializing;
 import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import io.swagger.annotations.*;
 
@@ -31,7 +29,6 @@ public class PubChannelDTO implements Serializable {
      */
     @ApiModelProperty(notes = " 扩展信息，无需配置")
     @JSONField(alternateNames = "extInfo", name = "ext_info")
-    @NotNull
     private String extInfo;
 
     public String getExtInfo() {

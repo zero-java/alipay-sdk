@@ -2,6 +2,7 @@ package com.alipay.api.domain;
 
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.alipay.api.internal.mapping.ApiField;
 import io.swagger.annotations.*;
 
@@ -54,6 +55,7 @@ public class KoubeiMarketingDataSmartactivityForecastModel extends AlipayObject 
      */
     @JSONField(name = "ext_info", alternateNames = "extInfo")
     @ApiModelProperty(notes = " 可选参数有如下几个：worth_value:奖品面额,可以阶梯送数据（示例：10|20|30）单位：分min_consume:门槛,可以阶梯送数据（示例：100|200|300）单位：分voucher_valid_days:券有效期天数activity_valid_days:活动有效期天数min_cost:领券门槛,可以阶梯送数据（示例：100|200|300）单位：分unconsume_days:会员流失天数crowd_group:人群对象consume_code:消费送活动形式包含commission_rate:口碑客分佣比例注意：对于消费送数据，min_consume/min_cost/worth_value是必填的且必须成组出现，对于诊断码为COMPOSED_ACTIVITY的预测，必须传入全量数据，并且各个参数使用竖线分隔多个值的场景")
+    @JSONString
     private ExtInfo extInfo;
 
     @ApiModel

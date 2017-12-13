@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayObject;
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import io.swagger.annotations.*;
@@ -66,6 +67,7 @@ public class CampDetail extends AlipayObject {
 	 * 扩展参数
 	 */@ApiModelProperty(notes = " 扩展参数")
 	@ApiField("ext_info")
+	@JSONString
 	private JSONObject extInfo;
 
 	/**

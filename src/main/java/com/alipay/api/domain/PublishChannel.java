@@ -2,9 +2,7 @@ package com.alipay.api.domain;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
-import com.alipay.api.AlipayObject;
-import com.alipay.api.StringValueSerializing;
-import com.alipay.api.internal.mapping.ApiField;
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import io.swagger.annotations.*;
 import org.hibernate.validator.constraints.NotBlank;
@@ -24,15 +22,17 @@ public class PublishChannel implements Serializable {
     /**
      * 当type为MERCHANT_CROWD时，config需填入口令送的密码和图片，样例如下："config":"{\"PASSWORD\":\"口令送密码\",\"BACKGROUND_LOGO\":\"1T8Pp00AT7eo9NoAJkMR3AAAACMAAQEC\"}"
      */
-    @JSONField(name = "config", alternateNames = "config", serializeUsing = StringValueSerializing.class)
+    @JSONField(name = "config", alternateNames = "config")
     @ApiModelProperty(notes = " 当type为MERCHANT_CROWD时，config需填入口令送的密码和图片，样例如下：\"config\":\"{\"PASSWORD\":\"口令送密码\",\"BACKGROUND_LOGO\":\"1T8Pp00AT7eo9NoAJkMR3AAAACMAAQEC\"}\"")
+    @JSONString
     private JSONObject config;
 
     /**
      * 扩展信息，无需配置
      */
     @ApiModelProperty(notes = " 扩展信息，无需配置")
-    @JSONField(name = "ext_info", alternateNames = "extInfo", serializeUsing = StringValueSerializing.class)
+    @JSONField(name = "ext_info", alternateNames = "extInfo")
+    @JSONString
     private JSONObject extInfo;
 
     /**

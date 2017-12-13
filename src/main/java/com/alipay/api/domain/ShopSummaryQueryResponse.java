@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayObject;
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import io.swagger.annotations.*;
@@ -101,6 +102,7 @@ public class ShopSummaryQueryResponse extends AlipayObject {
 	 * 图片集，是map转化成的json串，key是图片id,value是图片url
 	 */@ApiModelProperty(notes = " 图片集，是map转化成的json串，key是图片id,value是图片url")
 	@ApiField("pic_coll")
+	@JSONString
 	private JSONObject picColl;
 
 	/**

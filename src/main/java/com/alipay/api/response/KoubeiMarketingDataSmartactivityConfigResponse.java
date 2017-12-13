@@ -1,5 +1,6 @@
 package com.alipay.api.response;
 
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.alipay.api.internal.mapping.ApiField;
 
 import com.alipay.api.AlipayResponse;
@@ -55,6 +56,7 @@ public class KoubeiMarketingDataSmartactivityConfigResponse extends AlipayRespon
      */
     @ApiModelProperty(notes = " 扩展信息，对于拉新的会返回commission_rate(口碑客分佣比例)，对于方案组的会返回SMART_PROMO_GROUP_ID(方案组ID),SMART_PROMO_PLAN_ID方案ID，多个方案竖线分隔，consume_code表示消费送活动形式，包含RULES/USRLEVEL两个枚举值，分别表示按照用户规则和会员分层来创建活动组")
     @ApiField("ext_info")
+    @JSONString
     private ExtInfo extInfo;
 
     /**

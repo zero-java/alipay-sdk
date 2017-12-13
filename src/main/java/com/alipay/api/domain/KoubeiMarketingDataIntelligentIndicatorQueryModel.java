@@ -5,9 +5,7 @@ import java.util.Date;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
-import com.alipay.api.AlipayResponse;
-import com.alipay.api.StringValueSerializing;
-import com.alipay.api.internal.mapping.ApiField;
+import com.alipay.api.fastjson.annotation.JSONString;
 import io.swagger.annotations.*;
 
 /**
@@ -34,8 +32,9 @@ public class KoubeiMarketingDataIntelligentIndicatorQueryModel extends AlipayObj
      * sort_type：ASC表示升序,DESC表示降序
      * store_Ids：为门店ID，多个门店使用逗号分隔
      */
-    @JSONField(name = "ext_info", alternateNames = "extInfo", serializeUsing = StringValueSerializing.class)
+    @JSONField(name = "ext_info", alternateNames = "extInfo")
     @ApiModelProperty("拓展信息")
+    @JSONString
     private JSONObject extInfo;
 
     /**

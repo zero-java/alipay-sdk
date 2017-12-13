@@ -5,10 +5,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
-import com.alipay.api.AlipayObject;
-import com.alipay.api.StringValueSerializing;
-import com.alipay.api.internal.mapping.ApiField;
-import com.alipay.api.internal.mapping.ApiListField;
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.yazuo.xiaoya.common.annotation.validate.EnumCheck;
 import com.yazuo.xiaoya.common.validate.Create;
 import io.swagger.annotations.*;
@@ -69,8 +66,9 @@ public class IntelligentPromoDetail implements Serializable {
     /**
      * 活动扩展信息
      */
-    @JSONField(name = "ext_info", alternateNames = "extInfo", serializeUsing = StringValueSerializing.class)
+    @JSONField(name = "ext_info", alternateNames = "extInfo")
     @ApiModelProperty(notes = " 活动扩展信息")
+    @JSONString
     private JSONObject extInfo;
 
     /**

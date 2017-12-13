@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.serializer.ValueFilter;
 import com.alipay.api.*;
+import com.alipay.api.fastjson.serializer.Serializers;
 import com.alipay.api.internal.parser.xml.ObjectXmlParser;
 import com.alipay.api.internal.util.*;
 
@@ -123,12 +124,7 @@ public class DefaultFastJSONAlipayClient implements FastJSONAlipayClient {
                     && StringUtils.isEmpty(appParams.get(AlipayConstants.BIZ_CONTENT_KEY))
                     && request.getBizModel() != null) {
                 appParams.put(AlipayConstants.BIZ_CONTENT_KEY,
-                        JSON.toJSONString(request.getBizModel(), new ValueFilter() {
-                            @Override
-                            public Object process(Object object, String name, Object value) {
-                                return value instanceof Number ?value.toString():value;
-                            }
-                        },features));
+                        JSON.toJSONString(request.getBizModel(), Serializers.BEAN_TO_STRING,features));
             }
         } catch (NoSuchMethodException e) {
             // 找不到getBizContent则什么都不做

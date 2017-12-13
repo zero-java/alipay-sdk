@@ -7,6 +7,7 @@ import java.util.List;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.*;
 import com.alipay.api.AlipayObject;
+import com.alipay.api.fastjson.annotation.JSONString;
 import com.alipay.api.internal.mapping.ApiField;
 import com.alipay.api.internal.mapping.ApiListField;
 import com.yazuo.xiaoya.common.annotation.validate.EndDate;
@@ -107,6 +108,7 @@ public class Voucher implements Serializable {
      */
     @ApiModelProperty(notes = " 券的扩展信息")
     @JSONField(name = "ext_info", alternateNames = "extInfo")
+    @JSONString
     private JSONObject extInfo;
 
     /**
